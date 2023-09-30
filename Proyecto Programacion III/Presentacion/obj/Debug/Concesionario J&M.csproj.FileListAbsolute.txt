@@ -1,0 +1,11 @@
+C:\Users\Angel Barrueto\Documents\Parcial 1 corte\Presentacion\Concesionario J&M\bin\Debug\Concesionario J&M.exe.config
+C:\Users\Angel Barrueto\Documents\Parcial 1 corte\Presentacion\Concesionario J&M\bin\Debug\Concesionario J&M.exe
+C:\Users\Angel Barrueto\Documents\Parcial 1 corte\Presentacion\Concesionario J&M\bin\Debug\Concesionario J&M.pdb
+C:\Users\Angel Barrueto\Documents\Parcial 1 corte\Presentacion\Concesionario J&M\obj\Debug\Concesionario J&M.csproj.AssemblyReference.cache
+C:\Users\Angel Barrueto\Documents\Parcial 1 corte\Presentacion\Concesionario J&M\obj\Debug\Concesionario J&M.csproj.SuggestedBindingRedirects.cache
+C:\Users\Angel Barrueto\Documents\Parcial 1 corte\Presentacion\Concesionario J&M\obj\Debug\Concesionario_J_M.Form1.resources
+C:\Users\Angel Barrueto\Documents\Parcial 1 corte\Presentacion\Concesionario J&M\obj\Debug\Concesionario_J_M.Properties.Resources.resources
+C:\Users\Angel Barrueto\Documents\Parcial 1 corte\Presentacion\Concesionario J&M\obj\Debug\Concesionario J&M.csproj.GenerateResource.cache
+C:\Users\Angel Barrueto\Documents\Parcial 1 corte\Presentacion\Concesionario J&M\obj\Debug\Concesionario J&M.csproj.CoreCompileInputs.cache
+C:\Users\Angel Barrueto\Documents\Parcial 1 corte\Presentacion\Concesionario J&M\obj\Debug\Concesionario J&M.exe
+C:\Users\Angel Barrueto\Documents\Parcial 1 corte\Presentacion\Concesionario J&M\obj\Debug\Concesionario J&M.pdb
