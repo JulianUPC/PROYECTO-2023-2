@@ -1,0 +1,9 @@
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Datos\bin\Debug\Datos.dll
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Datos\bin\Debug\Datos.pdb
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Datos\bin\Debug\Entidades.dll
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Datos\bin\Debug\Entidades.pdb
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Datos\obj\Debug\Datos.csproj.CopyComplete
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Datos\obj\Debug\Datos.dll
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Datos\obj\Debug\Datos.pdb

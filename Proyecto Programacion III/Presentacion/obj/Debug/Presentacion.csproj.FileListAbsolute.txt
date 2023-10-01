@@ -10,3 +10,19 @@ C:\Users\Angel Barrueto\Documents\Parcial 1 corte\Presentacion\Concesionario J&M
 C:\Users\Angel Barrueto\Documents\Parcial 1 corte\Presentacion\Concesionario J&M\bin\Debug\Concesionario J&M.pdb
 C:\Users\Angel Barrueto\Documents\Parcial 1 corte\Presentacion\Concesionario J&M\obj\Debug\Presentacion.Menu.resources
 C:\Users\Angel Barrueto\Documents\Parcial 1 corte\Presentacion\Concesionario J&M\obj\Debug\Concesionario_J_M.Login.resources
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\bin\Debug\Concesionario J&M.exe.config
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\bin\Debug\Concesionario J&M.exe
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\bin\Debug\Concesionario J&M.pdb
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\bin\Debug\Entidades.dll
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\bin\Debug\Logica.dll
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\bin\Debug\Entidades.pdb
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\bin\Debug\Logica.pdb
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Presentacion.Menu.resources
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario_J_M.Login.resources
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario_J_M.Properties.Resources.resources
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario J&M.exe
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario J&M.pdb

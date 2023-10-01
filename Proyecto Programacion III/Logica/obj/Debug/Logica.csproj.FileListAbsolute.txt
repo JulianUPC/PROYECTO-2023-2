@@ -1,0 +1,11 @@
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Logica\bin\Debug\Logica.dll
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Logica\bin\Debug\Logica.pdb
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Logica\bin\Debug\Datos.dll
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Logica\bin\Debug\Entidades.dll
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Logica\bin\Debug\Datos.pdb
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Logica\bin\Debug\Entidades.pdb
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Logica\obj\Debug\Logica.csproj.AssemblyReference.cache
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Logica\obj\Debug\Logica.csproj.CopyComplete
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Logica\obj\Debug\Logica.dll
+C:\Users\PC\Documents\Programacion\PROYECTO-2023-2\Proyecto Programacion III\Logica\obj\Debug\Logica.pdb
