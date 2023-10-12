@@ -46,6 +46,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Autos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Autos.Designer.cs">
+      <DependentUpon>Autos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Finanzas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Finanzas.Designer.cs">
+      <DependentUpon>Finanzas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gerencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gerencia.Designer.cs">
+      <DependentUpon>Gerencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Informacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Informacion.Designer.cs">
+      <DependentUpon>Informacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario.Designer.cs">
+      <DependentUpon>Inventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrabajaConNosotros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrabajaConNosotros.Designer.cs">
+      <DependentUpon>TrabajaConNosotros.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +96,33 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Quienes Somos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quienes Somos.Designer.cs">
+      <DependentUpon>Quienes Somos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas.Designer.cs">
+      <DependentUpon>Ventas.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Autos.resx">
+      <DependentUpon>Autos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Finanzas.resx">
+      <DependentUpon>Finanzas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gerencia.resx">
+      <DependentUpon>Gerencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Informacion.resx">
+      <DependentUpon>Informacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario.resx">
+      <DependentUpon>Inventario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
@@ -75,6 +138,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Quienes Somos.resx">
+      <DependentUpon>Quienes Somos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrabajaConNosotros.resx">
+      <DependentUpon>TrabajaConNosotros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas.resx">
+      <DependentUpon>Ventas.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

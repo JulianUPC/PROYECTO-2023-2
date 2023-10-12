@@ -25,6 +25,7 @@ namespace Concesionario_J_M
             Btn_InicioSesion.ForeColor = Color.Black;
             Btn_Registrar.BackColor = Color.Black;
             Btn_Registrar.ForeColor = Color.White;
+            Panel_Gerente.Visible = false;
             Panel_Registrar.Visible = true;
         }
 
@@ -52,6 +53,11 @@ namespace Concesionario_J_M
         private void Btn_Gerente_Click(object sender, EventArgs e)
         {
             Panel_Gerente.Visible = true;
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
