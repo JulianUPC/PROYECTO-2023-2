@@ -16,13 +16,11 @@ namespace Presentacion
         public Menu()
         {
             InitializeComponent();
-            Gerencia gerencia = new Gerencia();
-            gerencia.Show();
         }
         //CERRAR,MAXIMIZAR,MINIMIZAR
         private void Btn_Cerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
         private void Btn_Minimizar_Click(object sender, EventArgs e)
         {
@@ -111,6 +109,8 @@ namespace Presentacion
         {
             Autos autos = new Autos();
             autos.Show();
+            this.Hide();
+            
         }
 
         private void Btn_Autos_Click(object sender, EventArgs e)

@@ -50,3 +50,51 @@ C:\Users\Angel Barrueto\Documents\Proyecto Corte II\PROYECTO-2023-2\Proyecto Pro
 C:\Users\Angel Barrueto\Documents\Proyecto Corte II\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario_J_M.Informacion.resources
 C:\Users\Angel Barrueto\Documents\Proyecto Corte II\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario_J_M.Inventario.resources
 C:\Users\Angel Barrueto\Documents\Proyecto Corte II\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario_J_M.Ventas.resources
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\bin\Debug\Concesionario J&M.exe.config
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\bin\Debug\Concesionario J&M.exe
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\bin\Debug\Concesionario J&M.pdb
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\bin\Debug\Entidades.dll
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\bin\Debug\Logica.dll
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\bin\Debug\Entidades.pdb
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\bin\Debug\Logica.pdb
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario_J_M.Autos.resources
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario_J_M.Finanzas.resources
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario_J_M.Gerencia.resources
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario_J_M.Informacion.resources
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario_J_M.Inventario.resources
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Presentacion.Menu.resources
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario_J_M.Login.resources
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario_J_M.Properties.Resources.resources
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario_J_M.Quienes_Somos.resources
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario_J_M.TrabajaConNosotros.resources
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario_J_M.Ventas.resources
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario J&M.exe
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario J&M.pdb
+C:\Users\Angel Barrueto\Documents\Proyecto Programacion III\Presentacion\bin\Debug\Concesionario J&M.exe.config
+C:\Users\Angel Barrueto\Documents\Proyecto Programacion III\Presentacion\bin\Debug\Concesionario J&M.exe
+C:\Users\Angel Barrueto\Documents\Proyecto Programacion III\Presentacion\bin\Debug\Concesionario J&M.pdb
+C:\Users\Angel Barrueto\Documents\Proyecto Programacion III\Presentacion\bin\Debug\Entidades.dll
+C:\Users\Angel Barrueto\Documents\Proyecto Programacion III\Presentacion\bin\Debug\Logica.dll
+C:\Users\Angel Barrueto\Documents\Proyecto Programacion III\Presentacion\bin\Debug\Entidades.pdb
+C:\Users\Angel Barrueto\Documents\Proyecto Programacion III\Presentacion\bin\Debug\Logica.pdb
+C:\Users\Angel Barrueto\Documents\Proyecto Programacion III\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
+C:\Users\Angel Barrueto\Documents\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario_J_M.Autos.resources
+C:\Users\Angel Barrueto\Documents\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario_J_M.Finanzas.resources
+C:\Users\Angel Barrueto\Documents\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario_J_M.Gerencia.resources
+C:\Users\Angel Barrueto\Documents\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario_J_M.Informacion.resources
+C:\Users\Angel Barrueto\Documents\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario_J_M.Inventario.resources
+C:\Users\Angel Barrueto\Documents\Proyecto Programacion III\Presentacion\obj\Debug\Presentacion.Menu.resources
+C:\Users\Angel Barrueto\Documents\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario_J_M.Login.resources
+C:\Users\Angel Barrueto\Documents\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario_J_M.Properties.Resources.resources
+C:\Users\Angel Barrueto\Documents\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario_J_M.Quienes_Somos.resources
+C:\Users\Angel Barrueto\Documents\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario_J_M.TrabajaConNosotros.resources
+C:\Users\Angel Barrueto\Documents\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario_J_M.Ventas.resources
+C:\Users\Angel Barrueto\Documents\Proyecto Programacion III\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
+C:\Users\Angel Barrueto\Documents\Proyecto Programacion III\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\Angel Barrueto\Documents\Proyecto Programacion III\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete
+C:\Users\Angel Barrueto\Documents\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario J&M.exe
+C:\Users\Angel Barrueto\Documents\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario J&M.pdb
