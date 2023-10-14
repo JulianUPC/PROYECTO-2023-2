@@ -44,11 +44,9 @@
     <Compile Include="Auto.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Concesionario.cs" />
+    <Compile Include="Empleado.cs" />
     <Compile Include="Finanzas.cs" />
-    <Compile Include="Informacion.cs" />
-    <Compile Include="Inventario.cs" />
-    <Compile Include="Login.cs" />
-    <Compile Include="Pagos.cs" />
+    <Compile Include="Gerente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -41,15 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RepositorioAutos.cs" />
-    <Compile Include="RepositorioCliente.cs" />
-    <Compile Include="RepositorioConcesionario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RepositorioFinanzas.cs" />
-    <Compile Include="RepositorioInformacion.cs" />
-    <Compile Include="RepositorioInventario.cs" />
-    <Compile Include="RepositorioLogin.cs" />
-    <Compile Include="RepositorioPagos.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidades.csproj">

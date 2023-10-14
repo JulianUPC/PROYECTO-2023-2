@@ -16,3 +16,12 @@ C:\Users\Angel Barrueto\Documents\Proyecto Corte II\PROYECTO-2023-2\Proyecto Pro
 C:\Users\Angel Barrueto\Documents\Proyecto Corte II\PROYECTO-2023-2\Proyecto Programacion III\Datos\obj\Debug\Datos.csproj.CopyComplete
 C:\Users\Angel Barrueto\Documents\Proyecto Corte II\PROYECTO-2023-2\Proyecto Programacion III\Datos\obj\Debug\Datos.dll
 C:\Users\Angel Barrueto\Documents\Proyecto Corte II\PROYECTO-2023-2\Proyecto Programacion III\Datos\obj\Debug\Datos.pdb
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Datos\bin\Debug\Datos.dll
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Datos\bin\Debug\Datos.pdb
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Datos\bin\Debug\Entidades.dll
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Datos\bin\Debug\Entidades.pdb
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Datos\obj\Debug\Datos.csproj.CopyComplete
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Datos\obj\Debug\Datos.dll
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Datos\obj\Debug\Datos.pdb

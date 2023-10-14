@@ -10,3 +10,9 @@ C:\Users\Angel Barrueto\Documents\Proyecto Corte II\PROYECTO-2023-2\Proyecto Pro
 C:\Users\Angel Barrueto\Documents\Proyecto Corte II\PROYECTO-2023-2\Proyecto Programacion III\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\Angel Barrueto\Documents\Proyecto Corte II\PROYECTO-2023-2\Proyecto Programacion III\Entidades\obj\Debug\Entidades.dll
 C:\Users\Angel Barrueto\Documents\Proyecto Corte II\PROYECTO-2023-2\Proyecto Programacion III\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Entidades\bin\Debug\Entidades.dll
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Entidades\obj\Debug\Entidades.dll
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Entidades\obj\Debug\Entidades.pdb

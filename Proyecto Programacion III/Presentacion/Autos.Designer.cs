@@ -182,6 +182,8 @@
             this.lbl_ModeloV = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.Pict_VhcDetalle = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lbl_DineroGerencia = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Btn_Volver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -237,6 +239,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lbl_DineroGerencia);
+            this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.Btn_IniciarSesion);
             this.panel1.Controls.Add(this.label45);
             this.panel1.Controls.Add(this.lbl_ID);
@@ -2011,7 +2015,7 @@
             this.lbl_SistemaCmb.AutoSize = true;
             this.lbl_SistemaCmb.Font = new System.Drawing.Font("Trebuchet MS", 21.75F);
             this.lbl_SistemaCmb.ForeColor = System.Drawing.Color.Black;
-            this.lbl_SistemaCmb.Location = new System.Drawing.Point(96, 395);
+            this.lbl_SistemaCmb.Location = new System.Drawing.Point(82, 398);
             this.lbl_SistemaCmb.Name = "lbl_SistemaCmb";
             this.lbl_SistemaCmb.Size = new System.Drawing.Size(127, 37);
             this.lbl_SistemaCmb.TabIndex = 29;
@@ -2024,7 +2028,7 @@
             this.lbl_Valvulas.AutoSize = true;
             this.lbl_Valvulas.Font = new System.Drawing.Font("Trebuchet MS", 21.75F);
             this.lbl_Valvulas.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Valvulas.Location = new System.Drawing.Point(315, 398);
+            this.lbl_Valvulas.Location = new System.Drawing.Point(314, 398);
             this.lbl_Valvulas.Name = "lbl_Valvulas";
             this.lbl_Valvulas.Size = new System.Drawing.Size(122, 37);
             this.lbl_Valvulas.TabIndex = 28;
@@ -2062,7 +2066,7 @@
             this.lbl_Precio.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_Precio.AutoSize = true;
             this.lbl_Precio.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Precio.Location = new System.Drawing.Point(541, 78);
+            this.lbl_Precio.Location = new System.Drawing.Point(553, 78);
             this.lbl_Precio.Name = "lbl_Precio";
             this.lbl_Precio.Size = new System.Drawing.Size(168, 37);
             this.lbl_Precio.TabIndex = 25;
@@ -2102,6 +2106,30 @@
             this.Pict_VhcDetalle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Pict_VhcDetalle.TabIndex = 0;
             this.Pict_VhcDetalle.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(185, 52);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(146, 21);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "Dinero Disponible";
+            this.label11.Visible = false;
+            // 
+            // lbl_DineroGerencia
+            // 
+            this.lbl_DineroGerencia.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbl_DineroGerencia.AutoSize = true;
+            this.lbl_DineroGerencia.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DineroGerencia.Location = new System.Drawing.Point(212, 73);
+            this.lbl_DineroGerencia.Name = "lbl_DineroGerencia";
+            this.lbl_DineroGerencia.Size = new System.Drawing.Size(90, 21);
+            this.lbl_DineroGerencia.TabIndex = 40;
+            this.lbl_DineroGerencia.Text = "$99.999.999";
+            this.lbl_DineroGerencia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_DineroGerencia.Visible = false;
             // 
             // Autos
             // 
@@ -2357,5 +2385,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button Btn_Comprar;
+        private System.Windows.Forms.Label lbl_DineroGerencia;
+        private System.Windows.Forms.Label label11;
     }
 }

@@ -16,6 +16,8 @@ namespace Presentacion
         public Menu()
         {
             InitializeComponent();
+            Gerencia ger = new Gerencia();
+            ger.Show();
         }
         //CERRAR,MAXIMIZAR,MINIMIZAR
         private void Btn_Cerrar_Click(object sender, EventArgs e)
