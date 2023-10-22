@@ -19,6 +19,7 @@ namespace Concesionario_J_M
         Servicio_Finanzas servicioFinanzas = new Servicio_Finanzas();
         Servicio_Empleado servicioEmpleado = new Servicio_Empleado(configConnnection.ConnectionString);
         ServicioClientes servicioClientes = new ServicioClientes(configConnnection.ConnectionString);
+        Empleado empleados = new Empleado();
         public Gerencia()
         {
             InitializeComponent();
@@ -181,8 +182,34 @@ namespace Concesionario_J_M
 
         private void Btn_BorrarEmp_Click(object sender, EventArgs e)
         {
+            servicioEmpleado.Delete(txt_IDEmpleado);
             Contadores();
         }
-        //FIN DISEÑO
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            Panel_Contratar.Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Panel_Contratar.Visible = true;
+        }
+        private void Btn_ConfContratar_Click(object sender, EventArgs e)
+        {
+            empleados.ID_Empleado = Txt_IDCont .Text;
+            empleados.N_identificacion = Txt_NIDCont.Text;
+            empleados.Nombre_Completo = Txt_NombreCont.Text;
+            empleados.Fecha_Ingreso = DateTime.Now;
+            empleados.Pago_Mes = 2000;
+            empleados.Monto_Comision = 0;
+            servicioEmpleado.Registrar(empleados);
+        }
+
+        private void txt_IDEmpleado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Dtv_Empleados.DataSource = servicioEmpleado.GetBy("ID_Empleado", txt_IDEmpleado.Text);
+
+        }
     }
 }
