@@ -60,20 +60,19 @@
             this.lbl_TotalEmpleado = new System.Windows.Forms.Label();
             this.Dtv_Empleados = new System.Windows.Forms.DataGridView();
             this.Panel_ModificarCliente = new System.Windows.Forms.Panel();
+            this.Btn_ConfModificar = new System.Windows.Forms.Button();
             this.Btn_Volver = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.txt_ = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.Txt_ModCorreo = new System.Windows.Forms.TextBox();
+            this.Txt_ModPresupuesto = new System.Windows.Forms.TextBox();
+            this.Txt_ModDireccion = new System.Windows.Forms.TextBox();
+            this.Txt_ModTelefono = new System.Windows.Forms.TextBox();
+            this.Txt_ModNombre = new System.Windows.Forms.TextBox();
             this.Btn_Modificar = new System.Windows.Forms.Button();
             this.Btn_Borrar = new System.Windows.Forms.Button();
             this.Txt_BuscarID = new System.Windows.Forms.TextBox();
@@ -87,6 +86,7 @@
             this.Panel_Finanzas = new System.Windows.Forms.Panel();
             this.Panel_Ventas = new System.Windows.Forms.Panel();
             this.Panel_Inventario = new System.Windows.Forms.Panel();
+            this.Btn_Comprar = new System.Windows.Forms.Button();
             this.Panel_BorrarI = new System.Windows.Forms.Panel();
             this.Pict_BorrarI = new System.Windows.Forms.PictureBox();
             this.Panel_ModificarI = new System.Windows.Forms.Panel();
@@ -145,7 +145,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbl_DineroTotal = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.Btn_Comprar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel1.SuspendLayout();
@@ -325,10 +324,9 @@
             this.Panel_Empleados.Controls.Add(this.label20);
             this.Panel_Empleados.Controls.Add(this.panel5);
             this.Panel_Empleados.Controls.Add(this.Dtv_Empleados);
-            this.Panel_Empleados.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Panel_Empleados.Location = new System.Drawing.Point(0, 0);
+            this.Panel_Empleados.Location = new System.Drawing.Point(261, 46);
             this.Panel_Empleados.Name = "Panel_Empleados";
-            this.Panel_Empleados.Size = new System.Drawing.Size(786, 451);
+            this.Panel_Empleados.Size = new System.Drawing.Size(525, 405);
             this.Panel_Empleados.TabIndex = 56;
             this.Panel_Empleados.Visible = false;
             // 
@@ -433,7 +431,7 @@
             this.Btn_ModificarEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_ModificarEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_ModificarEmp.ForeColor = System.Drawing.Color.Black;
-            this.Btn_ModificarEmp.Location = new System.Drawing.Point(11, 331);
+            this.Btn_ModificarEmp.Location = new System.Drawing.Point(11, 308);
             this.Btn_ModificarEmp.Name = "Btn_ModificarEmp";
             this.Btn_ModificarEmp.Size = new System.Drawing.Size(209, 49);
             this.Btn_ModificarEmp.TabIndex = 42;
@@ -447,12 +445,13 @@
             this.Btn_BorrarEmp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_BorrarEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_BorrarEmp.ForeColor = System.Drawing.Color.Black;
-            this.Btn_BorrarEmp.Location = new System.Drawing.Point(13, 252);
+            this.Btn_BorrarEmp.Location = new System.Drawing.Point(13, 229);
             this.Btn_BorrarEmp.Name = "Btn_BorrarEmp";
             this.Btn_BorrarEmp.Size = new System.Drawing.Size(209, 49);
             this.Btn_BorrarEmp.TabIndex = 41;
             this.Btn_BorrarEmp.Text = "Borrar";
             this.Btn_BorrarEmp.UseVisualStyleBackColor = false;
+            this.Btn_BorrarEmp.Click += new System.EventHandler(this.Btn_BorrarEmp_Click);
             // 
             // txt_IDEmpleado
             // 
@@ -467,7 +466,7 @@
             this.label19.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(6, 170);
+            this.label19.Location = new System.Drawing.Point(6, 147);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(142, 20);
             this.label19.TabIndex = 39;
@@ -478,7 +477,7 @@
             this.label20.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(6, 141);
+            this.label20.Location = new System.Drawing.Point(6, 118);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(219, 29);
             this.label20.TabIndex = 38;
@@ -537,25 +536,39 @@
             // 
             // Panel_ModificarCliente
             // 
+            this.Panel_ModificarCliente.Controls.Add(this.Btn_ConfModificar);
             this.Panel_ModificarCliente.Controls.Add(this.Btn_Volver);
             this.Panel_ModificarCliente.Controls.Add(this.label11);
             this.Panel_ModificarCliente.Controls.Add(this.label10);
             this.Panel_ModificarCliente.Controls.Add(this.label9);
             this.Panel_ModificarCliente.Controls.Add(this.label8);
             this.Panel_ModificarCliente.Controls.Add(this.label7);
-            this.Panel_ModificarCliente.Controls.Add(this.label1);
             this.Panel_ModificarCliente.Controls.Add(this.label3);
-            this.Panel_ModificarCliente.Controls.Add(this.textBox2);
-            this.Panel_ModificarCliente.Controls.Add(this.textBox3);
-            this.Panel_ModificarCliente.Controls.Add(this.textBox4);
-            this.Panel_ModificarCliente.Controls.Add(this.textBox5);
-            this.Panel_ModificarCliente.Controls.Add(this.txt_);
-            this.Panel_ModificarCliente.Controls.Add(this.textBox6);
-            this.Panel_ModificarCliente.Location = new System.Drawing.Point(319, 43);
+            this.Panel_ModificarCliente.Controls.Add(this.Txt_ModCorreo);
+            this.Panel_ModificarCliente.Controls.Add(this.Txt_ModPresupuesto);
+            this.Panel_ModificarCliente.Controls.Add(this.Txt_ModDireccion);
+            this.Panel_ModificarCliente.Controls.Add(this.Txt_ModTelefono);
+            this.Panel_ModificarCliente.Controls.Add(this.Txt_ModNombre);
+            this.Panel_ModificarCliente.Location = new System.Drawing.Point(319, 10);
             this.Panel_ModificarCliente.Name = "Panel_ModificarCliente";
-            this.Panel_ModificarCliente.Size = new System.Drawing.Size(245, 379);
+            this.Panel_ModificarCliente.Size = new System.Drawing.Size(245, 370);
             this.Panel_ModificarCliente.TabIndex = 55;
             this.Panel_ModificarCliente.Visible = false;
+            // 
+            // Btn_ConfModificar
+            // 
+            this.Btn_ConfModificar.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Btn_ConfModificar.BackColor = System.Drawing.Color.White;
+            this.Btn_ConfModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ConfModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_ConfModificar.ForeColor = System.Drawing.Color.Black;
+            this.Btn_ConfModificar.Location = new System.Drawing.Point(57, 315);
+            this.Btn_ConfModificar.Name = "Btn_ConfModificar";
+            this.Btn_ConfModificar.Size = new System.Drawing.Size(119, 39);
+            this.Btn_ConfModificar.TabIndex = 57;
+            this.Btn_ConfModificar.Text = "Modificar";
+            this.Btn_ConfModificar.UseVisualStyleBackColor = false;
+            this.Btn_ConfModificar.Click += new System.EventHandler(this.Btn_ConfModificar_Click);
             // 
             // Btn_Volver
             // 
@@ -573,7 +586,7 @@
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(80, 10);
+            this.label11.Location = new System.Drawing.Point(86, 10);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(82, 20);
             this.label11.TabIndex = 61;
@@ -584,7 +597,7 @@
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(4, 312);
+            this.label10.Location = new System.Drawing.Point(10, 250);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(158, 20);
             this.label10.TabIndex = 60;
@@ -595,7 +608,7 @@
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(4, 257);
+            this.label9.Location = new System.Drawing.Point(10, 195);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(110, 20);
             this.label9.TabIndex = 59;
@@ -606,7 +619,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(4, 202);
+            this.label8.Location = new System.Drawing.Point(10, 140);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(84, 20);
             this.label8.TabIndex = 58;
@@ -617,81 +630,62 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(4, 143);
+            this.label7.Location = new System.Drawing.Point(10, 88);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 20);
             this.label7.TabIndex = 57;
             this.label7.Text = "Telefono";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 88);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 20);
-            this.label1.TabIndex = 56;
-            this.label1.Text = "Apellido/s";
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(4, 33);
+            this.label3.Location = new System.Drawing.Point(10, 33);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 20);
             this.label3.TabIndex = 55;
             this.label3.Text = "Nombre/s";
             // 
-            // textBox2
+            // Txt_ModCorreo
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(3, 335);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(222, 29);
-            this.textBox2.TabIndex = 46;
+            this.Txt_ModCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_ModCorreo.Location = new System.Drawing.Point(8, 273);
+            this.Txt_ModCorreo.Name = "Txt_ModCorreo";
+            this.Txt_ModCorreo.Size = new System.Drawing.Size(222, 29);
+            this.Txt_ModCorreo.TabIndex = 46;
             // 
-            // textBox3
+            // Txt_ModPresupuesto
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(3, 280);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(222, 29);
-            this.textBox3.TabIndex = 48;
+            this.Txt_ModPresupuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_ModPresupuesto.Location = new System.Drawing.Point(9, 218);
+            this.Txt_ModPresupuesto.Name = "Txt_ModPresupuesto";
+            this.Txt_ModPresupuesto.Size = new System.Drawing.Size(222, 29);
+            this.Txt_ModPresupuesto.TabIndex = 48;
             // 
-            // textBox4
+            // Txt_ModDireccion
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(3, 225);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(222, 29);
-            this.textBox4.TabIndex = 50;
+            this.Txt_ModDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_ModDireccion.Location = new System.Drawing.Point(8, 163);
+            this.Txt_ModDireccion.Name = "Txt_ModDireccion";
+            this.Txt_ModDireccion.Size = new System.Drawing.Size(222, 29);
+            this.Txt_ModDireccion.TabIndex = 50;
             // 
-            // textBox5
+            // Txt_ModTelefono
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(6, 166);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(222, 29);
-            this.textBox5.TabIndex = 52;
+            this.Txt_ModTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_ModTelefono.Location = new System.Drawing.Point(9, 111);
+            this.Txt_ModTelefono.Name = "Txt_ModTelefono";
+            this.Txt_ModTelefono.Size = new System.Drawing.Size(222, 29);
+            this.Txt_ModTelefono.TabIndex = 52;
             // 
-            // txt_
+            // Txt_ModNombre
             // 
-            this.txt_.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_.Location = new System.Drawing.Point(6, 56);
-            this.txt_.Name = "txt_";
-            this.txt_.Size = new System.Drawing.Size(222, 29);
-            this.txt_.TabIndex = 44;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(6, 111);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(222, 29);
-            this.textBox6.TabIndex = 54;
+            this.Txt_ModNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_ModNombre.Location = new System.Drawing.Point(9, 56);
+            this.Txt_ModNombre.Name = "Txt_ModNombre";
+            this.Txt_ModNombre.Size = new System.Drawing.Size(222, 29);
+            this.Txt_ModNombre.TabIndex = 44;
             // 
             // Btn_Modificar
             // 
@@ -721,6 +715,7 @@
             this.Btn_Borrar.TabIndex = 41;
             this.Btn_Borrar.Text = "Borrar";
             this.Btn_Borrar.UseVisualStyleBackColor = false;
+            this.Btn_Borrar.Click += new System.EventHandler(this.Btn_Borrar_Click);
             // 
             // Txt_BuscarID
             // 
@@ -729,6 +724,7 @@
             this.Txt_BuscarID.Name = "Txt_BuscarID";
             this.Txt_BuscarID.Size = new System.Drawing.Size(222, 29);
             this.Txt_BuscarID.TabIndex = 40;
+            this.Txt_BuscarID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_BuscarID_KeyPress);
             // 
             // label6
             // 
@@ -737,9 +733,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(6, 170);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(118, 20);
+            this.label6.Size = new System.Drawing.Size(207, 20);
             this.label6.TabIndex = 39;
-            this.label6.Text = "ID del Cliente";
+            this.label6.Text = "Identificacion del Cliente";
             // 
             // label4
             // 
@@ -789,7 +785,7 @@
             this.Total_Clientes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.Total_Clientes.AutoSize = true;
             this.Total_Clientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Total_Clientes.Location = new System.Drawing.Point(86, 39);
+            this.Total_Clientes.Location = new System.Drawing.Point(96, 39);
             this.Total_Clientes.Name = "Total_Clientes";
             this.Total_Clientes.Size = new System.Drawing.Size(69, 73);
             this.Total_Clientes.TabIndex = 19;
@@ -811,9 +807,9 @@
             this.Panel_Finanzas.Controls.Add(this.Dgv_IngresosyGastos);
             this.Panel_Finanzas.Controls.Add(this.panel2);
             this.Panel_Finanzas.Controls.Add(this.panel4);
-            this.Panel_Finanzas.Location = new System.Drawing.Point(188, 2);
+            this.Panel_Finanzas.Location = new System.Drawing.Point(676, 334);
             this.Panel_Finanzas.Name = "Panel_Finanzas";
-            this.Panel_Finanzas.Size = new System.Drawing.Size(786, 451);
+            this.Panel_Finanzas.Size = new System.Drawing.Size(298, 119);
             this.Panel_Finanzas.TabIndex = 56;
             this.Panel_Finanzas.Visible = false;
             // 
@@ -829,9 +825,9 @@
             this.Panel_Ventas.Controls.Add(this.label26);
             this.Panel_Ventas.Controls.Add(this.panel7);
             this.Panel_Ventas.Controls.Add(this.Dgv_Ventas);
-            this.Panel_Ventas.Location = new System.Drawing.Point(0, 0);
+            this.Panel_Ventas.Location = new System.Drawing.Point(517, 369);
             this.Panel_Ventas.Name = "Panel_Ventas";
-            this.Panel_Ventas.Size = new System.Drawing.Size(786, 451);
+            this.Panel_Ventas.Size = new System.Drawing.Size(269, 82);
             this.Panel_Ventas.TabIndex = 28;
             // 
             // Panel_Inventario
@@ -845,11 +841,25 @@
             this.Panel_Inventario.Controls.Add(this.label42);
             this.Panel_Inventario.Controls.Add(this.panel10);
             this.Panel_Inventario.Controls.Add(this.Dgv_Inventario);
-            this.Panel_Inventario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Panel_Inventario.Location = new System.Drawing.Point(0, 0);
+            this.Panel_Inventario.Location = new System.Drawing.Point(516, 355);
             this.Panel_Inventario.Name = "Panel_Inventario";
-            this.Panel_Inventario.Size = new System.Drawing.Size(786, 451);
+            this.Panel_Inventario.Size = new System.Drawing.Size(270, 96);
             this.Panel_Inventario.TabIndex = 57;
+            // 
+            // Btn_Comprar
+            // 
+            this.Btn_Comprar.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Btn_Comprar.BackColor = System.Drawing.Color.White;
+            this.Btn_Comprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Comprar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Comprar.ForeColor = System.Drawing.Color.Black;
+            this.Btn_Comprar.Location = new System.Drawing.Point(9, 91);
+            this.Btn_Comprar.Name = "Btn_Comprar";
+            this.Btn_Comprar.Size = new System.Drawing.Size(234, 48);
+            this.Btn_Comprar.TabIndex = 63;
+            this.Btn_Comprar.Text = "Comprar";
+            this.Btn_Comprar.UseVisualStyleBackColor = false;
+            this.Btn_Comprar.Click += new System.EventHandler(this.Btn_Comprar_Click);
             // 
             // Panel_BorrarI
             // 
@@ -987,7 +997,7 @@
             this.Btn_ModificarI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_ModificarI.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_ModificarI.ForeColor = System.Drawing.Color.Black;
-            this.Btn_ModificarI.Location = new System.Drawing.Point(9, 331);
+            this.Btn_ModificarI.Location = new System.Drawing.Point(9, 154);
             this.Btn_ModificarI.Name = "Btn_ModificarI";
             this.Btn_ModificarI.Size = new System.Drawing.Size(233, 49);
             this.Btn_ModificarI.TabIndex = 51;
@@ -1002,7 +1012,7 @@
             this.btn_BorrarI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_BorrarI.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_BorrarI.ForeColor = System.Drawing.Color.Black;
-            this.btn_BorrarI.Location = new System.Drawing.Point(9, 393);
+            this.btn_BorrarI.Location = new System.Drawing.Point(9, 216);
             this.btn_BorrarI.Name = "btn_BorrarI";
             this.btn_BorrarI.Size = new System.Drawing.Size(234, 48);
             this.btn_BorrarI.TabIndex = 50;
@@ -1024,7 +1034,7 @@
             this.label41.AutoSize = true;
             this.label41.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label41.Location = new System.Drawing.Point(8, 180);
+            this.label41.Location = new System.Drawing.Point(8, 3);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(185, 20);
             this.label41.TabIndex = 48;
@@ -1035,7 +1045,7 @@
             this.label42.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(33, 141);
+            this.label42.Location = new System.Drawing.Point(33, -36);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(201, 29);
             this.label42.TabIndex = 46;
@@ -1163,7 +1173,7 @@
             this.Btn_ModificarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_ModificarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_ModificarP.ForeColor = System.Drawing.Color.Black;
-            this.Btn_ModificarP.Location = new System.Drawing.Point(11, 251);
+            this.Btn_ModificarP.Location = new System.Drawing.Point(11, 67);
             this.Btn_ModificarP.Name = "Btn_ModificarP";
             this.Btn_ModificarP.Size = new System.Drawing.Size(233, 49);
             this.Btn_ModificarP.TabIndex = 51;
@@ -1178,7 +1188,7 @@
             this.Btn_BorrarV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_BorrarV.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_BorrarV.ForeColor = System.Drawing.Color.Black;
-            this.Btn_BorrarV.Location = new System.Drawing.Point(11, 307);
+            this.Btn_BorrarV.Location = new System.Drawing.Point(11, 123);
             this.Btn_BorrarV.Name = "Btn_BorrarV";
             this.Btn_BorrarV.Size = new System.Drawing.Size(234, 48);
             this.Btn_BorrarV.TabIndex = 50;
@@ -1264,7 +1274,7 @@
             this.label25.AutoSize = true;
             this.label25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label25.Location = new System.Drawing.Point(8, 180);
+            this.label25.Location = new System.Drawing.Point(8, -4);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(170, 20);
             this.label25.TabIndex = 48;
@@ -1275,7 +1285,7 @@
             this.label26.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(33, 141);
+            this.label26.Location = new System.Drawing.Point(33, -43);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(201, 29);
             this.label26.TabIndex = 46;
@@ -1483,21 +1493,6 @@
             this.label24.TabIndex = 21;
             this.label24.Text = "DINERO TOTAL";
             // 
-            // Btn_Comprar
-            // 
-            this.Btn_Comprar.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Btn_Comprar.BackColor = System.Drawing.Color.White;
-            this.Btn_Comprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Comprar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Comprar.ForeColor = System.Drawing.Color.Black;
-            this.Btn_Comprar.Location = new System.Drawing.Point(9, 268);
-            this.Btn_Comprar.Name = "Btn_Comprar";
-            this.Btn_Comprar.Size = new System.Drawing.Size(234, 48);
-            this.Btn_Comprar.TabIndex = 63;
-            this.Btn_Comprar.Text = "Comprar";
-            this.Btn_Comprar.UseVisualStyleBackColor = false;
-            this.Btn_Comprar.Click += new System.EventHandler(this.Btn_Comprar_Click);
-            // 
             // Gerencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1589,14 +1584,12 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox txt_;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox Txt_ModCorreo;
+        private System.Windows.Forms.TextBox Txt_ModPresupuesto;
+        private System.Windows.Forms.TextBox Txt_ModDireccion;
+        private System.Windows.Forms.TextBox Txt_ModTelefono;
+        private System.Windows.Forms.TextBox Txt_ModNombre;
         private System.Windows.Forms.PictureBox Btn_Volver;
         private System.Windows.Forms.Panel Panel_Empleados;
         private System.Windows.Forms.Panel Panel_ModificarEmp;
@@ -1681,5 +1674,6 @@
         private System.Windows.Forms.Label lbl_VehiculosTotal;
         private System.Windows.Forms.DataGridView Dgv_Inventario;
         private System.Windows.Forms.Button Btn_Comprar;
+        private System.Windows.Forms.Button Btn_ConfModificar;
     }
 }

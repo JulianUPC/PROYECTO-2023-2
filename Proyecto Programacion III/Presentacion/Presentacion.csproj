@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -34,7 +34,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Data.OracleClient.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,6 +56,7 @@
     <Compile Include="Autos.Designer.cs">
       <DependentUpon>Autos.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConfigConnection.cs" />
     <Compile Include="Gerencia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,7 +135,7 @@
       <Name>Entidades</Name>
     </ProjectReference>
     <ProjectReference Include="..\Logica\Logica.csproj">
-      <Project>{967515d9-400e-4169-abae-b3b0f9b9eb18}</Project>
+      <Project>{83786b2e-05b4-453a-befe-99cd724bb9b6}</Project>
       <Name>Logica</Name>
     </ProjectReference>
   </ItemGroup>

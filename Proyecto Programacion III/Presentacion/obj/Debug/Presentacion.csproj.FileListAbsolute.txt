@@ -102,9 +102,7 @@ C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Progr
 C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\bin\Debug\Concesionario J&M.exe
 C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\bin\Debug\Concesionario J&M.pdb
 C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\bin\Debug\Entidades.dll
-C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\bin\Debug\Logica.dll
 C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\bin\Debug\Entidades.pdb
-C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\bin\Debug\Logica.pdb
 C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
 C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario_J_M.Autos.resources
 C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario_J_M.Gerencia.resources
@@ -118,3 +116,7 @@ C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Progr
 C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete
 C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario J&M.exe
 C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\obj\Debug\Concesionario J&M.pdb
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\bin\Debug\Logica2.dll
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\bin\Debug\Datos.dll
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\bin\Debug\Logica2.pdb
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Presentacion\bin\Debug\Datos.pdb

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Autos));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_DineroDisp = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.Btn_IniciarSesion = new System.Windows.Forms.Button();
             this.label45 = new System.Windows.Forms.Label();
             this.lbl_ID = new System.Windows.Forms.Label();
@@ -182,8 +184,6 @@
             this.lbl_ModeloV = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.Pict_VhcDetalle = new System.Windows.Forms.PictureBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.lbl_DineroGerencia = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Btn_Volver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -239,7 +239,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.lbl_DineroGerencia);
+            this.panel1.Controls.Add(this.lbl_DineroDisp);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.Btn_IniciarSesion);
             this.panel1.Controls.Add(this.label45);
@@ -255,6 +255,30 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 138);
             this.panel1.TabIndex = 1;
+            // 
+            // lbl_DineroDisp
+            // 
+            this.lbl_DineroDisp.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbl_DineroDisp.AutoSize = true;
+            this.lbl_DineroDisp.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DineroDisp.Location = new System.Drawing.Point(212, 73);
+            this.lbl_DineroDisp.Name = "lbl_DineroDisp";
+            this.lbl_DineroDisp.Size = new System.Drawing.Size(26, 21);
+            this.lbl_DineroDisp.TabIndex = 40;
+            this.lbl_DineroDisp.Text = "$0";
+            this.lbl_DineroDisp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_DineroDisp.Visible = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(185, 52);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(146, 21);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "Dinero Disponible";
+            this.label11.Visible = false;
             // 
             // Btn_IniciarSesion
             // 
@@ -2107,30 +2131,6 @@
             this.Pict_VhcDetalle.TabIndex = 0;
             this.Pict_VhcDetalle.TabStop = false;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(185, 52);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(146, 21);
-            this.label11.TabIndex = 23;
-            this.label11.Text = "Dinero Disponible";
-            this.label11.Visible = false;
-            // 
-            // lbl_DineroGerencia
-            // 
-            this.lbl_DineroGerencia.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbl_DineroGerencia.AutoSize = true;
-            this.lbl_DineroGerencia.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_DineroGerencia.Location = new System.Drawing.Point(212, 73);
-            this.lbl_DineroGerencia.Name = "lbl_DineroGerencia";
-            this.lbl_DineroGerencia.Size = new System.Drawing.Size(90, 21);
-            this.lbl_DineroGerencia.TabIndex = 40;
-            this.lbl_DineroGerencia.Text = "$99.999.999";
-            this.lbl_DineroGerencia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_DineroGerencia.Visible = false;
-            // 
             // Autos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2385,7 +2385,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button Btn_Comprar;
-        private System.Windows.Forms.Label lbl_DineroGerencia;
+        private System.Windows.Forms.Label lbl_DineroDisp;
         private System.Windows.Forms.Label label11;
     }
 }

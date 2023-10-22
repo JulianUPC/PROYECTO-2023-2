@@ -9,18 +9,26 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using System.Windows.Forms.VisualStyles;
+using Entidades;
+using Logica2;
+using System.Threading;
+using Presentacion;
 
 namespace Concesionario_J_M
 {
     public partial class Login : Form
     {
+        Cliente cliente = new Cliente();
+        ServicioClientes Sl = new ServicioClientes(configConnnection.ConnectionString);
+        Manejo_Formulario mf = new Manejo_Formulario();
         public Login()
         {
             InitializeComponent();
         }
-
+        
         private void Btn_Registrar_Click(object sender, EventArgs e)
         {
+
             Btn_InicioSesion.BackColor = Color.White;
             Btn_InicioSesion.ForeColor = Color.Black;
             Btn_Registrar.BackColor = Color.Black;
@@ -57,7 +65,124 @@ namespace Concesionario_J_M
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            this.Close();
+           Presentacion.Menu menu = new Presentacion.Menu();
+           menu.Show();
+           this.Close();
+        }
+        private void Txt_NombreC_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            mf.ValidarLetras(e, Txt_NombreC);
+        }
+
+        private void Txt_Cedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            mf.SoloNumeros(e);
+            mf.LimitarLongitudTextBox(Txt_Cedula, 10, e);
+        }
+
+        private void Txt_Cargo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            mf.ValidarLetras(e, Txt_Cargo);
+        }
+
+        private void Txt_IngresosM_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            mf.SoloNumeros(e);
+        }
+
+        private void Txt_Presupuesto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            mf.SoloNumeros(e);
+        }
+        //FIN DISEÑO
+        //INICIO LOGICA
+        private void Btn_RegistrarInfo_Click(object sender, EventArgs e)
+        {
+            cliente.N_Identificacion = Sl.Verificar_ID(Txt_Cedula);
+            cliente.Nombre_Completo = Txt_NombreC.Text;
+            cliente.Fecha_Nacimiento = Dtt_FechaN.Value;
+            cliente.Genero = Sl.Verificar_Genero(Opc_Masculino,Opc_Femenino);
+            cliente.Direccion = Txt_Direccion.Text;
+            cliente.Telefono = Txt_Celular.Text;
+            cliente.Trabaja = Sl.Verificar_Trabajo(Opc_TrabajoSi,Opc_TrabajoNo);
+            cliente.Cargo = Txt_Cargo.Text;
+            cliente.Presupuesto = Sl.LimitesPresupuesto(Txt_Presupuesto);
+            cliente.Ingresos_Mensuales = Sl.LimiteIngresos(Txt_IngresosM);
+            cliente.Ingresos_Mensuales = Sl.Verificar_Ingresos(Txt_IngresosM);
+            cliente.Presupuesto = Sl.Verificar_Presupuesto(Txt_Presupuesto);
+            cliente.Fecha_Registro = DateTime.Now;
+            cliente.Licencia = Sl.Verificar_Licencia(Opc_LicenciaSi,Opc_LicenciaNo);
+            cliente.Usuario = Txt_UsuarioR.Text;
+            cliente.Contraseña = Sl.VerificarContraseña(Txt_ContraseñaR, Txt_ConfCotraseñaR);
+            cliente.Autos_Comprados = 0;
+            cliente.Correo_Electronico = txt_Correo.Text;
+            Sl.Registrar(cliente,Opc_TerminosSi,Opc_TerminosNo);
+            
+        }
+        //INICIO DE SESION
+        private void Btn_Ingresar_Click(object sender, EventArgs e)
+        {
+            Txt_Cedula.Text = Sl.Iniciar_Sesion(Txt_Usuario, Txt_Contraseña);
+            Console.WriteLine(Txt_Cedula.Text);
+            if (Sl.Buscar_Cuenta(Txt_Cedula) == true)
+            {                     
+                Autos autos = new Autos();
+                autos.PasarUsuario(Txt_Cedula);
+                autos.Show();            
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Usuario o Contraseña Incorrectos");
+            }
+        }
+        //VACIAR REGISTRO
+        public void Vaciar_Registro()
+        {
+            if (Sl.Vaciar_Registro()==true)
+            {
+                Panel_Registrar.Visible = false;
+                Panel_Registro2.Visible = false;
+                VaciarTextBox();
+                VaciarRadioButtoms();
+            }
+        }
+        public void VaciarTextBox()
+        {
+            Sl.VaciarTextBox(Txt_Cedula);
+            Sl.VaciarTextBox(Txt_NombreC);
+            Dtt_FechaN.Text = "";
+            Sl.VaciarTextBox(Txt_Direccion);
+            Sl.VaciarTextBox(Txt_Cargo);
+            Sl.VaciarTextBox(Txt_IngresosM);
+            Sl.VaciarTextBox(Txt_Presupuesto);
+            Sl.VaciarTextBox(txt_Correo);
+            Sl.VaciarTextBox(Txt_UsuarioR);
+            Sl.VaciarTextBox(Txt_ContraseñaR);
+            Sl.VaciarTextBox(Txt_ConfCotraseñaR);
+        }
+        public void VaciarRadioButtoms()
+        {
+            Sl.VaciarRadioButtom(Opc_Femenino);
+            Sl.VaciarRadioButtom(Opc_Masculino);
+            Sl.VaciarRadioButtom(Opc_TrabajoSi);
+            Sl.VaciarRadioButtom(Opc_TrabajoNo);
+            Sl.VaciarRadioButtom(Opc_LicenciaSi);
+            Sl.VaciarRadioButtom(Opc_LicenciaNo);
+            Sl.VaciarRadioButtom(Opc_TerminosSi);
+            Sl.VaciarRadioButtom(Opc_TerminosNo);
+        }
+        //VERIFICAR LOS RADIO BUTTONS
+        //NO FUNCIONAN EN LA CAPA LOGICA
+        
+        private void Btn_IngresarGerente_Click(object sender, EventArgs e)
+        {
+            if (Sl.IngresarGerente(Txt_UsuarioG, Txt_ContraseñaG) == true)
+            {
+                Gerencia gerencia = new Gerencia();
+                gerencia.Show();
+                this.Close();
+            }
         }
     }
 }

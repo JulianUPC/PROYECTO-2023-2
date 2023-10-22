@@ -37,7 +37,6 @@
             this.Txt_Contraseña = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Btn_Ingresar = new System.Windows.Forms.Button();
             this.Txt_Usuario = new System.Windows.Forms.TextBox();
             this.Btn_Gerente = new System.Windows.Forms.Button();
             this.Panel_Gerente = new System.Windows.Forms.Panel();
@@ -63,7 +62,7 @@
             this.Btn_RegistrarInfo = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Opc_LicenciaSi = new System.Windows.Forms.RadioButton();
-            this.Txt_LicenciaNo = new System.Windows.Forms.RadioButton();
+            this.Opc_LicenciaNo = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.Opc_TrabajoSi = new System.Windows.Forms.RadioButton();
             this.Opc_TrabajoNo = new System.Windows.Forms.RadioButton();
@@ -71,9 +70,6 @@
             this.Opc_Masculino = new System.Windows.Forms.RadioButton();
             this.Opc_Femenino = new System.Windows.Forms.RadioButton();
             this.Btn_Siguiente = new System.Windows.Forms.Button();
-            this.Cmb_Año = new System.Windows.Forms.ComboBox();
-            this.Cmb_mes = new System.Windows.Forms.ComboBox();
-            this.Cmb_Dia = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.Txt_Presupuesto = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -95,11 +91,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.Txt_Cedula = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.Panel_InicioSesion = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label25 = new System.Windows.Forms.Label();
             this.txt_Correo = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
+            this.Dtt_FechaN = new System.Windows.Forms.DateTimePicker();
+            this.Panel_InicioSesion = new System.Windows.Forms.Panel();
+            this.Btn_Ingresar = new System.Windows.Forms.Button();
+            this.Pict_Volver = new System.Windows.Forms.PictureBox();
+            this.label25 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.Panel_Gerente.SuspendLayout();
@@ -110,7 +108,7 @@
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.Panel_InicioSesion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pict_Volver)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -202,18 +200,6 @@
             this.label1.Size = new System.Drawing.Size(270, 31);
             this.label1.TabIndex = 3;
             this.label1.Text = "INICIO DE SESION";
-            // 
-            // Btn_Ingresar
-            // 
-            this.Btn_Ingresar.FlatAppearance.BorderSize = 2;
-            this.Btn_Ingresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Ingresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Ingresar.Location = new System.Drawing.Point(176, 257);
-            this.Btn_Ingresar.Name = "Btn_Ingresar";
-            this.Btn_Ingresar.Size = new System.Drawing.Size(161, 37);
-            this.Btn_Ingresar.TabIndex = 10;
-            this.Btn_Ingresar.Text = "INGRESAR";
-            this.Btn_Ingresar.UseVisualStyleBackColor = true;
             // 
             // Txt_Usuario
             // 
@@ -308,6 +294,7 @@
             this.Btn_IngresarGerente.TabIndex = 59;
             this.Btn_IngresarGerente.Text = "INGRESAR";
             this.Btn_IngresarGerente.UseVisualStyleBackColor = true;
+            this.Btn_IngresarGerente.Click += new System.EventHandler(this.Btn_IngresarGerente_Click);
             // 
             // Panel_Registrar
             // 
@@ -316,9 +303,6 @@
             this.Panel_Registrar.Controls.Add(this.panel2);
             this.Panel_Registrar.Controls.Add(this.panel1);
             this.Panel_Registrar.Controls.Add(this.Btn_Siguiente);
-            this.Panel_Registrar.Controls.Add(this.Cmb_Año);
-            this.Panel_Registrar.Controls.Add(this.Cmb_mes);
-            this.Panel_Registrar.Controls.Add(this.Cmb_Dia);
             this.Panel_Registrar.Controls.Add(this.label5);
             this.Panel_Registrar.Controls.Add(this.Txt_Presupuesto);
             this.Panel_Registrar.Controls.Add(this.label17);
@@ -342,6 +326,7 @@
             this.Panel_Registrar.Controls.Add(this.label6);
             this.Panel_Registrar.Controls.Add(this.txt_Correo);
             this.Panel_Registrar.Controls.Add(this.label26);
+            this.Panel_Registrar.Controls.Add(this.Dtt_FechaN);
             this.Panel_Registrar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Panel_Registrar.Location = new System.Drawing.Point(0, 0);
             this.Panel_Registrar.Name = "Panel_Registrar";
@@ -423,18 +408,18 @@
             // 
             // Txt_ConfCotraseñaR
             // 
-            this.Txt_ConfCotraseñaR.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_ConfCotraseñaR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Txt_ConfCotraseñaR.Location = new System.Drawing.Point(147, 199);
             this.Txt_ConfCotraseñaR.Name = "Txt_ConfCotraseñaR";
-            this.Txt_ConfCotraseñaR.Size = new System.Drawing.Size(214, 29);
+            this.Txt_ConfCotraseñaR.Size = new System.Drawing.Size(214, 26);
             this.Txt_ConfCotraseñaR.TabIndex = 53;
             // 
             // Txt_ContraseñaR
             // 
-            this.Txt_ContraseñaR.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_ContraseñaR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Txt_ContraseñaR.Location = new System.Drawing.Point(147, 142);
             this.Txt_ContraseñaR.Name = "Txt_ContraseñaR";
-            this.Txt_ContraseñaR.Size = new System.Drawing.Size(214, 29);
+            this.Txt_ContraseñaR.Size = new System.Drawing.Size(214, 26);
             this.Txt_ContraseñaR.TabIndex = 52;
             // 
             // label20
@@ -469,10 +454,10 @@
             // 
             // Txt_UsuarioR
             // 
-            this.Txt_UsuarioR.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_UsuarioR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Txt_UsuarioR.Location = new System.Drawing.Point(147, 88);
             this.Txt_UsuarioR.Name = "Txt_UsuarioR";
-            this.Txt_UsuarioR.Size = new System.Drawing.Size(214, 29);
+            this.Txt_UsuarioR.Size = new System.Drawing.Size(214, 26);
             this.Txt_UsuarioR.TabIndex = 49;
             // 
             // Btn_RegistrarInfo
@@ -486,11 +471,12 @@
             this.Btn_RegistrarInfo.TabIndex = 16;
             this.Btn_RegistrarInfo.Text = "REGISTRAR";
             this.Btn_RegistrarInfo.UseVisualStyleBackColor = true;
+            this.Btn_RegistrarInfo.Click += new System.EventHandler(this.Btn_RegistrarInfo_Click);
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.Opc_LicenciaSi);
-            this.panel3.Controls.Add(this.Txt_LicenciaNo);
+            this.panel3.Controls.Add(this.Opc_LicenciaNo);
             this.panel3.Location = new System.Drawing.Point(264, 288);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(188, 29);
@@ -508,18 +494,18 @@
             this.Opc_LicenciaSi.Text = "SI";
             this.Opc_LicenciaSi.UseVisualStyleBackColor = true;
             // 
-            // Txt_LicenciaNo
+            // Opc_LicenciaNo
             // 
-            this.Txt_LicenciaNo.AutoSize = true;
-            this.Txt_LicenciaNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_LicenciaNo.Location = new System.Drawing.Point(54, 3);
-            this.Txt_LicenciaNo.Name = "Txt_LicenciaNo";
-            this.Txt_LicenciaNo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Txt_LicenciaNo.Size = new System.Drawing.Size(45, 20);
-            this.Txt_LicenciaNo.TabIndex = 42;
-            this.Txt_LicenciaNo.TabStop = true;
-            this.Txt_LicenciaNo.Text = "NO";
-            this.Txt_LicenciaNo.UseVisualStyleBackColor = true;
+            this.Opc_LicenciaNo.AutoSize = true;
+            this.Opc_LicenciaNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Opc_LicenciaNo.Location = new System.Drawing.Point(54, 3);
+            this.Opc_LicenciaNo.Name = "Opc_LicenciaNo";
+            this.Opc_LicenciaNo.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Opc_LicenciaNo.Size = new System.Drawing.Size(45, 20);
+            this.Opc_LicenciaNo.TabIndex = 42;
+            this.Opc_LicenciaNo.TabStop = true;
+            this.Opc_LicenciaNo.Text = "NO";
+            this.Opc_LicenciaNo.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -601,205 +587,6 @@
             this.Btn_Siguiente.UseVisualStyleBackColor = true;
             this.Btn_Siguiente.Click += new System.EventHandler(this.Btn_Siguiente_Click);
             // 
-            // Cmb_Año
-            // 
-            this.Cmb_Año.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Cmb_Año.DropDownWidth = 89;
-            this.Cmb_Año.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cmb_Año.FormattingEnabled = true;
-            this.Cmb_Año.IntegralHeight = false;
-            this.Cmb_Año.Items.AddRange(new object[] {
-            "2023",
-            "2022",
-            "2021",
-            "2020",
-            "2019",
-            "2018",
-            "2017",
-            "2016",
-            "2015",
-            "2014",
-            "2013",
-            "2012",
-            "2011",
-            "2010",
-            "2009",
-            "2008",
-            "2007",
-            "2006",
-            "2005",
-            "2004",
-            "2003",
-            "2002",
-            "2001",
-            "2000",
-            "1999",
-            "1998",
-            "1997",
-            "1996",
-            "1995",
-            "1994",
-            "1993",
-            "1992",
-            "1991",
-            "1990",
-            "1989",
-            "1988",
-            "1987",
-            "1986",
-            "1985",
-            "1984",
-            "1983",
-            "1982",
-            "1981",
-            "1980",
-            "1979",
-            "1978",
-            "1977",
-            "1976",
-            "1975",
-            "1974",
-            "1973",
-            "1972",
-            "1971",
-            "1970",
-            "1969",
-            "1968",
-            "1967",
-            "1966",
-            "1965",
-            "1964",
-            "1963",
-            "1962",
-            "1961",
-            "1960",
-            "1959",
-            "1958",
-            "1957",
-            "1956",
-            "1955",
-            "1954",
-            "1953",
-            "1952",
-            "1951",
-            "1950",
-            "1949",
-            "1948",
-            "1947",
-            "1946",
-            "1945",
-            "1944",
-            "1943",
-            "1942",
-            "1941",
-            "1940",
-            "1939",
-            "1938",
-            "1937",
-            "1936",
-            "1935",
-            "1934",
-            "1933",
-            "1932",
-            "1931",
-            "1930",
-            "1929",
-            "1928",
-            "1927",
-            "1926",
-            "1925",
-            "1924",
-            "1923",
-            "1922",
-            "1921",
-            "1920",
-            "1919",
-            "1918",
-            "1917",
-            "1916",
-            "1915",
-            "1914",
-            "1913",
-            "1912",
-            "1911",
-            "1910",
-            "1909",
-            "1908",
-            "1907",
-            "1906",
-            "1905"});
-            this.Cmb_Año.Location = new System.Drawing.Point(168, 180);
-            this.Cmb_Año.Name = "Cmb_Año";
-            this.Cmb_Año.Size = new System.Drawing.Size(61, 24);
-            this.Cmb_Año.TabIndex = 46;
-            // 
-            // Cmb_mes
-            // 
-            this.Cmb_mes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Cmb_mes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cmb_mes.FormattingEnabled = true;
-            this.Cmb_mes.IntegralHeight = false;
-            this.Cmb_mes.Items.AddRange(new object[] {
-            "ENE",
-            "FEB",
-            "MAR",
-            "ABR",
-            "MAY",
-            "JUN",
-            "JUL",
-            "AGO",
-            "SEP",
-            "OCT",
-            "NOV",
-            "DIC"});
-            this.Cmb_mes.Location = new System.Drawing.Point(74, 180);
-            this.Cmb_mes.Name = "Cmb_mes";
-            this.Cmb_mes.Size = new System.Drawing.Size(89, 24);
-            this.Cmb_mes.TabIndex = 45;
-            // 
-            // Cmb_Dia
-            // 
-            this.Cmb_Dia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Cmb_Dia.DropDownWidth = 89;
-            this.Cmb_Dia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cmb_Dia.FormattingEnabled = true;
-            this.Cmb_Dia.IntegralHeight = false;
-            this.Cmb_Dia.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30"});
-            this.Cmb_Dia.Location = new System.Drawing.Point(6, 180);
-            this.Cmb_Dia.Name = "Cmb_Dia";
-            this.Cmb_Dia.Size = new System.Drawing.Size(61, 24);
-            this.Cmb_Dia.TabIndex = 44;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -812,11 +599,12 @@
             // 
             // Txt_Presupuesto
             // 
-            this.Txt_Presupuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_Presupuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Txt_Presupuesto.Location = new System.Drawing.Point(264, 237);
             this.Txt_Presupuesto.Name = "Txt_Presupuesto";
-            this.Txt_Presupuesto.Size = new System.Drawing.Size(214, 29);
+            this.Txt_Presupuesto.Size = new System.Drawing.Size(214, 26);
             this.Txt_Presupuesto.TabIndex = 39;
+            this.Txt_Presupuesto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Presupuesto_KeyPress);
             // 
             // label17
             // 
@@ -830,11 +618,12 @@
             // 
             // Txt_Cargo
             // 
-            this.Txt_Cargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_Cargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Txt_Cargo.Location = new System.Drawing.Point(264, 135);
             this.Txt_Cargo.Name = "Txt_Cargo";
-            this.Txt_Cargo.Size = new System.Drawing.Size(214, 29);
+            this.Txt_Cargo.Size = new System.Drawing.Size(214, 26);
             this.Txt_Cargo.TabIndex = 37;
+            this.Txt_Cargo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Cargo_KeyPress);
             // 
             // label16
             // 
@@ -934,11 +723,12 @@
             // 
             // Txt_IngresosM
             // 
-            this.Txt_IngresosM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_IngresosM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.Txt_IngresosM.Location = new System.Drawing.Point(264, 186);
             this.Txt_IngresosM.Name = "Txt_IngresosM";
-            this.Txt_IngresosM.Size = new System.Drawing.Size(214, 29);
+            this.Txt_IngresosM.Size = new System.Drawing.Size(214, 26);
             this.Txt_IngresosM.TabIndex = 20;
+            this.Txt_IngresosM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_IngresosM_KeyPress);
             // 
             // label8
             // 
@@ -967,6 +757,7 @@
             this.Txt_NombreC.Name = "Txt_NombreC";
             this.Txt_NombreC.Size = new System.Drawing.Size(235, 26);
             this.Txt_NombreC.TabIndex = 12;
+            this.Txt_NombreC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_NombreC_KeyPress);
             // 
             // label4
             // 
@@ -985,6 +776,7 @@
             this.Txt_Cedula.Name = "Txt_Cedula";
             this.Txt_Cedula.Size = new System.Drawing.Size(235, 26);
             this.Txt_Cedula.TabIndex = 13;
+            this.Txt_Cedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_Cedula_KeyPress);
             // 
             // label6
             // 
@@ -995,6 +787,33 @@
             this.label6.Size = new System.Drawing.Size(143, 16);
             this.label6.TabIndex = 14;
             this.label6.Text = "NOMBRE COMPLETO";
+            // 
+            // txt_Correo
+            // 
+            this.txt_Correo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txt_Correo.Location = new System.Drawing.Point(264, 341);
+            this.txt_Correo.Name = "txt_Correo";
+            this.txt_Correo.Size = new System.Drawing.Size(214, 26);
+            this.txt_Correo.TabIndex = 53;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(252, 323);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(238, 16);
+            this.label26.TabIndex = 52;
+            this.label26.Text = "CORREO ELECTRONICO(OPCIONAL)";
+            // 
+            // Dtt_FechaN
+            // 
+            this.Dtt_FechaN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dtt_FechaN.Location = new System.Drawing.Point(6, 181);
+            this.Dtt_FechaN.Name = "Dtt_FechaN";
+            this.Dtt_FechaN.Size = new System.Drawing.Size(190, 24);
+            this.Dtt_FechaN.TabIndex = 54;
+            this.Dtt_FechaN.Value = new System.DateTime(2023, 10, 21, 0, 0, 0, 0);
             // 
             // Panel_InicioSesion
             // 
@@ -1008,23 +827,36 @@
             this.Panel_InicioSesion.Controls.Add(this.label3);
             this.Panel_InicioSesion.Controls.Add(this.Txt_Contraseña);
             this.Panel_InicioSesion.Controls.Add(this.label2);
-            this.Panel_InicioSesion.Controls.Add(this.pictureBox3);
+            this.Panel_InicioSesion.Controls.Add(this.Pict_Volver);
             this.Panel_InicioSesion.Controls.Add(this.label25);
             this.Panel_InicioSesion.Location = new System.Drawing.Point(403, 36);
             this.Panel_InicioSesion.Name = "Panel_InicioSesion";
             this.Panel_InicioSesion.Size = new System.Drawing.Size(490, 434);
             this.Panel_InicioSesion.TabIndex = 11;
             // 
-            // pictureBox3
+            // Btn_Ingresar
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(59, 376);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(59, 53);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 13;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.Btn_Ingresar.FlatAppearance.BorderSize = 2;
+            this.Btn_Ingresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Ingresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Ingresar.Location = new System.Drawing.Point(176, 257);
+            this.Btn_Ingresar.Name = "Btn_Ingresar";
+            this.Btn_Ingresar.Size = new System.Drawing.Size(161, 37);
+            this.Btn_Ingresar.TabIndex = 10;
+            this.Btn_Ingresar.Text = "INGRESAR";
+            this.Btn_Ingresar.UseVisualStyleBackColor = true;
+            this.Btn_Ingresar.Click += new System.EventHandler(this.Btn_Ingresar_Click);
+            // 
+            // Pict_Volver
+            // 
+            this.Pict_Volver.Image = ((System.Drawing.Image)(resources.GetObject("Pict_Volver.Image")));
+            this.Pict_Volver.Location = new System.Drawing.Point(59, 376);
+            this.Pict_Volver.Name = "Pict_Volver";
+            this.Pict_Volver.Size = new System.Drawing.Size(59, 53);
+            this.Pict_Volver.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Pict_Volver.TabIndex = 13;
+            this.Pict_Volver.TabStop = false;
+            this.Pict_Volver.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // label25
             // 
@@ -1035,24 +867,6 @@
             this.label25.Size = new System.Drawing.Size(59, 21);
             this.label25.TabIndex = 14;
             this.label25.Text = "Volver";
-            // 
-            // txt_Correo
-            // 
-            this.txt_Correo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Correo.Location = new System.Drawing.Point(264, 341);
-            this.txt_Correo.Name = "txt_Correo";
-            this.txt_Correo.Size = new System.Drawing.Size(214, 29);
-            this.txt_Correo.TabIndex = 53;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(252, 323);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(238, 16);
-            this.label26.TabIndex = 52;
-            this.label26.Text = "CORREO ELECTRONICO(OPCIONAL)";
             // 
             // Login
             // 
@@ -1089,7 +903,7 @@
             this.panel1.PerformLayout();
             this.Panel_InicioSesion.ResumeLayout(false);
             this.Panel_InicioSesion.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pict_Volver)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1104,7 +918,6 @@
         private System.Windows.Forms.TextBox Txt_Contraseña;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button Btn_Ingresar;
         private System.Windows.Forms.TextBox Txt_Usuario;
         private System.Windows.Forms.Button Btn_Gerente;
         private System.Windows.Forms.Panel Panel_Gerente;
@@ -1130,7 +943,7 @@
         private System.Windows.Forms.Button Btn_RegistrarInfo;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.RadioButton Opc_LicenciaSi;
-        private System.Windows.Forms.RadioButton Txt_LicenciaNo;
+        private System.Windows.Forms.RadioButton Opc_LicenciaNo;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RadioButton Opc_TrabajoSi;
         private System.Windows.Forms.RadioButton Opc_TrabajoNo;
@@ -1138,9 +951,6 @@
         private System.Windows.Forms.RadioButton Opc_Masculino;
         private System.Windows.Forms.RadioButton Opc_Femenino;
         private System.Windows.Forms.Button Btn_Siguiente;
-        private System.Windows.Forms.ComboBox Cmb_Año;
-        private System.Windows.Forms.ComboBox Cmb_mes;
-        private System.Windows.Forms.ComboBox Cmb_Dia;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox Txt_Presupuesto;
         private System.Windows.Forms.Label label17;
@@ -1164,8 +974,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel Panel_InicioSesion;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox Pict_Volver;
         private System.Windows.Forms.TextBox txt_Correo;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Button Btn_Ingresar;
+        private System.Windows.Forms.DateTimePicker Dtt_FechaN;
     }
 }

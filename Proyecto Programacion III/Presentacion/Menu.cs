@@ -16,8 +16,6 @@ namespace Presentacion
         public Menu()
         {
             InitializeComponent();
-            Gerencia ger = new Gerencia();
-            ger.Show();
         }
         //CERRAR,MAXIMIZAR,MINIMIZAR
         private void Btn_Cerrar_Click(object sender, EventArgs e)
@@ -84,6 +82,7 @@ namespace Presentacion
         {
             Login login = new Login();
             login.Show();
+            this.Hide();
         }
 
         private void Boton_Negro(Button boton)
@@ -130,5 +129,6 @@ namespace Presentacion
         {
             Form_Autos();
         }
+        //FIN DISEÑO
     }
 }

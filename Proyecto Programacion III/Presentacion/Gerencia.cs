@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Entidades;
+using Logica2;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,15 @@ namespace Concesionario_J_M
 {
     public partial class Gerencia : Form
     {
+        ServicioAutos servicioAutos = new ServicioAutos(configConnnection.ConnectionString);
+        Servicio_Ventas servicioVentas = new Servicio_Ventas();
+        Servicio_Finanzas servicioFinanzas = new Servicio_Finanzas();
+        Servicio_Empleado servicioEmpleado = new Servicio_Empleado(configConnnection.ConnectionString);
+        ServicioClientes servicioClientes = new ServicioClientes(configConnnection.ConnectionString);
         public Gerencia()
         {
             InitializeComponent();
+            Contadores();
         }
         //ABRIR Y CERRAR PANELES DEPENDIENDO LA OPCION
         //PANEL CLIENTES
@@ -25,12 +33,23 @@ namespace Concesionario_J_M
             Panel_Ventas.Visible = false;
             Panel_Inventario.Visible = false;
         }
+       private void Contadores()
+        {
+            Total_Clientes.Text = servicioClientes.ContarClientes().ToString(); 
+            lbl_TotalEmpleado.Text = servicioEmpleado.ContarEmpleados().ToString();
+            lbl_VehiculosTotal.Text = servicioAutos.ContarAutos().ToString();
+            //servicioVentas.Contar_VehiculosVendidos();
+            //servicioAutos.Contar_VehiculosInventario();
+
+        }
+
         //PANEL EMPLEADOS
         private void Cerrar_PanelesEmpleados()
         {
-            Panel_Ventas.Visible = false;
-            Panel_Inventario.Visible = false;
             Panel_Empleados.Visible = true;
+            Panel_Finanzas.Visible = false;
+            Panel_Ventas.Visible = false;
+            Panel_Inventario.Visible = false;         
         }
         //PANEL FINANANZAS
         private void Cerrar_PanelesFinanzas()
@@ -133,6 +152,8 @@ namespace Concesionario_J_M
 
         private void Btn_Salir_Click(object sender, EventArgs e)
         {
+            Login login = new Login();
+            login.Show();
             this.Close();
         }
 
@@ -141,5 +162,27 @@ namespace Concesionario_J_M
             Autos autos = new Autos();
             autos.Show();
         }
+
+        private void Txt_BuscarID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Dtv_Clientes.DataSource = servicioClientes.GetBy("N_Identificacion", Txt_BuscarID.Text);
+        }
+
+        private void Btn_ConfModificar_Click(object sender, EventArgs e)
+        {
+            servicioClientes.ActualizarInfo(Txt_ModNombre, Txt_ModTelefono, Txt_ModDireccion,Txt_ModPresupuesto,Txt_ModCorreo,Txt_BuscarID);
+        }
+
+        private void Btn_Borrar_Click(object sender, EventArgs e)
+        {
+            servicioClientes.Delete(Txt_BuscarID);
+            Contadores();
+        }
+
+        private void Btn_BorrarEmp_Click(object sender, EventArgs e)
+        {
+            Contadores();
+        }
+        //FIN DISEÑO
     }
 }

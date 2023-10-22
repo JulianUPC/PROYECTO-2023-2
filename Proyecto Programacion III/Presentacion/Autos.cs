@@ -1,4 +1,6 @@
-﻿using Presentacion;
+﻿using Entidades;
+using Logica2;
+using Presentacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -506,7 +508,28 @@ namespace Concesionario_J_M
         {
             Inciar_Sesion();
         }
-
+        //FIN DISEÑO
+        //INICIO DE LOGICA
+        public void PasarUsuario(TextBox n_identificacion)
+        {
+            Cliente cliente = new Cliente();
+            ServicioClientes Sl = new ServicioClientes(configConnnection.ConnectionString);
+            ActivarLabelCliente();         
+            foreach (Cliente cl in Sl.Buscar_Cliente(n_identificacion))
+            {
+                lbl_ID.Text = cl.N_Identificacion.ToString();
+                lbl_Nombre.Text = cl.Nombre_Completo;
+                lbl_DineroDisp.Text = "$" + cl.Presupuesto.ToString();
+            }
+        }
+        public void ActivarLabelCliente()
+        {
+            Btn_IniciarSesion.Visible = false;
+            lbl_Nombre.Visible = true;
+            lbl_ID.Visible = true;
+            lbl_DineroDisp.Visible = true;
+            label11.Visible = true;
+        }
 
         /* private void Btn_Comprar_Click(object sender, EventArgs e)
          {
