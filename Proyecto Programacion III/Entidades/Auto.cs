@@ -9,7 +9,6 @@ namespace Entidades
     public class Auto : Cliente
     {
         public Auto() { }
-        public string Matricula { get; set; }
         public string Nombre_Auto { get; set; }
         public int Precio { get; set; }      
         public string Modelo { get; set; }
@@ -21,10 +20,8 @@ namespace Entidades
         public string Sistema_Combustible { get; set; }
         public string Tipo_Transmision {  get; set; }
 
-        public Auto(int id_auto,string matricula, string nombre_Auto, int precio, string modelo, string categoria, string motor, string potencia, string valvulas, string asientos, string sistema_Combustible, string tipo_Transmision)
-        {
-            Id_Auto = id_auto;
-            Matricula = matricula;
+        public Auto(string nombre_Auto, int precio, string modelo, string categoria, string motor, string potencia, string valvulas, string asientos, string sistema_Combustible, string tipo_Transmision)
+        {        
             Nombre_Auto = nombre_Auto;
             Precio = precio;          
             Modelo = modelo;

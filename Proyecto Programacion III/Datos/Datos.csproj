@@ -47,6 +47,7 @@
     <Compile Include="RepositorioAuto.cs" />
     <Compile Include="RepositorioCliente.cs" />
     <Compile Include="RepositorioEmpleados.cs" />
+    <Compile Include="repositorioFinanzas.cs" />
     <Compile Include="RepositorioInventario.cs" />
   </ItemGroup>
   <ItemGroup>

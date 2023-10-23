@@ -24,6 +24,7 @@ namespace Concesionario_J_M
         {
             InitializeComponent();
             Contadores();
+            Tabla_Finanzas();
         }
         //ABRIR Y CERRAR PANELES DEPENDIENDO LA OPCION
         //PANEL CLIENTES
@@ -39,6 +40,9 @@ namespace Concesionario_J_M
             Total_Clientes.Text = servicioClientes.ContarClientes().ToString(); 
             lbl_TotalEmpleado.Text = servicioEmpleado.ContarEmpleados().ToString();
             lbl_VehiculosTotal.Text = servicioAutos.ContarAutos().ToString();
+           // lbl_IngresosT.Text = servicioFinanzas.Contar_Ingresos().ToString();
+           // lbl_GastosT.Text = servicioFinanzas.Contar_Gastos().ToString();
+            //lbl_DineroTotal.Text = servicioFinanzas.Contar_DineroTotal().ToString();
             //servicioVentas.Contar_VehiculosVendidos();
             //servicioAutos.Contar_VehiculosInventario();
 
@@ -109,26 +113,6 @@ namespace Concesionario_J_M
         private void Btn_Volver_Click_1(object sender, EventArgs e)
         {
             Panel_ModificarCliente.Visible = false;
-        }
-
-        private void Btn_ModificarP_Click(object sender, EventArgs e)
-        {
-            Panel_ModificarP.Visible = true;
-        }
-
-        private void Btn_BorrarV_Click(object sender, EventArgs e)
-        {
-            Panel_BorrarV.Visible = true;
-        }
-
-        private void Btn_VolverM_Click(object sender, EventArgs e)
-        {
-            Panel_ModificarP.Visible = false;
-        }
-
-        private void Btn_VolverB_Click(object sender, EventArgs e)
-        {
-            Panel_BorrarV.Visible = false;
         }
 
         private void Btn_ModificarI_Click(object sender, EventArgs e)
@@ -210,6 +194,15 @@ namespace Concesionario_J_M
         {
             Dtv_Empleados.DataSource = servicioEmpleado.GetBy("ID_Empleado", txt_IDEmpleado.Text);
 
+        }
+
+        private void Txt_BuscarM_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+        public void Tabla_Finanzas()
+        {
+            //Dtv_IngresosyGastos.DataSource = servicioFinanzas.GetAllT();
         }
     }
 }

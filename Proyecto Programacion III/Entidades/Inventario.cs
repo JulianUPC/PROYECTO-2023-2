@@ -14,7 +14,6 @@ namespace Entidades
         {
             Fecha_Compra = fecha_compra;
             Id_Auto = id_auto;
-            Matricula = matricula;
             Nombre_Auto = nombre_Auto;
             Precio = precio;
             Modelo = modelo;
