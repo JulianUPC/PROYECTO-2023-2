@@ -26,8 +26,9 @@ namespace Entidades
         public int Autos_Comprados { get; set; }
         public string Correo_Electronico { get; set; }
 
-        public Cliente(int n_Identificacion,string nombre_completo,DateTime fecha_Nacimiento,string genero,string direccion,string telefono,string trabaja,string cargo, int presupuesto, int ingresos_Mensuales,DateTime fecha_Registro,string licencia,string usuario,string contraseña,int autos_Comprados,string correo_Electronico)
+        public Cliente(string id_cliente,int n_Identificacion,string nombre_completo,DateTime fecha_Nacimiento,string genero,string direccion,string telefono,string trabaja,string cargo, int presupuesto, int ingresos_Mensuales,DateTime fecha_Registro,string licencia,string usuario,string contraseña,int autos_Comprados,string correo_Electronico)
         {
+            Id_Cliente = id_cliente;
             N_Identificacion = n_Identificacion;
             Nombre_Completo = nombre_completo;
             Fecha_Nacimiento = fecha_Nacimiento;

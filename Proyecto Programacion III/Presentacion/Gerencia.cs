@@ -15,16 +15,18 @@ namespace Concesionario_J_M
     public partial class Gerencia : Form
     {
         ServicioAutos servicioAutos = new ServicioAutos(configConnnection.ConnectionString);
-        Servicio_Ventas servicioVentas = new Servicio_Ventas();
-        Servicio_Finanzas servicioFinanzas = new Servicio_Finanzas();
+        Servicio_Ventas servicioVentas = new Servicio_Ventas(configConnnection.ConnectionString);
+        Servicio_Finanzas servicioFinanzas = new Servicio_Finanzas(configConnnection.ConnectionString);
         Servicio_Empleado servicioEmpleado = new Servicio_Empleado(configConnnection.ConnectionString);
         ServicioClientes servicioClientes = new ServicioClientes(configConnnection.ConnectionString);
+        Servicio_Inventario servicio_Inventario = new Servicio_Inventario(configConnnection.ConnectionString);
+        Servicio_Autos_de_Clientes servicio_Autos_De_Clientes = new Servicio_Autos_de_Clientes(configConnnection.ConnectionString);
         Empleado empleados = new Empleado();
         public Gerencia()
         {
             InitializeComponent();
             Contadores();
-            Tabla_Finanzas();
+            Cargar_Tablas();
         }
         //ABRIR Y CERRAR PANELES DEPENDIENDO LA OPCION
         //PANEL CLIENTES
@@ -39,10 +41,10 @@ namespace Concesionario_J_M
         {
             Total_Clientes.Text = servicioClientes.ContarClientes().ToString(); 
             lbl_TotalEmpleado.Text = servicioEmpleado.ContarEmpleados().ToString();
-            lbl_VehiculosTotal.Text = servicioAutos.ContarAutos().ToString();
-           // lbl_IngresosT.Text = servicioFinanzas.Contar_Ingresos().ToString();
-           // lbl_GastosT.Text = servicioFinanzas.Contar_Gastos().ToString();
-            //lbl_DineroTotal.Text = servicioFinanzas.Contar_DineroTotal().ToString();
+            lbl_VehiculosTotal.Text = servicio_Inventario.ContarInventario().ToString();
+            lbl_IngresosT.Text = servicioFinanzas.Contar_Ingresos().ToString();
+            lbl_GastosT.Text = servicioFinanzas.Contar_Gastos().ToString();
+            lbl_DineroTotal.Text = servicioFinanzas.Contar_DineroTotal().ToString();
             //servicioVentas.Contar_VehiculosVendidos();
             //servicioAutos.Contar_VehiculosInventario();
 
@@ -141,11 +143,13 @@ namespace Concesionario_J_M
             login.Show();
             this.Close();
         }
-
+        
         private void Btn_Comprar_Click(object sender, EventArgs e)
         {
             Autos autos = new Autos();
             autos.Show();
+            this.Close();          
+            autos.ActivarLabelGerente();
         }
 
         private void Txt_BuscarID_KeyPress(object sender, KeyPressEventArgs e)
@@ -190,19 +194,24 @@ namespace Concesionario_J_M
             servicioEmpleado.Registrar(empleados);
         }
 
+        public void Cargar_Tablas()
+        {
+            Dtv_Clientes.DataSource = servicioClientes.GetAll();
+            Dtv_Empleados.DataSource = servicioEmpleado.GetAll();
+            Dtv_IngresosyGastos.DataSource = servicioFinanzas.GetAll();
+            Dgv_Ventas.DataSource = servicioVentas.GetAll();
+            Dgv_Inventario.DataSource = servicio_Inventario.GetAll();   
+            Dtv_AutosCliente.DataSource = servicio_Autos_De_Clientes.GetAll();
+        }
+
         private void txt_IDEmpleado_KeyPress(object sender, KeyPressEventArgs e)
         {
             Dtv_Empleados.DataSource = servicioEmpleado.GetBy("ID_Empleado", txt_IDEmpleado.Text);
-
         }
 
         private void Txt_BuscarM_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-        }
-        public void Tabla_Finanzas()
-        {
-            //Dtv_IngresosyGastos.DataSource = servicioFinanzas.GetAllT();
         }
     }
 }

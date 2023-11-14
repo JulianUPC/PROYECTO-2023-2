@@ -45,10 +45,12 @@
     <Compile Include="Conexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositorioAuto.cs" />
+    <Compile Include="RepositorioAuto_de_Cliente.cs" />
     <Compile Include="RepositorioCliente.cs" />
     <Compile Include="RepositorioEmpleados.cs" />
     <Compile Include="repositorioFinanzas.cs" />
     <Compile Include="RepositorioInventario.cs" />
+    <Compile Include="Repositorio_Ventas.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidades.csproj">

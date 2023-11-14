@@ -20,7 +20,7 @@ namespace Datos
             if (!dataReader.HasRows) return null;
             Auto clienteLog = new Auto();
             clienteLog.Nombre_Auto = dataReader.GetString(0);
-            clienteLog.Precio = dataReader.GetInt32(1);
+            clienteLog.Precio_Compra = dataReader.GetInt32(1);
             clienteLog.Modelo = dataReader.GetString(2);
             clienteLog.Categoria = dataReader.GetString(3);
             clienteLog.Motor = dataReader.GetString(4);
@@ -29,6 +29,8 @@ namespace Datos
             clienteLog.Asientos = dataReader.GetString(7);
             clienteLog.Sistema_Combustible = dataReader.GetString(8);
             clienteLog.Tipo_Transmision = dataReader.GetString(9);
+            clienteLog.Id_Auto = dataReader.GetString(10);
+            clienteLog.Precio_Venta = dataReader.GetInt32(11);
 
             return clienteLog;
         }

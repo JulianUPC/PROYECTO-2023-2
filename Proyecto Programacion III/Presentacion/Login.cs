@@ -116,7 +116,7 @@ namespace Concesionario_J_M
             cliente.Contraseña = Sl.VerificarContraseña(Txt_ContraseñaR, Txt_ConfCotraseñaR);
             cliente.Autos_Comprados = 0;
             cliente.Correo_Electronico = txt_Correo.Text;
-            Sl.Registrar(cliente,Opc_TerminosSi,Opc_TerminosNo);
+            Sl.Registrar(cliente,Opc_TerminosSi,Opc_TerminosNo,Panel_Registrar,Panel_Registro2,Txt_Cedula,Txt_NombreC,Txt_Direccion,Txt_Celular,Txt_Cargo,Txt_IngresosM,Txt_Presupuesto,txt_Correo,Txt_UsuarioR,Txt_ContraseñaR,Txt_ConfCotraseñaR,Opc_Femenino,Opc_Masculino,Opc_TrabajoSi,Opc_TrabajoNo,Opc_LicenciaSi,Opc_LicenciaNo,Opc_TerminosSi,Opc_TerminosNo,Dtt_FechaN);
             
         }
         //INICIO DE SESION
@@ -127,7 +127,7 @@ namespace Concesionario_J_M
             if (Sl.Buscar_Cuenta(Txt_Cedula) == true)
             {                     
                 Autos autos = new Autos();
-                autos.PasarUsuario(Txt_Cedula);
+                autos.PasarUsuario(Txt_Cedula.Text);
                 autos.Show();            
                 this.Close();
             }
@@ -135,46 +135,7 @@ namespace Concesionario_J_M
             {
                 MessageBox.Show("Usuario o Contraseña Incorrectos");
             }
-        }
-        //VACIAR REGISTRO
-        public void Vaciar_Registro()
-        {
-            if (Sl.Vaciar_Registro()==true)
-            {
-                Panel_Registrar.Visible = false;
-                Panel_Registro2.Visible = false;
-                VaciarTextBox();
-                VaciarRadioButtoms();
-            }
-        }
-        public void VaciarTextBox()
-        {
-            Sl.VaciarTextBox(Txt_Cedula);
-            Sl.VaciarTextBox(Txt_NombreC);
-            Dtt_FechaN.Text = "";
-            Sl.VaciarTextBox(Txt_Direccion);
-            Sl.VaciarTextBox(Txt_Cargo);
-            Sl.VaciarTextBox(Txt_IngresosM);
-            Sl.VaciarTextBox(Txt_Presupuesto);
-            Sl.VaciarTextBox(txt_Correo);
-            Sl.VaciarTextBox(Txt_UsuarioR);
-            Sl.VaciarTextBox(Txt_ContraseñaR);
-            Sl.VaciarTextBox(Txt_ConfCotraseñaR);
-        }
-        public void VaciarRadioButtoms()
-        {
-            Sl.VaciarRadioButtom(Opc_Femenino);
-            Sl.VaciarRadioButtom(Opc_Masculino);
-            Sl.VaciarRadioButtom(Opc_TrabajoSi);
-            Sl.VaciarRadioButtom(Opc_TrabajoNo);
-            Sl.VaciarRadioButtom(Opc_LicenciaSi);
-            Sl.VaciarRadioButtom(Opc_LicenciaNo);
-            Sl.VaciarRadioButtom(Opc_TerminosSi);
-            Sl.VaciarRadioButtom(Opc_TerminosNo);
-        }
-        //VERIFICAR LOS RADIO BUTTONS
-        //NO FUNCIONAN EN LA CAPA LOGICA
-        
+        }      
         private void Btn_IngresarGerente_Click(object sender, EventArgs e)
         {
             if (Sl.IngresarGerente(Txt_UsuarioG, Txt_ContraseñaG) == true)

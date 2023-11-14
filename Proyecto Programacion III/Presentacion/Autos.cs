@@ -11,28 +11,49 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace Concesionario_J_M
 {
     public partial class Autos : Form
     {
+        ServicioClientes Sl = new ServicioClientes(configConnnection.ConnectionString);
+        Servicio_Inventario Si = new Servicio_Inventario(configConnnection.ConnectionString);
+        ServicioAutos Sa = new ServicioAutos(configConnnection.ConnectionString);
+        ServicioAutos servicioAutos = new ServicioAutos(configConnnection.ConnectionString);
+        Gerencia gerencia = new Gerencia();
+        Auto auto = new Auto();
+        Inventario inventario = new Inventario();
+
         public Autos()
         {
             InitializeComponent();
+            Actualizar_Lista();
         }
-
         private void Btn_Volver_Click(object sender, EventArgs e)
         {
-            if(Panel_Detalles.Visible == true)
+            if (Panel_Detalles.Visible == true)
             {
-                Panel_Detalles.Visible = false;
+                Panel_Detalles.Visible = false;             
             }
             else
             {
-                Presentacion.Menu menu = new Presentacion.Menu();
-                menu.Show();
-                this.Close();
-            }                    
+                if(lbl_Nombre.Text == "Gerente")
+                {
+                    lbl_Nombre.Text = "";
+                    lbl_Nombre.Visible = false;
+                    lbl_DineroDisp.Text = "0";
+                    Presentacion.Menu menu = new Presentacion.Menu();
+                    menu.Show();
+                    this.Close();
+                }
+                else
+                {
+                    Presentacion.Menu menu = new Presentacion.Menu();
+                    menu.Show();
+                    this.Close();
+                }
+            }         
         }
         //CODIGO NECESARIO PARA EL COMPORTAMIENTO DEL BOTON AL PASAR EL MOUSE POR ESTE
         public void Letras_Grises(Button boton)
@@ -110,12 +131,72 @@ namespace Concesionario_J_M
             Panel_Deportivos.Visible = true;
             Panel_Electricos.Visible = true;
         }
-        public void Vehiculo_Detalles(PictureBox picture,Label label1,Label label2)
+        public void Actualizar_Lista()
         {
+            Actulizar_Vehiculos(lbl_NCamioneta1, PS_Camioneta1, "A02");
+            Actulizar_Vehiculos(lbl_NCamioneta2, PS_Camioneta2, "A09");
+            Actulizar_Vehiculos(lbl_NCamioneta3, PS_Camioneta3, "A016");
+            Actulizar_Vehiculos(lbl_NCamioneta4, PS_Camioneta4, "A017");
+            Actulizar_Vehiculos(lbl_NCamioneta5, PS_Camioneta5, "A018");
+            Actulizar_Vehiculos(lbl_NConvertible1, PS_Convertible1, "A015");
+            Actulizar_Vehiculos(lbl_NConvertible2, PS_Convertible2, "A01");
+            Actulizar_Vehiculos(lbl_NConvertible3, PS_Convertible3, "A012");
+            Actulizar_Vehiculos(lbl_NDeportivo1, PS_Deportivo1, "A04");
+            Actulizar_Vehiculos(lbl_NDeportivo2, PS_Deportivo2, "A05");
+            Actulizar_Vehiculos(lbl_NDeportivo3, PS_Deportivo3, "A013");
+            Actulizar_Vehiculos(lbl_NElectrico1, PS_Electrico1, "A03");
+            Actulizar_Vehiculos(lbl_NElectrico2, PS_Electrico2, "A08");
+            Actulizar_Vehiculos(lbl_NElectrico3, PS_Electrico3, "A010");
+            Actulizar_Vehiculos(lbl_NElectrico4, PS_Electrico4, "A011");
+            Actulizar_Vehiculos(lbl_NPerformance1, lbl_Performance1, "A06");
+            Actulizar_Vehiculos(lbl_NPerformance2, lbl_Performance2, "A015");
+            Actulizar_Vehiculos(lbl_NPerformance3, lbl_Performance3, "A014");
+        }
+        public void Actulizar_Vehiculos(Label Auto,Label precio,string Id_Auto)
+        {
+            foreach (Auto Ca in Sa.Buscar_Auto(Id_Auto))
+            {
+                Auto.Text = Ca.Nombre_Auto;
+                if (lbl_Nombre.Text == "Gerente")
+                {
+
+                        precio.Text = "$" + Ca.Precio_Compra.ToString();
+                }
+                else
+                {
+                        precio.Text = "$" + Ca.Precio_Venta.ToString();                  
+                }
+
+            }
+           
+        }
+
+
+        public void Vehiculo_Detalles(Label Carro,PictureBox picture,string Id_Auto)
+        {           
             Panel_Detalles.Visible = true;
             Pict_VhcDetalle.Image = picture.Image;
-            lbl_ModeloV.Text = label1.Text;
-            lbl_Precio.Text = label2.Text;
+            foreach (Auto Ca in Sa.Buscar_Auto(Id_Auto))
+            {
+                Carro.Text = Ca.Nombre_Auto;
+                lbl_NombreV.Text = Ca.Nombre_Auto;
+                lbl_ModeloV.Text = Ca.Modelo;
+                lbl_Trasmision.Text = Ca.Tipo_Transmision;
+                lbl_SistemaCmb.Text = Ca.Sistema_Combustible;
+                lbl_Valvulas.Text = Ca.Valvulas;
+                lbl_Motor.Text = Ca.Motor;
+                lbl_Asientos.Text = Ca.Asientos;
+                lbl_Id_Auto.Text = Ca.Id_Auto;
+                if (lbl_Nombre.Text == "Gerente")
+                {
+                        lbl_Precio.Text = "$" + Ca.Precio_Compra.ToString(); 
+                }
+                else
+                {
+                        lbl_Precio.Text = "$" + Ca.Precio_Venta.ToString();              
+                }
+            }
+                  
         }
         public void Inciar_Sesion()
         {
@@ -146,6 +227,7 @@ namespace Concesionario_J_M
         private void Pnl_Camioneta1_MouseEnter(object sender, EventArgs e)
         {
             lbl_Camioneta1.Visible = true;
+            
         }
         private void Pict_Camioneta1_MouseEnter(object sender, EventArgs e)
         {
@@ -197,28 +279,29 @@ namespace Concesionario_J_M
             lbl_Camioneta5.Visible = false;
         }
         //MOSTRAR DETALLES DE LA CAMIONETA
+        
         private void Pict_Camioneta1_Click(object sender, EventArgs e)
         {
-            Vehiculo_Detalles(Pict_Camioneta1, lbl_NCamioneta1, PS_Camioneta1);
+            Vehiculo_Detalles(lbl_NCamioneta1,Pict_Camioneta1,"A02");
         }
         private void Pict_Camioneta2_Click(object sender, EventArgs e)
         {
-            Vehiculo_Detalles(Pict_Camioneta2, lbl_NCamioneta2, PS_Camioneta2);
+            Vehiculo_Detalles(lbl_NCamioneta2, Pict_Camioneta2,"A09");
         }
 
         private void Pict_Camioneta3_Click(object sender, EventArgs e)
         {
-            Vehiculo_Detalles(Pict_Camioneta3, lbl_NCamioneta3, PS_Camioneta3);
+            Vehiculo_Detalles(lbl_NCamioneta3,Pict_Camioneta3, "A016");
         }
 
         private void Pict_Camioneta4_Click(object sender, EventArgs e)
         {
-            Vehiculo_Detalles(Pict_Camioneta4, lbl_NCamioneta4, PS_Camioneta4);
+            Vehiculo_Detalles(lbl_NCamioneta4,Pict_Camioneta4, "A017");
         }
 
         private void Pict_Camioneta5_Click(object sender, EventArgs e)
         {
-            Vehiculo_Detalles(Pict_Camioneta5, lbl_NCamioneta5, PS_Camioneta5);
+            Vehiculo_Detalles(lbl_NCamioneta5,Pict_Camioneta5, "A018");
         }
         //CONVERTIBLES
         private void Btn_Convertibles_MouseEnter(object sender, EventArgs e)
@@ -271,19 +354,20 @@ namespace Concesionario_J_M
             lbl_Convertible3.Visible = false;
         }
         //MOSTRAR DETALLES DEL CONVERTIBLE
+        
         private void Pict_Convertible1_Click(object sender, EventArgs e)
         {
-            Vehiculo_Detalles(Pict_Convertible1, lbl_NConvertible1, PS_Convertible1);
+            Vehiculo_Detalles(lbl_Convertible1,Pict_Convertible1, "A015");
         }
 
         private void Pict_Convertible2_Click(object sender, EventArgs e)
         {
-            Vehiculo_Detalles(Pict_Convertible2, lbl_NConvertible2, PS_Convertible2);
+            Vehiculo_Detalles(lbl_Convertible2, Pict_Convertible2, "A01");
         }
 
         private void Pict_Convertible3_Click(object sender, EventArgs e)
         {
-            Vehiculo_Detalles(Pict_Convertible3, lbl_NConvertible3, PS_Convertible3);
+            Vehiculo_Detalles(lbl_Convertible3, Pict_Convertible3, "A012");
         }
         //DEPORTIVOS
         private void Btn_Deportivos_MouseEnter(object sender, EventArgs e)
@@ -337,19 +421,20 @@ namespace Concesionario_J_M
 
         }
         //MOSTRAR DETALLES DE LOS DEPORTIVOS
+        
         private void Pict_Deportivo1_Click(object sender, EventArgs e)
         {
-            Vehiculo_Detalles(Pict_Deportivo1, lbl_NDeportivo1, PS_Deportivo1);
+            Vehiculo_Detalles(lbl_Deportivo1,Pict_Deportivo1, "A04");
         }
 
         private void Pict_Deportivo2_Click(object sender, EventArgs e)
         {
-            Vehiculo_Detalles(Pict_Deportivo2, lbl_NDeportivo2, PS_Deportivo2);
+            Vehiculo_Detalles(lbl_Deportivo2,Pict_Deportivo1, "A05");
         }
 
         private void Pict_Deportivo3_Click(object sender, EventArgs e)
         {
-            Vehiculo_Detalles(Pict_Deportivo3, lbl_NDeportivo3, PS_Deportivo3);
+            Vehiculo_Detalles(lbl_Deportivo3, Pict_Deportivo3, "A013");
         }
         //ELECTRICOS
         private void Btn_Electricos_MouseEnter(object sender, EventArgs e)
@@ -417,24 +502,25 @@ namespace Concesionario_J_M
 
         }
         //MOSTRAR DETALLES DE LOS ELECTRICOS
+        
         private void Pict_Electrico1_Click(object sender, EventArgs e)
         {
-            Vehiculo_Detalles(Pict_Electrico1, lbl_NElectrico1, PS_Electrico1);
+            Vehiculo_Detalles(lbl_Electrico1,Pict_Electrico1, "A03");
         }
 
         private void Pict_Electrico2_Click(object sender, EventArgs e)
         {
-            Vehiculo_Detalles(Pict_Electrico2, lbl_NElectrico2, PS_Electrico2);
+            Vehiculo_Detalles(lbl_Deportivo2, Pict_Electrico2, "A08");
         }
 
         private void Pict_Electrico3_Click(object sender, EventArgs e)
         {
-            Vehiculo_Detalles(Pict_Electrico3, lbl_NElectrico3, PS_Electrico3);
+            Vehiculo_Detalles(lbl_Electrico3, Pict_Electrico3, "A010");
         }
 
         private void Pict_Electrico4_Click(object sender, EventArgs e)
         {
-            Vehiculo_Detalles(Pict_Electrico4, lbl_NElectrico4, PS_Electrico4);
+            Vehiculo_Detalles(lbl_Electrico4, Pict_Electrico4, "A011");
         }
         //PERFORMANCE
         private void Btn_Performance_MouseEnter(object sender, EventArgs e)
@@ -488,32 +574,33 @@ namespace Concesionario_J_M
 
         }
         //MOSTRAR DETALLES DE LOS PERFORMANCE
+        
         private void Pict_Performance1_Click(object sender, EventArgs e)
         {
-            Vehiculo_Detalles(Pict_Performance1, lbl_NPerformance1, PS_Performance1);
+            Vehiculo_Detalles(lbl_Performance1,Pict_Performance1, "A06");
         }
 
         private void Pict_Performance2_Click(object sender, EventArgs e)
         {
-            Vehiculo_Detalles(Pict_Performance2, lbl_NPerformance2, PS_Performance2);
+            Vehiculo_Detalles(lbl_Performance2, Pict_Performance2, "A015");
         }
 
         private void Pict_Performance3_Click(object sender, EventArgs e)
         {
-            Vehiculo_Detalles(Pict_Performance3, lbl_NPerformance3, PS_Performance3);
+            Vehiculo_Detalles(lbl_Performance3,Pict_Performance3, "A014");
         }
         //INICIAR SESION DESDE FORM AUTOS
 
         private void Btn_IniciarSesion_Click(object sender, EventArgs e)
         {
             Inciar_Sesion();
+            this.Close();
         }
         //FIN DISEÑO
         //INICIO DE LOGICA
-        public void PasarUsuario(TextBox n_identificacion)
+        public void PasarUsuario(string n_identificacion)
         {
             Cliente cliente = new Cliente();
-            ServicioClientes Sl = new ServicioClientes(configConnnection.ConnectionString);
             ActivarLabelCliente();         
             foreach (Cliente cl in Sl.Buscar_Cliente(n_identificacion))
             {
@@ -522,6 +609,7 @@ namespace Concesionario_J_M
                 lbl_DineroDisp.Text = "$" + cl.Presupuesto.ToString();
             }
         }
+
         public void ActivarLabelCliente()
         {
             Btn_IniciarSesion.Visible = false;
@@ -529,6 +617,29 @@ namespace Concesionario_J_M
             lbl_ID.Visible = true;
             lbl_DineroDisp.Visible = true;
             label11.Visible = true;
+        }
+
+        public void ActivarLabelGerente()
+        {
+            Servicio_Finanzas servicioFinanzas = new Servicio_Finanzas(configConnnection.ConnectionString);
+            Btn_IniciarSesion.Visible = false;
+            lbl_Nombre.Text = "Gerente";
+            lbl_ID.Visible = false;
+            label45.Visible = false;
+            lbl_DineroDisp.Text = servicioFinanzas.Contar_DineroTotal().ToString();
+        }
+
+        private void Btn_Comprar_Click(object sender, EventArgs e)
+        {
+            string Id_Cliente;
+            string Id_Auto = lbl_Id_Auto.Text;
+            foreach (Cliente cl in Sl.Buscar_Cliente(lbl_ID.Text))
+            {
+                lbl_ID.Text = cl.N_Identificacion.ToString();
+                Id_Cliente = cl.Id_Cliente;
+            }
+
+            servicioAutos.Comprar_Auto(lbl_Nombre.Text,Id_Auto,int.Parse(lbl_Precio.Text),int.Parse(lbl_DineroDisp.Text));
         }
 
         /* private void Btn_Comprar_Click(object sender, EventArgs e)

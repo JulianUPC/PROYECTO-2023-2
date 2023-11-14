@@ -85,7 +85,6 @@
             this.Total_Clientes = new System.Windows.Forms.Label();
             this.Dtv_Clientes = new System.Windows.Forms.DataGridView();
             this.Panel_Finanzas = new System.Windows.Forms.Panel();
-            this.lbl_Lista_Vacia = new System.Windows.Forms.Label();
             this.Panel_Ventas = new System.Windows.Forms.Panel();
             this.Panel_Inventario = new System.Windows.Forms.Panel();
             this.Btn_Comprar = new System.Windows.Forms.Button();
@@ -130,6 +129,9 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbl_DineroTotal = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
+            this.lbl_Lista_Vacia = new System.Windows.Forms.Label();
+            this.Dtv_AutosCliente = new System.Windows.Forms.DataGridView();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel1.SuspendLayout();
@@ -158,6 +160,7 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dtv_AutosCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // Btn_Clientes
@@ -282,6 +285,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Panel_Base.Controls.Add(this.Panel_Empleados);
             this.Panel_Base.Controls.Add(this.Panel_ModificarCliente);
+            this.Panel_Base.Controls.Add(this.label12);
+            this.Panel_Base.Controls.Add(this.Dtv_AutosCliente);
             this.Panel_Base.Controls.Add(this.Btn_Modificar);
             this.Panel_Base.Controls.Add(this.Btn_Borrar);
             this.Panel_Base.Controls.Add(this.Txt_BuscarID);
@@ -796,7 +801,7 @@
             this.Dtv_Clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dtv_Clientes.Location = new System.Drawing.Point(261, 3);
             this.Dtv_Clientes.Name = "Dtv_Clientes";
-            this.Dtv_Clientes.Size = new System.Drawing.Size(520, 438);
+            this.Dtv_Clientes.Size = new System.Drawing.Size(520, 242);
             this.Dtv_Clientes.TabIndex = 36;
             // 
             // Panel_Finanzas
@@ -813,19 +818,6 @@
             this.Panel_Finanzas.Size = new System.Drawing.Size(786, 451);
             this.Panel_Finanzas.TabIndex = 56;
             this.Panel_Finanzas.Visible = false;
-            // 
-            // lbl_Lista_Vacia
-            // 
-            this.lbl_Lista_Vacia.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbl_Lista_Vacia.AutoSize = true;
-            this.lbl_Lista_Vacia.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Lista_Vacia.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Lista_Vacia.Location = new System.Drawing.Point(499, 186);
-            this.lbl_Lista_Vacia.Name = "lbl_Lista_Vacia";
-            this.lbl_Lista_Vacia.Size = new System.Drawing.Size(253, 42);
-            this.lbl_Lista_Vacia.TabIndex = 22;
-            this.lbl_Lista_Vacia.Text = "LISTA VACIA";
-            this.lbl_Lista_Vacia.Visible = false;
             // 
             // Panel_Ventas
             // 
@@ -1314,6 +1306,38 @@
             this.label24.TabIndex = 21;
             this.label24.Text = "DINERO TOTAL";
             // 
+            // lbl_Lista_Vacia
+            // 
+            this.lbl_Lista_Vacia.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbl_Lista_Vacia.AutoSize = true;
+            this.lbl_Lista_Vacia.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Lista_Vacia.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Lista_Vacia.Location = new System.Drawing.Point(499, 186);
+            this.lbl_Lista_Vacia.Name = "lbl_Lista_Vacia";
+            this.lbl_Lista_Vacia.Size = new System.Drawing.Size(253, 42);
+            this.lbl_Lista_Vacia.TabIndex = 22;
+            this.lbl_Lista_Vacia.Text = "LISTA VACIA";
+            this.lbl_Lista_Vacia.Visible = false;
+            // 
+            // Dtv_AutosCliente
+            // 
+            this.Dtv_AutosCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dtv_AutosCliente.Location = new System.Drawing.Point(258, 304);
+            this.Dtv_AutosCliente.Name = "Dtv_AutosCliente";
+            this.Dtv_AutosCliente.Size = new System.Drawing.Size(523, 140);
+            this.Dtv_AutosCliente.TabIndex = 57;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(422, 260);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(212, 29);
+            this.label12.TabIndex = 58;
+            this.label12.Text = "Autos del Cliente";
+            // 
             // Gerencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1369,6 +1393,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dtv_AutosCliente)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1475,5 +1500,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button Btn_ConfContratar;
         private System.Windows.Forms.Label lbl_Lista_Vacia;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridView Dtv_AutosCliente;
     }
 }

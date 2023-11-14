@@ -352,14 +352,21 @@ namespace Logica2
         public bool Buscar_Cuenta(TextBox identifiacion)
         {
             bool Verificar = false;
-            foreach (var item in GetAll())
+            try
             {
-                if (item.N_Identificacion.Equals(int.Parse(identifiacion.Text)))
+                foreach (var item in GetAll())
                 {
-                    Verificar = true;
+                    if (item.N_Identificacion.Equals(int.Parse(identifiacion.Text)))
+                    {
+                        Verificar = true;
+                    }
                 }
+                return Verificar;
             }
-            return Verificar;
+            catch (Exception)
+            {
+                return Verificar;
+            }
         }      
         public string Iniciar_Sesion(TextBox usuario,TextBox contraseña)
         {
@@ -373,14 +380,10 @@ namespace Logica2
                     return Identificacion;                  
                 }
             }
-            if(Identificacion == "")
-            {
-                MessageBox.Show("Usuario o Contraseña Incorrectos");
-            }
             return Identificacion;
         }
 
-        public void Registrar(Cliente cliente,RadioButton terminossi,RadioButton terminosno)
+        public void Registrar(Cliente cliente,RadioButton terminossi,RadioButton terminosno,Panel panel1,Panel panel2,TextBox texto1,TextBox texto2,TextBox texto3,TextBox texto4,TextBox texto5,TextBox texto6,TextBox texto7,TextBox texto8,TextBox texto9,TextBox texto10, TextBox texto11, RadioButton boton1, RadioButton boton2, RadioButton boton3, RadioButton boton4, RadioButton boton5, RadioButton boton6, RadioButton boton7, RadioButton boton8, DateTimePicker fecha_n)
         {
           if (AceptarTerminos(terminossi,terminosno) == true) { 
               if (Verificar_DatosErroneos(cliente) == true)
@@ -389,7 +392,8 @@ namespace Logica2
                     {
                           Insertar(cliente);
                           MessageBox.Show("Cuenta Registrada");
-                          Vaciar_Registro();
+                          Vaciar_Registro(panel1,panel2,texto1,texto2,texto3,texto4,texto5,texto6,texto7,texto8,texto9,texto10,texto11,fecha_n);
+                          VaciarRadioButtom(boton1,boton2,boton3,boton4,boton5,boton6,boton7,boton8);
                     }
                     else
                     {
@@ -399,7 +403,7 @@ namespace Logica2
           }
         }
         
-        public List<Cliente> Buscar_Cliente(TextBox n_identificacion)
+        public List<Cliente> Buscar_Cliente(string n_identificacion)
         {
             try
             {
@@ -412,7 +416,7 @@ namespace Logica2
                 {
                     foreach (var item in GetAll())
                     {
-                        if (item.N_Identificacion.Equals(int.Parse(n_identificacion.Text)))
+                        if (item.N_Identificacion.Equals(int.Parse(n_identificacion)))
                         {
                             ListaPorND.Add(item);
                         }
@@ -448,10 +452,36 @@ namespace Logica2
             }
             return total_clientes;
         }
-        public bool Vaciar_Registro()
-        {        
-            return true;
+        public void Vaciar_Registro(Panel panel1,Panel panel2,TextBox texto1, TextBox texto2, TextBox texto3, TextBox texto4, TextBox texto5, TextBox texto6, TextBox texto7, TextBox texto8, TextBox texto9, TextBox texto10, TextBox texto11, DateTimePicker fecha_n)
+        {      
+            panel1.Visible = false;
+            panel2.Visible = false;
+            fecha_n.Text = DateTime.Now.ToString();
+            texto1.Text = "";
+            texto2.Text = "";
+            texto3.Text = "";
+            texto4.Text = "";
+            texto5.Text = "";
+            texto6.Text = "";
+            texto7.Text = "";
+            texto8.Text = "";
+            texto9.Text = "";
+            texto10.Text = "";
+            texto11.Text = "";
         }
+
+        public void VaciarRadioButtom(RadioButton boton1, RadioButton boton2, RadioButton boton3, RadioButton boton4, RadioButton boton5, RadioButton boton6, RadioButton boton7, RadioButton boton8)
+        {
+            VaciarRadioButtom(boton1);
+            VaciarRadioButtom(boton2);
+            VaciarRadioButtom(boton3);
+            VaciarRadioButtom(boton4);
+            VaciarRadioButtom(boton5);
+            VaciarRadioButtom(boton6);
+            VaciarRadioButtom(boton7);
+            VaciarRadioButtom(boton8);
+        }
+
 
         public void VaciarTextBox(TextBox txt)
         {
@@ -462,6 +492,7 @@ namespace Logica2
         {
             radioButton.Checked = false;
         }
+        
         public DataTable GetBy(String Columna, String Doc)
         {
             return repositorioCliente.GetBy(Columna, Doc);

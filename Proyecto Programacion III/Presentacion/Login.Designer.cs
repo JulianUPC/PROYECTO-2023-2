@@ -809,6 +809,7 @@
             // Dtt_FechaN
             // 
             this.Dtt_FechaN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Dtt_FechaN.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.Dtt_FechaN.Location = new System.Drawing.Point(6, 181);
             this.Dtt_FechaN.Name = "Dtt_FechaN";
             this.Dtt_FechaN.Size = new System.Drawing.Size(190, 24);

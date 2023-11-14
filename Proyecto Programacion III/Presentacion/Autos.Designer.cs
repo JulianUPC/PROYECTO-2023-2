@@ -164,26 +164,28 @@
             this.lbl_Camioneta2 = new System.Windows.Forms.Label();
             this.Pict_Camioneta2 = new System.Windows.Forms.PictureBox();
             this.lbl_NCamioneta2 = new System.Windows.Forms.Label();
-            this.Panel_Detalles = new System.Windows.Forms.Panel();
+            this.Pict_VhcDetalle = new System.Windows.Forms.PictureBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.lbl_ModeloV = new System.Windows.Forms.Label();
+            this.lbl_Precio = new System.Windows.Forms.Label();
+            this.lbl_Motor = new System.Windows.Forms.Label();
+            this.lbl_Asientos = new System.Windows.Forms.Label();
+            this.lbl_Valvulas = new System.Windows.Forms.Label();
+            this.lbl_SistemaCmb = new System.Windows.Forms.Label();
+            this.lbl_Trasmision = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Btn_Comprar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.lbl_NombreV = new System.Windows.Forms.Label();
+            this.Panel_Detalles = new System.Windows.Forms.Panel();
+            this.lbl_Id_Auto = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Btn_Comprar = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lbl_Trasmision = new System.Windows.Forms.Label();
-            this.lbl_SistemaCmb = new System.Windows.Forms.Label();
-            this.lbl_Valvulas = new System.Windows.Forms.Label();
-            this.lbl_Asientos = new System.Windows.Forms.Label();
-            this.lbl_Motor = new System.Windows.Forms.Label();
-            this.lbl_Precio = new System.Windows.Forms.Label();
-            this.lbl_ModeloV = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.Pict_VhcDetalle = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Btn_Volver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -229,12 +231,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.Pict_Camioneta1)).BeginInit();
             this.Pnl_Camioneta2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pict_Camioneta2)).BeginInit();
-            this.Panel_Detalles.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Pict_VhcDetalle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.Panel_Detalles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pict_VhcDetalle)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -273,7 +275,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(185, 52);
+            this.label11.Location = new System.Drawing.Point(184, 52);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(146, 21);
             this.label11.TabIndex = 23;
@@ -290,7 +292,7 @@
             this.Btn_IniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_IniciarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_IniciarSesion.ForeColor = System.Drawing.Color.Black;
-            this.Btn_IniciarSesion.Location = new System.Drawing.Point(183, 3);
+            this.Btn_IniciarSesion.Location = new System.Drawing.Point(182, 3);
             this.Btn_IniciarSesion.Name = "Btn_IniciarSesion";
             this.Btn_IniciarSesion.Size = new System.Drawing.Size(148, 39);
             this.Btn_IniciarSesion.TabIndex = 19;
@@ -638,11 +640,11 @@
             // 
             this.PS_Performance3.AutoSize = true;
             this.PS_Performance3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PS_Performance3.Location = new System.Drawing.Point(65, 141);
+            this.PS_Performance3.Location = new System.Drawing.Point(83, 141);
             this.PS_Performance3.Name = "PS_Performance3";
-            this.PS_Performance3.Size = new System.Drawing.Size(78, 16);
+            this.PS_Performance3.Size = new System.Drawing.Size(49, 16);
             this.PS_Performance3.TabIndex = 24;
-            this.PS_Performance3.Text = "319.990.016";
+            this.PS_Performance3.Text = "$71845";
             this.PS_Performance3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_Performance3
@@ -744,12 +746,12 @@
             // 
             this.PS_Performance1.AutoSize = true;
             this.PS_Performance1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PS_Performance1.Location = new System.Drawing.Point(68, 141);
+            this.PS_Performance1.Location = new System.Drawing.Point(81, 141);
             this.PS_Performance1.Name = "PS_Performance1";
             this.PS_Performance1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.PS_Performance1.Size = new System.Drawing.Size(78, 16);
+            this.PS_Performance1.Size = new System.Drawing.Size(49, 16);
             this.PS_Performance1.TabIndex = 2;
-            this.PS_Performance1.Text = "289.990.016";
+            this.PS_Performance1.Text = "$58967";
             this.PS_Performance1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel16
@@ -779,11 +781,11 @@
             // 
             this.PS_Performance2.AutoSize = true;
             this.PS_Performance2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PS_Performance2.Location = new System.Drawing.Point(68, 141);
+            this.PS_Performance2.Location = new System.Drawing.Point(79, 141);
             this.PS_Performance2.Name = "PS_Performance2";
-            this.PS_Performance2.Size = new System.Drawing.Size(78, 16);
+            this.PS_Performance2.Size = new System.Drawing.Size(49, 16);
             this.PS_Performance2.TabIndex = 21;
-            this.PS_Performance2.Text = "374.990.000";
+            this.PS_Performance2.Text = "$81895";
             this.PS_Performance2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_Performance2
@@ -849,11 +851,11 @@
             // 
             this.PS_Electrico4.AutoSize = true;
             this.PS_Electrico4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PS_Electrico4.Location = new System.Drawing.Point(65, 141);
+            this.PS_Electrico4.Location = new System.Drawing.Point(78, 141);
             this.PS_Electrico4.Name = "PS_Electrico4";
-            this.PS_Electrico4.Size = new System.Drawing.Size(78, 16);
+            this.PS_Electrico4.Size = new System.Drawing.Size(49, 16);
             this.PS_Electrico4.TabIndex = 24;
-            this.PS_Electrico4.Text = "149.700.000";
+            this.PS_Electrico4.Text = "$32784";
             this.PS_Electrico4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_Electrico4
@@ -919,11 +921,11 @@
             // 
             this.PS_Electrico3.AutoSize = true;
             this.PS_Electrico3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PS_Electrico3.Location = new System.Drawing.Point(65, 141);
+            this.PS_Electrico3.Location = new System.Drawing.Point(72, 141);
             this.PS_Electrico3.Name = "PS_Electrico3";
-            this.PS_Electrico3.Size = new System.Drawing.Size(78, 16);
+            this.PS_Electrico3.Size = new System.Drawing.Size(49, 16);
             this.PS_Electrico3.TabIndex = 24;
-            this.PS_Electrico3.Text = "144.990.000";
+            this.PS_Electrico3.Text = "$30145";
             this.PS_Electrico3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_Electrico3
@@ -1025,12 +1027,12 @@
             // 
             this.PS_Electrico1.AutoSize = true;
             this.PS_Electrico1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PS_Electrico1.Location = new System.Drawing.Point(68, 141);
+            this.PS_Electrico1.Location = new System.Drawing.Point(78, 141);
             this.PS_Electrico1.Name = "PS_Electrico1";
             this.PS_Electrico1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.PS_Electrico1.Size = new System.Drawing.Size(78, 16);
+            this.PS_Electrico1.Size = new System.Drawing.Size(49, 16);
             this.PS_Electrico1.TabIndex = 2;
-            this.PS_Electrico1.Text = "199.990.000";
+            this.PS_Electrico1.Text = "$41238";
             this.PS_Electrico1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel11
@@ -1060,11 +1062,11 @@
             // 
             this.PS_Electrico2.AutoSize = true;
             this.PS_Electrico2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PS_Electrico2.Location = new System.Drawing.Point(68, 141);
+            this.PS_Electrico2.Location = new System.Drawing.Point(75, 141);
             this.PS_Electrico2.Name = "PS_Electrico2";
-            this.PS_Electrico2.Size = new System.Drawing.Size(78, 16);
+            this.PS_Electrico2.Size = new System.Drawing.Size(49, 16);
             this.PS_Electrico2.TabIndex = 21;
-            this.PS_Electrico2.Text = "259.990.000";
+            this.PS_Electrico2.Text = "$57297";
             this.PS_Electrico2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_Electrico2
@@ -1130,11 +1132,11 @@
             // 
             this.PS_Deportivo3.AutoSize = true;
             this.PS_Deportivo3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PS_Deportivo3.Location = new System.Drawing.Point(65, 141);
+            this.PS_Deportivo3.Location = new System.Drawing.Point(70, 141);
             this.PS_Deportivo3.Name = "PS_Deportivo3";
-            this.PS_Deportivo3.Size = new System.Drawing.Size(78, 16);
+            this.PS_Deportivo3.Size = new System.Drawing.Size(56, 16);
             this.PS_Deportivo3.TabIndex = 24;
-            this.PS_Deportivo3.Text = "450.000.000";
+            this.PS_Deportivo3.Text = "$101274";
             this.PS_Deportivo3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_Deportivo3
@@ -1236,12 +1238,12 @@
             // 
             this.PS_Deportivo1.AutoSize = true;
             this.PS_Deportivo1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PS_Deportivo1.Location = new System.Drawing.Point(68, 141);
+            this.PS_Deportivo1.Location = new System.Drawing.Point(77, 141);
             this.PS_Deportivo1.Name = "PS_Deportivo1";
             this.PS_Deportivo1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.PS_Deportivo1.Size = new System.Drawing.Size(78, 16);
+            this.PS_Deportivo1.Size = new System.Drawing.Size(49, 16);
             this.PS_Deportivo1.TabIndex = 2;
-            this.PS_Deportivo1.Text = "257.020.000";
+            this.PS_Deportivo1.Text = "$54423";
             this.PS_Deportivo1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel8
@@ -1271,11 +1273,11 @@
             // 
             this.PS_Deportivo2.AutoSize = true;
             this.PS_Deportivo2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PS_Deportivo2.Location = new System.Drawing.Point(68, 141);
+            this.PS_Deportivo2.Location = new System.Drawing.Point(73, 141);
             this.PS_Deportivo2.Name = "PS_Deportivo2";
-            this.PS_Deportivo2.Size = new System.Drawing.Size(78, 16);
+            this.PS_Deportivo2.Size = new System.Drawing.Size(56, 16);
             this.PS_Deportivo2.TabIndex = 21;
-            this.PS_Deportivo2.Text = "850.720.000";
+            this.PS_Deportivo2.Text = "$176124";
             this.PS_Deportivo2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_Deportivo2
@@ -1341,11 +1343,11 @@
             // 
             this.PS_Convertible3.AutoSize = true;
             this.PS_Convertible3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PS_Convertible3.Location = new System.Drawing.Point(65, 141);
+            this.PS_Convertible3.Location = new System.Drawing.Point(74, 141);
             this.PS_Convertible3.Name = "PS_Convertible3";
-            this.PS_Convertible3.Size = new System.Drawing.Size(71, 16);
+            this.PS_Convertible3.Size = new System.Drawing.Size(49, 16);
             this.PS_Convertible3.TabIndex = 24;
-            this.PS_Convertible3.Text = "73.238.000";
+            this.PS_Convertible3.Text = "$13534";
             this.PS_Convertible3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_Convertible3
@@ -1447,11 +1449,11 @@
             // 
             this.PS_Convertible1.AutoSize = true;
             this.PS_Convertible1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PS_Convertible1.Location = new System.Drawing.Point(68, 141);
+            this.PS_Convertible1.Location = new System.Drawing.Point(77, 141);
             this.PS_Convertible1.Name = "PS_Convertible1";
-            this.PS_Convertible1.Size = new System.Drawing.Size(78, 16);
+            this.PS_Convertible1.Size = new System.Drawing.Size(49, 16);
             this.PS_Convertible1.TabIndex = 2;
-            this.PS_Convertible1.Text = "140.600.000";
+            this.PS_Convertible1.Text = "$29242";
             this.PS_Convertible1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel7
@@ -1481,11 +1483,11 @@
             // 
             this.PS_Convertible2.AutoSize = true;
             this.PS_Convertible2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PS_Convertible2.Location = new System.Drawing.Point(68, 141);
+            this.PS_Convertible2.Location = new System.Drawing.Point(77, 141);
             this.PS_Convertible2.Name = "PS_Convertible2";
-            this.PS_Convertible2.Size = new System.Drawing.Size(78, 16);
+            this.PS_Convertible2.Size = new System.Drawing.Size(49, 16);
             this.PS_Convertible2.TabIndex = 21;
-            this.PS_Convertible2.Text = "339.100.000";
+            this.PS_Convertible2.Text = "$67613";
             this.PS_Convertible2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_Convertible2
@@ -1551,11 +1553,11 @@
             // 
             this.PS_Camioneta5.AutoSize = true;
             this.PS_Camioneta5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PS_Camioneta5.Location = new System.Drawing.Point(67, 141);
+            this.PS_Camioneta5.Location = new System.Drawing.Point(78, 141);
             this.PS_Camioneta5.Name = "PS_Camioneta5";
-            this.PS_Camioneta5.Size = new System.Drawing.Size(78, 16);
+            this.PS_Camioneta5.Size = new System.Drawing.Size(49, 16);
             this.PS_Camioneta5.TabIndex = 24;
-            this.PS_Camioneta5.Text = "146.500.000";
+            this.PS_Camioneta5.Text = "$30932";
             this.PS_Camioneta5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_Camioneta5
@@ -1621,11 +1623,11 @@
             // 
             this.PS_Camioneta4.AutoSize = true;
             this.PS_Camioneta4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PS_Camioneta4.Location = new System.Drawing.Point(68, 141);
+            this.PS_Camioneta4.Location = new System.Drawing.Point(78, 141);
             this.PS_Camioneta4.Name = "PS_Camioneta4";
-            this.PS_Camioneta4.Size = new System.Drawing.Size(78, 16);
+            this.PS_Camioneta4.Size = new System.Drawing.Size(49, 16);
             this.PS_Camioneta4.TabIndex = 21;
-            this.PS_Camioneta4.Text = "107.265.000";
+            this.PS_Camioneta4.Text = "$21284";
             this.PS_Camioneta4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_Camioneta4
@@ -1691,11 +1693,11 @@
             // 
             this.PS_Camioneta3.AutoSize = true;
             this.PS_Camioneta3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PS_Camioneta3.Location = new System.Drawing.Point(65, 141);
+            this.PS_Camioneta3.Location = new System.Drawing.Point(79, 141);
             this.PS_Camioneta3.Name = "PS_Camioneta3";
-            this.PS_Camioneta3.Size = new System.Drawing.Size(76, 16);
+            this.PS_Camioneta3.Size = new System.Drawing.Size(49, 16);
             this.PS_Camioneta3.TabIndex = 24;
-            this.PS_Camioneta3.Text = "111.758.000";
+            this.PS_Camioneta3.Text = "$23964";
             this.PS_Camioneta3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_Camioneta3
@@ -1797,11 +1799,11 @@
             // 
             this.PS_Camioneta1.AutoSize = true;
             this.PS_Camioneta1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PS_Camioneta1.Location = new System.Drawing.Point(68, 141);
+            this.PS_Camioneta1.Location = new System.Drawing.Point(78, 141);
             this.PS_Camioneta1.Name = "PS_Camioneta1";
-            this.PS_Camioneta1.Size = new System.Drawing.Size(78, 16);
+            this.PS_Camioneta1.Size = new System.Drawing.Size(49, 16);
             this.PS_Camioneta1.TabIndex = 2;
-            this.PS_Camioneta1.Text = "124.000.000";
+            this.PS_Camioneta1.Text = "$23101";
             this.PS_Camioneta1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Pnl_Camioneta2
@@ -1831,11 +1833,11 @@
             // 
             this.PS_Camioneta2.AutoSize = true;
             this.PS_Camioneta2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PS_Camioneta2.Location = new System.Drawing.Point(68, 141);
+            this.PS_Camioneta2.Location = new System.Drawing.Point(78, 141);
             this.PS_Camioneta2.Name = "PS_Camioneta2";
-            this.PS_Camioneta2.Size = new System.Drawing.Size(71, 16);
+            this.PS_Camioneta2.Size = new System.Drawing.Size(49, 16);
             this.PS_Camioneta2.TabIndex = 21;
-            this.PS_Camioneta2.Text = "98.500.000";
+            this.PS_Camioneta2.Text = "$20298";
             this.PS_Camioneta2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_Camioneta2
@@ -1874,11 +1876,237 @@
             this.lbl_NCamioneta2.TabIndex = 1;
             this.lbl_NCamioneta2.Text = "Kicks Exclusive";
             // 
+            // Pict_VhcDetalle
+            // 
+            this.Pict_VhcDetalle.Image = ((System.Drawing.Image)(resources.GetObject("Pict_VhcDetalle.Image")));
+            this.Pict_VhcDetalle.Location = new System.Drawing.Point(16, 12);
+            this.Pict_VhcDetalle.Name = "Pict_VhcDetalle";
+            this.Pict_VhcDetalle.Size = new System.Drawing.Size(444, 240);
+            this.Pict_VhcDetalle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Pict_VhcDetalle.TabIndex = 0;
+            this.Pict_VhcDetalle.TabStop = false;
+            // 
+            // label31
+            // 
+            this.label31.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Trebuchet MS", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(502, 20);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(276, 43);
+            this.label31.TabIndex = 23;
+            this.label31.Text = "Precio Sugerido";
+            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_ModeloV
+            // 
+            this.lbl_ModeloV.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbl_ModeloV.AutoSize = true;
+            this.lbl_ModeloV.Font = new System.Drawing.Font("Trebuchet MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ModeloV.Location = new System.Drawing.Point(9, 300);
+            this.lbl_ModeloV.Name = "lbl_ModeloV";
+            this.lbl_ModeloV.Size = new System.Drawing.Size(178, 27);
+            this.lbl_ModeloV.TabIndex = 24;
+            this.lbl_ModeloV.Text = "Modelo_Vehiculo";
+            this.lbl_ModeloV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Precio
+            // 
+            this.lbl_Precio.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbl_Precio.AutoSize = true;
+            this.lbl_Precio.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Precio.Location = new System.Drawing.Point(580, 78);
+            this.lbl_Precio.Name = "lbl_Precio";
+            this.lbl_Precio.Size = new System.Drawing.Size(107, 37);
+            this.lbl_Precio.TabIndex = 25;
+            this.lbl_Precio.Text = "$23101";
+            this.lbl_Precio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Motor
+            // 
+            this.lbl_Motor.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbl_Motor.AutoSize = true;
+            this.lbl_Motor.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Motor.ForeColor = System.Drawing.Color.Black;
+            this.lbl_Motor.Location = new System.Drawing.Point(447, 409);
+            this.lbl_Motor.Name = "lbl_Motor";
+            this.lbl_Motor.Size = new System.Drawing.Size(183, 20);
+            this.lbl_Motor.TabIndex = 26;
+            this.lbl_Motor.Text = "Motor EcoBoos de 3.6L V6";
+            this.lbl_Motor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Asientos
+            // 
+            this.lbl_Asientos.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbl_Asientos.AutoSize = true;
+            this.lbl_Asientos.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Asientos.ForeColor = System.Drawing.Color.Black;
+            this.lbl_Asientos.Location = new System.Drawing.Point(704, 405);
+            this.lbl_Asientos.Name = "lbl_Asientos";
+            this.lbl_Asientos.Size = new System.Drawing.Size(20, 24);
+            this.lbl_Asientos.TabIndex = 27;
+            this.lbl_Asientos.Text = "5";
+            this.lbl_Asientos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Valvulas
+            // 
+            this.lbl_Valvulas.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbl_Valvulas.AutoSize = true;
+            this.lbl_Valvulas.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Valvulas.ForeColor = System.Drawing.Color.Black;
+            this.lbl_Valvulas.Location = new System.Drawing.Point(219, 408);
+            this.lbl_Valvulas.Name = "lbl_Valvulas";
+            this.lbl_Valvulas.Size = new System.Drawing.Size(196, 20);
+            this.lbl_Valvulas.TabIndex = 28;
+            this.lbl_Valvulas.Text = "DOHC(4 válvulas por cilindro";
+            this.lbl_Valvulas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_SistemaCmb
+            // 
+            this.lbl_SistemaCmb.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbl_SistemaCmb.AutoSize = true;
+            this.lbl_SistemaCmb.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_SistemaCmb.ForeColor = System.Drawing.Color.Black;
+            this.lbl_SistemaCmb.Location = new System.Drawing.Point(60, 409);
+            this.lbl_SistemaCmb.Name = "lbl_SistemaCmb";
+            this.lbl_SistemaCmb.Size = new System.Drawing.Size(64, 20);
+            this.lbl_SistemaCmb.TabIndex = 29;
+            this.lbl_SistemaCmb.Text = "Gasolina";
+            this.lbl_SistemaCmb.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbl_Trasmision
+            // 
+            this.lbl_Trasmision.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbl_Trasmision.AutoSize = true;
+            this.lbl_Trasmision.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Trasmision.ForeColor = System.Drawing.Color.Black;
+            this.lbl_Trasmision.Location = new System.Drawing.Point(545, 272);
+            this.lbl_Trasmision.Name = "lbl_Trasmision";
+            this.lbl_Trasmision.Size = new System.Drawing.Size(173, 24);
+            this.lbl_Trasmision.TabIndex = 30;
+            this.lbl_Trasmision.Text = "Automática con OD";
+            this.lbl_Trasmision.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 15.75F);
+            this.label10.ForeColor = System.Drawing.Color.DimGray;
+            this.label10.Location = new System.Drawing.Point(513, 360);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(50, 21);
+            this.label10.TabIndex = 31;
+            this.label10.Text = "Motor";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 15.75F);
+            this.label9.ForeColor = System.Drawing.Color.DimGray;
+            this.label9.Location = new System.Drawing.Point(681, 360);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(67, 21);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "Asientos";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 15.75F);
+            this.label8.ForeColor = System.Drawing.Color.DimGray;
+            this.label8.Location = new System.Drawing.Point(287, 360);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(64, 21);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "Valvulas";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DimGray;
+            this.label6.Location = new System.Drawing.Point(12, 360);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(175, 21);
+            this.label6.TabIndex = 34;
+            this.label6.Text = "Sistema de Combustible";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 15.75F);
+            this.label4.ForeColor = System.Drawing.Color.DimGray;
+            this.label4.Location = new System.Drawing.Point(583, 240);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(92, 21);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "Transmisión";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Btn_Comprar
+            // 
+            this.Btn_Comprar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Btn_Comprar.BackColor = System.Drawing.Color.White;
+            this.Btn_Comprar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Btn_Comprar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Btn_Comprar.FlatAppearance.BorderSize = 2;
+            this.Btn_Comprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Comprar.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Comprar.ForeColor = System.Drawing.Color.Black;
+            this.Btn_Comprar.Location = new System.Drawing.Point(560, 155);
+            this.Btn_Comprar.Name = "Btn_Comprar";
+            this.Btn_Comprar.Size = new System.Drawing.Size(148, 39);
+            this.Btn_Comprar.TabIndex = 23;
+            this.Btn_Comprar.Text = "Comprar";
+            this.Btn_Comprar.UseVisualStyleBackColor = false;
+            this.Btn_Comprar.Click += new System.EventHandler(this.Btn_Comprar_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.Location = new System.Drawing.Point(487, 233);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(279, 4);
+            this.pictureBox1.TabIndex = 36;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.Black;
+            this.pictureBox6.Location = new System.Drawing.Point(636, 354);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(3, 104);
+            this.pictureBox6.TabIndex = 39;
+            this.pictureBox6.TabStop = false;
+            // 
+            // lbl_NombreV
+            // 
+            this.lbl_NombreV.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbl_NombreV.AutoSize = true;
+            this.lbl_NombreV.Font = new System.Drawing.Font("Trebuchet MS", 26.25F, System.Drawing.FontStyle.Bold);
+            this.lbl_NombreV.Location = new System.Drawing.Point(6, 257);
+            this.lbl_NombreV.Name = "lbl_NombreV";
+            this.lbl_NombreV.Size = new System.Drawing.Size(296, 43);
+            this.lbl_NombreV.TabIndex = 40;
+            this.lbl_NombreV.Text = "Modelo_Vehiculo";
+            this.lbl_NombreV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Panel_Detalles
             // 
-            this.Panel_Detalles.Controls.Add(this.pictureBox6);
+            this.Panel_Detalles.Controls.Add(this.lbl_Id_Auto);
             this.Panel_Detalles.Controls.Add(this.pictureBox5);
             this.Panel_Detalles.Controls.Add(this.pictureBox4);
+            this.Panel_Detalles.Controls.Add(this.lbl_NombreV);
+            this.Panel_Detalles.Controls.Add(this.pictureBox6);
             this.Panel_Detalles.Controls.Add(this.pictureBox1);
             this.Panel_Detalles.Controls.Add(this.Btn_Comprar);
             this.Panel_Detalles.Controls.Add(this.label4);
@@ -1902,234 +2130,36 @@
             this.Panel_Detalles.TabIndex = 28;
             this.Panel_Detalles.Visible = false;
             // 
-            // pictureBox6
+            // lbl_Id_Auto
             // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Black;
-            this.pictureBox6.Location = new System.Drawing.Point(572, 354);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(3, 104);
-            this.pictureBox6.TabIndex = 39;
-            this.pictureBox6.TabStop = false;
+            this.lbl_Id_Auto.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lbl_Id_Auto.AutoSize = true;
+            this.lbl_Id_Auto.Font = new System.Drawing.Font("Trebuchet MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Id_Auto.ForeColor = System.Drawing.Color.Black;
+            this.lbl_Id_Auto.Location = new System.Drawing.Point(777, 434);
+            this.lbl_Id_Auto.Name = "lbl_Id_Auto";
+            this.lbl_Id_Auto.Size = new System.Drawing.Size(20, 24);
+            this.lbl_Id_Auto.TabIndex = 43;
+            this.lbl_Id_Auto.Text = "5";
+            this.lbl_Id_Auto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Black;
-            this.pictureBox5.Location = new System.Drawing.Point(449, 354);
+            this.pictureBox5.Location = new System.Drawing.Point(202, 354);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(3, 104);
-            this.pictureBox5.TabIndex = 38;
+            this.pictureBox5.TabIndex = 42;
             this.pictureBox5.TabStop = false;
             // 
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Black;
-            this.pictureBox4.Location = new System.Drawing.Point(306, 354);
+            this.pictureBox4.Location = new System.Drawing.Point(434, 354);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(3, 104);
-            this.pictureBox4.TabIndex = 37;
+            this.pictureBox4.TabIndex = 41;
             this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Black;
-            this.pictureBox1.Location = new System.Drawing.Point(487, 233);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(279, 4);
-            this.pictureBox1.TabIndex = 36;
-            this.pictureBox1.TabStop = false;
-            // 
-            // Btn_Comprar
-            // 
-            this.Btn_Comprar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Btn_Comprar.BackColor = System.Drawing.Color.White;
-            this.Btn_Comprar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Btn_Comprar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.Btn_Comprar.FlatAppearance.BorderSize = 2;
-            this.Btn_Comprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Comprar.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Comprar.ForeColor = System.Drawing.Color.Black;
-            this.Btn_Comprar.Location = new System.Drawing.Point(560, 155);
-            this.Btn_Comprar.Name = "Btn_Comprar";
-            this.Btn_Comprar.Size = new System.Drawing.Size(148, 39);
-            this.Btn_Comprar.TabIndex = 23;
-            this.Btn_Comprar.Text = "Comprar";
-            this.Btn_Comprar.UseVisualStyleBackColor = false;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 26.25F);
-            this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(554, 240);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(156, 35);
-            this.label4.TabIndex = 35;
-            this.label4.Text = "Transmisión";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 26.25F);
-            this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(3, 343);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(299, 35);
-            this.label6.TabIndex = 34;
-            this.label6.Text = "Sistema de Combustible";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 26.25F);
-            this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(315, 343);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(112, 35);
-            this.label8.TabIndex = 33;
-            this.label8.Text = "Valvulas";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 26.25F);
-            this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(581, 343);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(113, 35);
-            this.label9.TabIndex = 32;
-            this.label9.Text = "Asientos";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.DimGray;
-            this.label10.Location = new System.Drawing.Point(457, 343);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(81, 35);
-            this.label10.TabIndex = 31;
-            this.label10.Text = "Motor";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Trasmision
-            // 
-            this.lbl_Trasmision.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbl_Trasmision.AutoSize = true;
-            this.lbl_Trasmision.Font = new System.Drawing.Font("Trebuchet MS", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Trasmision.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Trasmision.Location = new System.Drawing.Point(549, 275);
-            this.lbl_Trasmision.Name = "lbl_Trasmision";
-            this.lbl_Trasmision.Size = new System.Drawing.Size(169, 37);
-            this.lbl_Trasmision.TabIndex = 30;
-            this.lbl_Trasmision.Text = "Transmisión";
-            this.lbl_Trasmision.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_SistemaCmb
-            // 
-            this.lbl_SistemaCmb.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbl_SistemaCmb.AutoSize = true;
-            this.lbl_SistemaCmb.Font = new System.Drawing.Font("Trebuchet MS", 21.75F);
-            this.lbl_SistemaCmb.ForeColor = System.Drawing.Color.Black;
-            this.lbl_SistemaCmb.Location = new System.Drawing.Point(82, 398);
-            this.lbl_SistemaCmb.Name = "lbl_SistemaCmb";
-            this.lbl_SistemaCmb.Size = new System.Drawing.Size(127, 37);
-            this.lbl_SistemaCmb.TabIndex = 29;
-            this.lbl_SistemaCmb.Text = "Sistema ";
-            this.lbl_SistemaCmb.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Valvulas
-            // 
-            this.lbl_Valvulas.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbl_Valvulas.AutoSize = true;
-            this.lbl_Valvulas.Font = new System.Drawing.Font("Trebuchet MS", 21.75F);
-            this.lbl_Valvulas.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Valvulas.Location = new System.Drawing.Point(314, 398);
-            this.lbl_Valvulas.Name = "lbl_Valvulas";
-            this.lbl_Valvulas.Size = new System.Drawing.Size(122, 37);
-            this.lbl_Valvulas.TabIndex = 28;
-            this.lbl_Valvulas.Text = "Valvulas";
-            this.lbl_Valvulas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Asientos
-            // 
-            this.lbl_Asientos.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbl_Asientos.AutoSize = true;
-            this.lbl_Asientos.Font = new System.Drawing.Font("Trebuchet MS", 21.75F);
-            this.lbl_Asientos.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Asientos.Location = new System.Drawing.Point(630, 398);
-            this.lbl_Asientos.Name = "lbl_Asientos";
-            this.lbl_Asientos.Size = new System.Drawing.Size(126, 37);
-            this.lbl_Asientos.TabIndex = 27;
-            this.lbl_Asientos.Text = "Asientos";
-            this.lbl_Asientos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Motor
-            // 
-            this.lbl_Motor.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbl_Motor.AutoSize = true;
-            this.lbl_Motor.Font = new System.Drawing.Font("Trebuchet MS", 21.75F);
-            this.lbl_Motor.ForeColor = System.Drawing.Color.Black;
-            this.lbl_Motor.Location = new System.Drawing.Point(473, 398);
-            this.lbl_Motor.Name = "lbl_Motor";
-            this.lbl_Motor.Size = new System.Drawing.Size(93, 37);
-            this.lbl_Motor.TabIndex = 26;
-            this.lbl_Motor.Text = "Motor";
-            this.lbl_Motor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_Precio
-            // 
-            this.lbl_Precio.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbl_Precio.AutoSize = true;
-            this.lbl_Precio.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Precio.Location = new System.Drawing.Point(553, 78);
-            this.lbl_Precio.Name = "lbl_Precio";
-            this.lbl_Precio.Size = new System.Drawing.Size(168, 37);
-            this.lbl_Precio.TabIndex = 25;
-            this.lbl_Precio.Text = "$99.999.999";
-            this.lbl_Precio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbl_ModeloV
-            // 
-            this.lbl_ModeloV.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lbl_ModeloV.AutoSize = true;
-            this.lbl_ModeloV.Font = new System.Drawing.Font("Trebuchet MS", 26.25F, System.Drawing.FontStyle.Bold);
-            this.lbl_ModeloV.Location = new System.Drawing.Point(8, 265);
-            this.lbl_ModeloV.Name = "lbl_ModeloV";
-            this.lbl_ModeloV.Size = new System.Drawing.Size(296, 43);
-            this.lbl_ModeloV.TabIndex = 24;
-            this.lbl_ModeloV.Text = "Modelo_Vehiculo";
-            this.lbl_ModeloV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label31
-            // 
-            this.label31.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Trebuchet MS", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(502, 20);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(276, 43);
-            this.label31.TabIndex = 23;
-            this.label31.Text = "Precio Sugerido";
-            this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Pict_VhcDetalle
-            // 
-            this.Pict_VhcDetalle.Image = ((System.Drawing.Image)(resources.GetObject("Pict_VhcDetalle.Image")));
-            this.Pict_VhcDetalle.Location = new System.Drawing.Point(16, 12);
-            this.Pict_VhcDetalle.Name = "Pict_VhcDetalle";
-            this.Pict_VhcDetalle.Size = new System.Drawing.Size(444, 240);
-            this.Pict_VhcDetalle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Pict_VhcDetalle.TabIndex = 0;
-            this.Pict_VhcDetalle.TabStop = false;
             // 
             // Autos
             // 
@@ -2218,13 +2248,13 @@
             this.Pnl_Camioneta2.ResumeLayout(false);
             this.Pnl_Camioneta2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pict_Camioneta2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pict_VhcDetalle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.Panel_Detalles.ResumeLayout(false);
             this.Panel_Detalles.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pict_VhcDetalle)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2365,27 +2395,29 @@
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Label lbl_ID;
         private System.Windows.Forms.Label lbl_Nombre;
-        private System.Windows.Forms.Panel Panel_Detalles;
-        private System.Windows.Forms.Label lbl_Precio;
-        private System.Windows.Forms.Label lbl_ModeloV;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.PictureBox Pict_VhcDetalle;
-        private System.Windows.Forms.Label lbl_Valvulas;
-        private System.Windows.Forms.Label lbl_Asientos;
-        private System.Windows.Forms.Label lbl_Motor;
-        private System.Windows.Forms.Label lbl_SistemaCmb;
-        private System.Windows.Forms.Label lbl_Trasmision;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button Btn_Comprar;
         private System.Windows.Forms.Label lbl_DineroDisp;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.PictureBox Pict_VhcDetalle;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label lbl_ModeloV;
+        private System.Windows.Forms.Label lbl_Precio;
+        private System.Windows.Forms.Label lbl_Motor;
+        private System.Windows.Forms.Label lbl_Asientos;
+        private System.Windows.Forms.Label lbl_Valvulas;
+        private System.Windows.Forms.Label lbl_SistemaCmb;
+        private System.Windows.Forms.Label lbl_Trasmision;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button Btn_Comprar;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label lbl_NombreV;
+        private System.Windows.Forms.Panel Panel_Detalles;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label lbl_Id_Auto;
     }
 }

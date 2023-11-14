@@ -18,8 +18,9 @@ namespace Entidades
         public DateTime Fecha_Gasto { get; set; }
         public int Monto_Gasto { get; set; }
         public string Nombre_Auto { get; set; }
+        public int Monto_Total { get; set; }
 
-        public Finanzas(string tipo,DateTime fecha_ingreso,int monto_ingreso ,DateTime fecha_gasto,int monto_gasto,string nombre_auto)
+        public Finanzas(string tipo,DateTime fecha_ingreso,int monto_ingreso ,DateTime fecha_gasto,int monto_gasto,string nombre_auto,int monto_total)
         {
             Tipo = tipo;
             Fecha_Ingreso = fecha_ingreso;
@@ -27,6 +28,7 @@ namespace Entidades
             Fecha_Gasto = fecha_gasto;   
             Monto_Gasto = monto_gasto;
             Nombre_Auto = nombre_auto;
+            Monto_Total = monto_total;
         }
     }
 }

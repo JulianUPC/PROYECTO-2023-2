@@ -21,7 +21,7 @@ namespace Datos
                 Comando.CommandText = "Insert into Inventario (Fecha_Compra,Nombre_Auto,Precio,Modelo,Categoria,Motor,Potencia,Valvulas,Asientos,Sistema_Combustible,Tipo_Transmision) values (@Fecha_Compra,@Nombre_Auto,@Precio,@Modelo,@Categoria,@Motor,@Potencia,@Valvulas,@Asientos,@Sistema_Combustible,@Tipo_Transmision)";
                 Comando.Parameters.Add("@Fecha_Compra", SqlDbType.DateTime).Value = inventario.Fecha_Compra;
                 Comando.Parameters.Add("@Nombre_Auto", SqlDbType.VarChar).Value = inventario.Nombre_Auto;
-                Comando.Parameters.Add("@Precio", SqlDbType.Int).Value = inventario.Precio;
+                Comando.Parameters.Add("@Precio", SqlDbType.Int).Value = inventario.Precio_Venta;
                 Comando.Parameters.Add("@Modelo", SqlDbType.VarChar).Value = inventario.Modelo;
                 Comando.Parameters.Add("@Categoria", SqlDbType.VarChar).Value = inventario.Categoria;
                 Comando.Parameters.Add("@Motor", SqlDbType.VarChar).Value = inventario.Motor;
@@ -37,22 +37,33 @@ namespace Datos
 
             }
         }
+        public void Update(string id, Inventario inventario)
+        {
 
-        private Inventario Mapeador_inventario(SqlDataReader dataReader)
+        }
+
+        public void Delete(Inventario inventario)
+        {
+
+        }
+
+            private Inventario Mapeador_inventario(SqlDataReader dataReader)
         {
             if (!dataReader.HasRows) return null;
             Inventario clienteLog = new Inventario();
             clienteLog.Fecha_Compra = dataReader.GetDateTime(0);
-            clienteLog.Nombre_Auto = dataReader.GetString(1);
-            clienteLog.Precio = dataReader.GetInt32(2);
-            clienteLog.Modelo = dataReader.GetString(3);
-            clienteLog.Categoria = dataReader.GetString(4);
-            clienteLog.Motor = dataReader.GetString(5);
-            clienteLog.Potencia = dataReader.GetString(6);
-            clienteLog.Valvulas = dataReader.GetString(7);
-            clienteLog.Asientos = dataReader.GetString(8);
-            clienteLog.Sistema_Combustible = dataReader.GetString(9);
-            clienteLog.Tipo_Transmision = dataReader.GetString(10);
+            clienteLog.Matricula = dataReader.GetString(1);
+            clienteLog.Nombre_Auto = dataReader.GetString(2);
+            clienteLog.Precio_Venta = dataReader.GetInt32(3);
+            clienteLog.Modelo = dataReader.GetString(4);
+            clienteLog.Categoria = dataReader.GetString(5);
+            clienteLog.Motor = dataReader.GetString(6);
+            clienteLog.Potencia = dataReader.GetString(7);
+            clienteLog.Valvulas = dataReader.GetString(8);
+            clienteLog.Asientos = dataReader.GetString(9);
+            clienteLog.Sistema_Combustible = dataReader.GetString(10);
+            clienteLog.Tipo_Transmision = dataReader.GetString(11);
+            clienteLog.Id_Auto = dataReader.GetString(12);
 
             return clienteLog;
         }

@@ -47,8 +47,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServicioAutos.cs" />
     <Compile Include="ServicioClientes.cs" />
+    <Compile Include="Servicio_Autos_de_Clientes.cs" />
     <Compile Include="Servicio_Empleado.cs" />
     <Compile Include="Servicio_Finanzas.cs" />
+    <Compile Include="Servicio_Inventario.cs" />
     <Compile Include="Servicio_Ventas.cs" />
   </ItemGroup>
   <ItemGroup>

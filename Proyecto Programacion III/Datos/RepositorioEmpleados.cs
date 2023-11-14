@@ -64,7 +64,7 @@ namespace Datos
         {
             List<Empleado> empleado = new List<Empleado>();
             var comando = conexion.CreateCommand();
-            comando.CommandText = "SELECT * FROM Empleados";
+            comando.CommandText = "SELECT * FROM EMPLEADOS";
             Open();
             SqlDataReader lector = comando.ExecuteReader();
             while (lector.Read())

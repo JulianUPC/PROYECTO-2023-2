@@ -10,16 +10,15 @@ namespace Entidades
     {
         public Ventas() { }
         public DateTime Fecha_Vendido { get; set; }
-        public string ID_Comprador { get; set; }
         public string Matricula { get; set; }
-        public Ventas(DateTime fecha_Vendido,string Id_Comprador,int id_auto,string matricula, string nombre_Auto, int precio, string modelo, string categoria, string motor, string potencia, string valvulas, string asientos, string sistema_Combustible, string tipo_Transmision)
+        public Ventas(DateTime fecha_Vendido,string Id_Comprador,string id_cliente,string id_auto,string matricula, string nombre_Auto, int precio_venta, string modelo, string categoria, string motor, string potencia, string valvulas, string asientos, string sistema_Combustible, string tipo_Transmision)
         {
             Fecha_Vendido = fecha_Vendido;
-            ID_Comprador = Id_Comprador;
+            Id_Cliente = id_cliente;
             Id_Auto = id_auto;
             Matricula = matricula;
             Nombre_Auto = nombre_Auto;
-            Precio = precio;
+            Precio_Venta = precio_venta;
             Modelo = modelo;
             Categoria = categoria;
             Motor = motor;

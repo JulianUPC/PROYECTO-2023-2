@@ -9,18 +9,12 @@ namespace Entidades
     public class Concesionario
     {
         public Concesionario() { }
-        public int Id_Cliente { get; set; }
-        public int Id_Auto { get; set; }
-        public int Dinero_Total { get; set; }
-        public Concesionario(int id_Cliente, int id_Auto, int dinero_Total)
+        public string Id_Cliente { get; set; }
+        public string Id_Auto { get; set; }
+        public Concesionario(string id_Cliente, string id_Auto)
         {
             Id_Cliente = id_Cliente;
             Id_Auto = id_Auto;
-            Dinero_Total = dinero_Total;
-        }
-        public void Calcular_DineroTotal(int ingresos, int gastos)
-        {
-            Dinero_Total = ingresos - gastos;
         }
     }
 }
