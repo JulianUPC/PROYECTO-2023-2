@@ -14,6 +14,17 @@ namespace Datos
         public RepositorioAuto(string connectionString) : base(connectionString)
         {
         }
+        public void Update(string id, Auto auto)
+        {
+            using (var Comando = conexion.CreateCommand())
+            {
+                Comando.CommandText = "Update Autos SET Precio_Venta = @Precio_Venta WHERE ID_Auto = '" + id + "';";
+                Comando.Parameters.Add("@Precio_Venta", SqlDbType.Int).Value = auto.Precio_Venta;
+                Open();
+                Comando.ExecuteNonQuery();
+                Close();
+            }
+        }
         //TENDRA VEHICULOS YA ESTABLECIDOS POR LO CUAL NO HAY NECESIDAD DE LLEVAR INSERT      
         private Auto Mapeador_auto(SqlDataReader dataReader)
         {

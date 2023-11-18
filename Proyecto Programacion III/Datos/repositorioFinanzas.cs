@@ -19,13 +19,13 @@ namespace Datos
             using (var Comando = conexion.CreateCommand())
             {
                 Comando.CommandText = "Insert into Finanzas (Tipo,Fecha_Ingreso,Monto_Ingresos,Fecha_Gasto,Monto_Gastos,Nombre_Auto,Monto_Total) values (@Tipo,@Fecha_Ingreso,@Monto_Ingresos,@Fecha_Gasto,@Monto_Gastos,@Nombre_Auto,@Monto_Total)";
-                Comando.Parameters.Add("@Tipo", SqlDbType.DateTime).Value = finanzas.Tipo;
-                Comando.Parameters.Add("@Fecha_Ingreso", SqlDbType.VarChar).Value = finanzas.Fecha_Ingreso;
+                Comando.Parameters.Add("@Tipo", SqlDbType.VarChar).Value = finanzas.Tipo;
+                Comando.Parameters.Add("@Fecha_Ingreso", SqlDbType.DateTime).Value = finanzas.Fecha_Ingreso;
                 Comando.Parameters.Add("@Monto_Ingresos", SqlDbType.Int).Value = finanzas.Monto_Ingreso;
-                Comando.Parameters.Add("@Fecha_Gasto", SqlDbType.VarChar).Value = finanzas.Fecha_Gasto;
-                Comando.Parameters.Add("@Monto_Gastos", SqlDbType.VarChar).Value = finanzas.Monto_Gasto;
+                Comando.Parameters.Add("@Fecha_Gasto", SqlDbType.DateTime).Value = finanzas.Fecha_Gasto;
+                Comando.Parameters.Add("@Monto_Gastos", SqlDbType.Int).Value = finanzas.Monto_Gasto;
                 Comando.Parameters.Add("@Nombre_Auto", SqlDbType.VarChar).Value = finanzas.Nombre_Auto;
-                Comando.Parameters.Add("@Monto_Total", SqlDbType.VarChar).Value = finanzas.Monto_Total;
+                Comando.Parameters.Add("@Monto_Total", SqlDbType.Int).Value = finanzas.Monto_Total;
                 Open();
                 Comando.ExecuteNonQuery();
                 Close();

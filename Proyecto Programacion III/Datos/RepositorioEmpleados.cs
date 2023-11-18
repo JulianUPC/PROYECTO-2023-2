@@ -18,21 +18,31 @@ namespace Datos
         {
             using (var Comando = conexion.CreateCommand())
             {
-                Comando.CommandText = "Insert into Empleados (ID_Empleado,N_identificacion,Nombre_Completo,Fecha_Ingreso,Pago_Mes,Monto_Comision) values (@ID_Empleado,@N_identificacion,@Nombre_Completo,@Fecha_Ingreso,@Pago_Mes,@Monto_Comision)";
+                Comando.CommandText = "Insert into Empleados (ID_Empleado,N_identificacion,Nombre_Completo,Fecha_Ingreso,Pago_Mes,Monto_Comision,Cargo) values (@ID_Empleado,@N_identificacion,@Nombre_Completo,@Fecha_Ingreso,@Pago_Mes,@Monto_Comision,@Cargo)";
                 Comando.Parameters.Add("@ID_Empleado", SqlDbType.VarChar).Value = empleado.ID_Empleado;
                 Comando.Parameters.Add("@N_identificacion", SqlDbType.VarChar).Value = empleado.N_identificacion;
                 Comando.Parameters.Add("@Nombre_Completo", SqlDbType.VarChar).Value = empleado.Nombre_Completo;
                 Comando.Parameters.Add("@Fecha_Ingreso", SqlDbType.DateTime).Value = empleado.Fecha_Ingreso;
                 Comando.Parameters.Add("@Pago_Mes", SqlDbType.Int).Value = empleado.Pago_Mes;
                 Comando.Parameters.Add("@Monto_Comision", SqlDbType.Int).Value = empleado.Monto_Comision;
+                Comando.Parameters.Add("@Cargo", SqlDbType.VarChar).Value = empleado.Cargo;
                 Open();
                 Comando.ExecuteNonQuery();
                 Close();
 
             }
         }
-        public void Update(Cliente PersonaLog)
+        public void Update(string id,Empleado empleado)
         {
+            using (var Comando = conexion.CreateCommand())
+            {
+                Comando.CommandText = "Update Empleados SET Pago_Mes = @Pago_Mes,Monto_Comision = @Monto_Comision WHERE ID_Empleado = '" + id + "';";
+                Comando.Parameters.Add("@Pago_Mes", SqlDbType.Int).Value = empleado.Pago_Mes;
+                Comando.Parameters.Add("@Monto_Comision", SqlDbType.Int).Value = empleado.Monto_Comision;
+                Open();
+                Comando.ExecuteNonQuery();
+                Close();
+            }
         }
 
         public void Delete(Empleado empleado)

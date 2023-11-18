@@ -16,8 +16,9 @@ namespace Entidades
         public DateTime Fecha_Ingreso { get; set; }
         public int Pago_Mes { get; set; }
         public int Monto_Comision { get; set; }
+        public string Cargo { get; set; }
 
-        public Empleado(string iD_Empleado, string n_identificacion, string nombre_completo, DateTime fecha_Ingreso, int pago_Mes,int monto_comision)
+        public Empleado(string iD_Empleado, string n_identificacion, string nombre_completo, DateTime fecha_Ingreso, int pago_Mes,int monto_comision,string cargo)
         {
             ID_Empleado = iD_Empleado;
             N_identificacion = n_identificacion;
@@ -25,6 +26,7 @@ namespace Entidades
             Fecha_Ingreso = fecha_Ingreso;
             Pago_Mes = pago_Mes;
             Monto_Comision = monto_comision;
+            Cargo = cargo;
         }
         public int Calcular_Comision(int Precio_Auto)
         {
@@ -33,10 +35,15 @@ namespace Entidades
             Pago_Total = Convert.ToInt32(Precio_Auto * Comision);
             return Pago_Total;
         }
-        public void Calcular_Pago(int Precio_Auto)
+        public int Calcular_PagoMes(int Precio_Auto)
         {
             Pago_Mes = Pago_Mes + Calcular_Comision(Precio_Auto);
+            return Pago_Mes;
+        }
+        public int Calcular_MontoComision(int Precio_Auto) 
+        {
             Monto_Comision = Monto_Comision + Calcular_Comision(Precio_Auto);
+            return Monto_Comision;
         }
     }
 }

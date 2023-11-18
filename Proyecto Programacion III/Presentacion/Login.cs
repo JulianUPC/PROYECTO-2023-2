@@ -98,6 +98,7 @@ namespace Concesionario_J_M
         //INICIO LOGICA
         private void Btn_RegistrarInfo_Click(object sender, EventArgs e)
         {
+            cliente.Id_Cliente = Sl.Generar_ID();
             cliente.N_Identificacion = Sl.Verificar_ID(Txt_Cedula);
             cliente.Nombre_Completo = Txt_NombreC.Text;
             cliente.Fecha_Nacimiento = Dtt_FechaN.Value;
@@ -115,7 +116,11 @@ namespace Concesionario_J_M
             cliente.Usuario = Txt_UsuarioR.Text;
             cliente.Contraseña = Sl.VerificarContraseña(Txt_ContraseñaR, Txt_ConfCotraseñaR);
             cliente.Autos_Comprados = 0;
-            cliente.Correo_Electronico = txt_Correo.Text;
+            if(txt_Correo.Text == "")
+            {
+                txt_Correo.Text = "Sin Correo";
+            }
+            cliente.Correo_Electronico = txt_Correo.Text;           
             Sl.Registrar(cliente,Opc_TerminosSi,Opc_TerminosNo,Panel_Registrar,Panel_Registro2,Txt_Cedula,Txt_NombreC,Txt_Direccion,Txt_Celular,Txt_Cargo,Txt_IngresosM,Txt_Presupuesto,txt_Correo,Txt_UsuarioR,Txt_ContraseñaR,Txt_ConfCotraseñaR,Opc_Femenino,Opc_Masculino,Opc_TrabajoSi,Opc_TrabajoNo,Opc_LicenciaSi,Opc_LicenciaNo,Opc_TerminosSi,Opc_TerminosNo,Dtt_FechaN);
             
         }

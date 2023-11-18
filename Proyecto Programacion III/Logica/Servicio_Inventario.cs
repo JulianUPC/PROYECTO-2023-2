@@ -10,24 +10,24 @@ namespace Logica2
 {
     public class Servicio_Inventario : ICrud<Inventario>
     {
-        Datos.RepositorioInventario RepositorioInventario;
+        Datos.RepositorioInventario repositorioInventario;
         public Servicio_Inventario(string conexion)
         {
-            RepositorioInventario = new RepositorioInventario(conexion);
+            repositorioInventario = new RepositorioInventario(conexion);
         }
         public void Insertar(Inventario inventario)
         {
-            RepositorioInventario.Insert(inventario);
+            repositorioInventario.Insert(inventario);
         }
 
         public void Delete(Inventario inventario)
         {
-            RepositorioInventario.Delete(inventario);
+            repositorioInventario.Delete(inventario);
         }
 
         public void Update(string id, Inventario inventario)
         {
-            RepositorioInventario.Update(id, inventario);
+            repositorioInventario.Update(id, inventario);
         }
         public int ContarInventario()
         {
@@ -38,6 +38,7 @@ namespace Logica2
             }
             return total_inventario;
         }
+
         public List<Inventario> Buscar_Auto(string id_auto)
         {
             try
@@ -66,7 +67,7 @@ namespace Logica2
         }
         public List<Inventario> GetAll()
         {
-            return RepositorioInventario.GetAll();
+            return repositorioInventario.GetAll();
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -35,6 +36,10 @@ namespace Logica2
         public void Update(string id,Cliente cliente)
         {
             repositorioCliente.Update(id,cliente);
+        }
+        public void UpdateAuto(string id, Cliente cliente)
+        {
+            repositorioCliente.UpdateAuto(id, cliente);
         }
 
         public bool AceptarTerminos(RadioButton terminossi,RadioButton terminosno)
@@ -82,49 +87,81 @@ namespace Logica2
             cliente.Correo_Electronico = correo_electronico.Text;
             foreach (var item in GetAll())
             {
-                if(item.N_Identificacion.Equals(int.Parse(id.Text)))
+                try
                 {
-                    if (string.IsNullOrEmpty(nombre.Text))
+                    if (string.IsNullOrEmpty(nombre.Text) && string.IsNullOrEmpty(telefono.Text) && string.IsNullOrEmpty(direccion.Text) && string.IsNullOrEmpty(presupuesto.Text) && string.IsNullOrEmpty(correo_electronico.Text))
                     {
-                        cliente.Nombre_Completo = item.Nombre_Completo; ;
+                        MessageBox.Show("Todas las casillas estan vacias, no se puede modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    if (string.IsNullOrEmpty(telefono.Text))
+                    else if (item.N_Identificacion.Equals(int.Parse(id.Text)))
                     {
-                        cliente.Telefono = item.Telefono;
-                    }
-                    if (string.IsNullOrEmpty(direccion.Text))
-                    {
-                        cliente.Direccion = item.Direccion;
-                    }
-                    if (string.IsNullOrEmpty(presupuesto.Text))
-                    {
-                        cliente.Presupuesto = item.Presupuesto;
-                    }
-                    else
-                    {
-                        cliente.Presupuesto = int.Parse(presupuesto.Text);
-                    }                
-                    if (string.IsNullOrEmpty(correo_electronico.Text))
-                    {
-                        cliente.Correo_Electronico = item.Correo_Electronico;
+                        if (string.IsNullOrEmpty(nombre.Text))
+                        {
+                            cliente.Nombre_Completo = item.Nombre_Completo;
+                        }
+                        if (string.IsNullOrEmpty(telefono.Text))
+                        {
+                            cliente.Telefono = item.Telefono;
+                        }
+                        if (string.IsNullOrEmpty(direccion.Text))
+                        {
+                            cliente.Direccion = item.Direccion;
+                        }
+                        if (string.IsNullOrEmpty(presupuesto.Text))
+                        {
+                            cliente.Presupuesto = item.Presupuesto;
+                        }
+                        else
+                        {
+                            cliente.Presupuesto = int.Parse(presupuesto.Text);
+                        }
+                        if (string.IsNullOrEmpty(correo_electronico.Text))
+                        {
+                            cliente.Correo_Electronico = item.Correo_Electronico;
+                        }
+                        Update(id.Text, cliente);
+                        MessageBox.Show("Informacion Actualizada");
                     }
                 }
-            }          
-                Update(id.Text,cliente);
-                MessageBox.Show("Informacion Actualizada");             
+                catch (Exception)
+                {
+                    MessageBox.Show("Error al encontrar la identificacion del cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }                                  
         }
 
         public void Delete(TextBox id)
         {
-            foreach (var item in GetAll())
+            try
             {
-                if (item.N_Identificacion.Equals(int.Parse(id.Text)))
+                foreach (var item in GetAll())
                 {
-                    cliente.N_Identificacion = item.N_Identificacion;
-                    repositorioCliente.Delete(cliente);
-                    MessageBox.Show("Cliente Eliminado");
+                    if (item.N_Identificacion.Equals(int.Parse(id.Text)))
+                    {
+                        cliente.N_Identificacion = item.N_Identificacion;
+                        repositorioCliente.Delete(cliente);
+                        MessageBox.Show("Cliente Eliminado");
+                    }
                 }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Ingrese un numero de identificacion Existente","Confirmacion", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            
+        }
+        public string Generar_ID()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Random randomChar = new Random();
+                char[] letras = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+                string IdRandom = letras[randomChar.Next(26)].ToString() + letras[randomChar.Next(26)].ToString() + randomChar.Next(000, 999);
+
+                return IdRandom;
+            }
+
+            return Generar_ID().ToString();
         }
         public int LimitesPresupuesto(TextBox presupuesto)
         {
@@ -294,7 +331,7 @@ namespace Logica2
         }
         public void Mensaje_Error()
         {
-            MessageBox.Show("LLene todas las casillas Para poder Continuar");
+            MessageBox.Show("LLene todas las casillas Para poder Continuar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         public bool Buscar_Repetidos(Cliente cliente)
         {
@@ -401,8 +438,7 @@ namespace Logica2
                     }
               }
           }
-        }
-        
+        }     
         public List<Cliente> Buscar_Cliente(string n_identificacion)
         {
             try
@@ -451,6 +487,23 @@ namespace Logica2
                 total_clientes++;
             }
             return total_clientes;
+        }
+        public string Informacion_Celda(DataGridViewRow fila, string nombreColumna)
+        {
+            if (fila != null && fila.Cells[nombreColumna] != null)
+            {
+                object valorCelda = fila.Cells[nombreColumna].Value;
+                return valorCelda != null ? valorCelda.ToString() : string.Empty;
+            }
+            return string.Empty;
+        }
+        public void Buscar_Tablas(TextBox text, DataGridView tabla, string dato, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                string valorCelda = Informacion_Celda(tabla.Rows[e.RowIndex], dato);
+                text.Text = valorCelda;
+            }
         }
         public void Vaciar_Registro(Panel panel1,Panel panel2,TextBox texto1, TextBox texto2, TextBox texto3, TextBox texto4, TextBox texto5, TextBox texto6, TextBox texto7, TextBox texto8, TextBox texto9, TextBox texto10, TextBox texto11, DateTimePicker fecha_n)
         {      

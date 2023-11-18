@@ -74,6 +74,8 @@
             this.Txt_ModDireccion = new System.Windows.Forms.TextBox();
             this.Txt_ModTelefono = new System.Windows.Forms.TextBox();
             this.Txt_ModNombre = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.Dtv_AutosCliente = new System.Windows.Forms.DataGridView();
             this.Btn_Modificar = new System.Windows.Forms.Button();
             this.Btn_Borrar = new System.Windows.Forms.Button();
             this.Txt_BuscarID = new System.Windows.Forms.TextBox();
@@ -95,13 +97,12 @@
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.Txt_PrecioM = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.Btn_ModificarI = new System.Windows.Forms.Button();
-            this.btn_BorrarI = new System.Windows.Forms.Button();
+            this.Btn_ModificarP = new System.Windows.Forms.Button();
             this.txt_BuscarMatricula = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
@@ -120,6 +121,8 @@
             this.Dgv_Ventas = new System.Windows.Forms.DataGridView();
             this.Dtv_IngresosyGastos = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.lbl_GastosT = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -127,11 +130,14 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label23 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
             this.lbl_DineroTotal = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.lbl_Lista_Vacia = new System.Windows.Forms.Label();
-            this.Dtv_AutosCliente = new System.Windows.Forms.DataGridView();
-            this.label12 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.Txt_ID_Auto = new System.Windows.Forms.TextBox();
+            this.Btn_ModificarPA = new System.Windows.Forms.Button();
+            this.TxT_CompradorID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel1.SuspendLayout();
@@ -143,6 +149,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Dtv_Empleados)).BeginInit();
             this.Panel_ModificarCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Btn_Volver)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dtv_AutosCliente)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dtv_Clientes)).BeginInit();
             this.Panel_Finanzas.SuspendLayout();
@@ -160,7 +167,6 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Dtv_AutosCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // Btn_Clientes
@@ -538,6 +544,7 @@
             this.Dtv_Empleados.Name = "Dtv_Empleados";
             this.Dtv_Empleados.Size = new System.Drawing.Size(520, 438);
             this.Dtv_Empleados.TabIndex = 36;
+            this.Dtv_Empleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dtv_Empleados_CellClick);
             // 
             // Panel_ModificarCliente
             // 
@@ -692,6 +699,25 @@
             this.Txt_ModNombre.Size = new System.Drawing.Size(222, 29);
             this.Txt_ModNombre.TabIndex = 44;
             // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(422, 260);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(212, 29);
+            this.label12.TabIndex = 58;
+            this.label12.Text = "Autos del Cliente";
+            // 
+            // Dtv_AutosCliente
+            // 
+            this.Dtv_AutosCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dtv_AutosCliente.Location = new System.Drawing.Point(258, 304);
+            this.Dtv_AutosCliente.Name = "Dtv_AutosCliente";
+            this.Dtv_AutosCliente.Size = new System.Drawing.Size(523, 140);
+            this.Dtv_AutosCliente.TabIndex = 57;
+            // 
             // Btn_Modificar
             // 
             this.Btn_Modificar.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -803,11 +829,10 @@
             this.Dtv_Clientes.Name = "Dtv_Clientes";
             this.Dtv_Clientes.Size = new System.Drawing.Size(520, 242);
             this.Dtv_Clientes.TabIndex = 36;
+            this.Dtv_Clientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dtv_Clientes_CellClick);
             // 
             // Panel_Finanzas
             // 
-            this.Panel_Finanzas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.Panel_Finanzas.Controls.Add(this.Panel_Ventas);
             this.Panel_Finanzas.Controls.Add(this.Dtv_IngresosyGastos);
             this.Panel_Finanzas.Controls.Add(this.panel2);
@@ -827,7 +852,6 @@
             this.Panel_Ventas.Controls.Add(this.label26);
             this.Panel_Ventas.Controls.Add(this.panel7);
             this.Panel_Ventas.Controls.Add(this.Dgv_Ventas);
-            this.Panel_Ventas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Panel_Ventas.Location = new System.Drawing.Point(0, 0);
             this.Panel_Ventas.Name = "Panel_Ventas";
             this.Panel_Ventas.Size = new System.Drawing.Size(786, 451);
@@ -835,15 +859,16 @@
             // 
             // Panel_Inventario
             // 
+            this.Panel_Inventario.Controls.Add(this.TxT_CompradorID);
+            this.Panel_Inventario.Controls.Add(this.Panel_ModificarI);
             this.Panel_Inventario.Controls.Add(this.Btn_Comprar);
-            this.Panel_Inventario.Controls.Add(this.Panel_BorrarI);
-            this.Panel_Inventario.Controls.Add(this.Btn_ModificarI);
-            this.Panel_Inventario.Controls.Add(this.btn_BorrarI);
+            this.Panel_Inventario.Controls.Add(this.Btn_ModificarP);
             this.Panel_Inventario.Controls.Add(this.txt_BuscarMatricula);
             this.Panel_Inventario.Controls.Add(this.label41);
             this.Panel_Inventario.Controls.Add(this.label42);
             this.Panel_Inventario.Controls.Add(this.panel10);
             this.Panel_Inventario.Controls.Add(this.Dgv_Inventario);
+            this.Panel_Inventario.Controls.Add(this.Panel_BorrarI);
             this.Panel_Inventario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Panel_Inventario.Location = new System.Drawing.Point(0, 0);
             this.Panel_Inventario.Name = "Panel_Inventario";
@@ -868,7 +893,6 @@
             // Panel_BorrarI
             // 
             this.Panel_BorrarI.Controls.Add(this.Pict_BorrarI);
-            this.Panel_BorrarI.Controls.Add(this.Panel_ModificarI);
             this.Panel_BorrarI.Controls.Add(this.label35);
             this.Panel_BorrarI.Controls.Add(this.label36);
             this.Panel_BorrarI.Controls.Add(this.label37);
@@ -892,14 +916,17 @@
             // 
             // Panel_ModificarI
             // 
+            this.Panel_ModificarI.Controls.Add(this.Btn_ModificarPA);
+            this.Panel_ModificarI.Controls.Add(this.label18);
+            this.Panel_ModificarI.Controls.Add(this.Txt_ID_Auto);
             this.Panel_ModificarI.Controls.Add(this.Pict_ModificarI);
             this.Panel_ModificarI.Controls.Add(this.label38);
             this.Panel_ModificarI.Controls.Add(this.label39);
             this.Panel_ModificarI.Controls.Add(this.label40);
-            this.Panel_ModificarI.Controls.Add(this.textBox7);
-            this.Panel_ModificarI.Location = new System.Drawing.Point(0, 1);
+            this.Panel_ModificarI.Controls.Add(this.Txt_PrecioM);
+            this.Panel_ModificarI.Location = new System.Drawing.Point(400, 159);
             this.Panel_ModificarI.Name = "Panel_ModificarI";
-            this.Panel_ModificarI.Size = new System.Drawing.Size(249, 91);
+            this.Panel_ModificarI.Size = new System.Drawing.Size(249, 205);
             this.Panel_ModificarI.TabIndex = 56;
             this.Panel_ModificarI.Visible = false;
             // 
@@ -919,7 +946,7 @@
             this.label38.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(76, 7);
+            this.label38.Location = new System.Drawing.Point(79, 17);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(82, 20);
             this.label38.TabIndex = 61;
@@ -930,7 +957,7 @@
             this.label39.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(6, -11);
+            this.label39.Location = new System.Drawing.Point(6, 46);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(0, 20);
             this.label39.TabIndex = 56;
@@ -940,19 +967,19 @@
             this.label40.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(10, 32);
+            this.label40.Location = new System.Drawing.Point(14, 98);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(59, 20);
             this.label40.TabIndex = 55;
             this.label40.Text = "Precio";
             // 
-            // textBox7
+            // Txt_PrecioM
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(10, 56);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(222, 29);
-            this.textBox7.TabIndex = 44;
+            this.Txt_PrecioM.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_PrecioM.Location = new System.Drawing.Point(12, 118);
+            this.Txt_PrecioM.Name = "Txt_PrecioM";
+            this.Txt_PrecioM.Size = new System.Drawing.Size(222, 29);
+            this.Txt_PrecioM.TabIndex = 44;
             // 
             // label35
             // 
@@ -994,35 +1021,20 @@
             this.textBox1.Size = new System.Drawing.Size(222, 29);
             this.textBox1.TabIndex = 44;
             // 
-            // Btn_ModificarI
+            // Btn_ModificarP
             // 
-            this.Btn_ModificarI.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Btn_ModificarI.BackColor = System.Drawing.Color.White;
-            this.Btn_ModificarI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_ModificarI.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_ModificarI.ForeColor = System.Drawing.Color.Black;
-            this.Btn_ModificarI.Location = new System.Drawing.Point(9, 331);
-            this.Btn_ModificarI.Name = "Btn_ModificarI";
-            this.Btn_ModificarI.Size = new System.Drawing.Size(233, 49);
-            this.Btn_ModificarI.TabIndex = 51;
-            this.Btn_ModificarI.Text = "Modificar Precio";
-            this.Btn_ModificarI.UseVisualStyleBackColor = false;
-            this.Btn_ModificarI.Click += new System.EventHandler(this.Btn_ModificarI_Click);
-            // 
-            // btn_BorrarI
-            // 
-            this.btn_BorrarI.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btn_BorrarI.BackColor = System.Drawing.Color.White;
-            this.btn_BorrarI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_BorrarI.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_BorrarI.ForeColor = System.Drawing.Color.Black;
-            this.btn_BorrarI.Location = new System.Drawing.Point(9, 393);
-            this.btn_BorrarI.Name = "btn_BorrarI";
-            this.btn_BorrarI.Size = new System.Drawing.Size(234, 48);
-            this.btn_BorrarI.TabIndex = 50;
-            this.btn_BorrarI.Text = "Borrar";
-            this.btn_BorrarI.UseVisualStyleBackColor = false;
-            this.btn_BorrarI.Click += new System.EventHandler(this.btn_BorrarI_Click);
+            this.Btn_ModificarP.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Btn_ModificarP.BackColor = System.Drawing.Color.White;
+            this.Btn_ModificarP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ModificarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_ModificarP.ForeColor = System.Drawing.Color.Black;
+            this.Btn_ModificarP.Location = new System.Drawing.Point(9, 331);
+            this.Btn_ModificarP.Name = "Btn_ModificarP";
+            this.Btn_ModificarP.Size = new System.Drawing.Size(233, 49);
+            this.Btn_ModificarP.TabIndex = 51;
+            this.Btn_ModificarP.Text = "Modificar Precio";
+            this.Btn_ModificarP.UseVisualStyleBackColor = false;
+            this.Btn_ModificarP.Click += new System.EventHandler(this.Btn_ModificarI_Click);
             // 
             // txt_BuscarMatricula
             // 
@@ -1105,6 +1117,7 @@
             this.Dgv_Inventario.Name = "Dgv_Inventario";
             this.Dgv_Inventario.Size = new System.Drawing.Size(524, 443);
             this.Dgv_Inventario.TabIndex = 45;
+            this.Dgv_Inventario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Inventario_CellClick);
             // 
             // Txt_BuscarM
             // 
@@ -1123,9 +1136,9 @@
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.label25.Location = new System.Drawing.Point(7, 242);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(170, 20);
+            this.label25.Size = new System.Drawing.Size(193, 20);
             this.label25.TabIndex = 48;
-            this.label25.Text = "Modelo del Vehiculo";
+            this.label25.Text = "Nombre del Comprador";
             // 
             // label26
             // 
@@ -1200,6 +1213,8 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label17);
+            this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.lbl_GastosT);
             this.panel2.Controls.Add(this.label14);
@@ -1210,6 +1225,28 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(292, 239);
             this.panel2.TabIndex = 26;
+            // 
+            // label17
+            // 
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(-1, 46);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(40, 42);
+            this.label17.TabIndex = 27;
+            this.label17.Text = "$";
+            // 
+            // label16
+            // 
+            this.label16.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(-1, 169);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(40, 42);
+            this.label16.TabIndex = 23;
+            this.label16.Text = "$";
             // 
             // label13
             // 
@@ -1227,7 +1264,7 @@
             this.lbl_GastosT.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_GastosT.AutoSize = true;
             this.lbl_GastosT.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_GastosT.Location = new System.Drawing.Point(125, 174);
+            this.lbl_GastosT.Location = new System.Drawing.Point(87, 174);
             this.lbl_GastosT.Name = "lbl_GastosT";
             this.lbl_GastosT.Size = new System.Drawing.Size(36, 37);
             this.lbl_GastosT.TabIndex = 26;
@@ -1249,7 +1286,7 @@
             this.lbl_IngresosT.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_IngresosT.AutoSize = true;
             this.lbl_IngresosT.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_IngresosT.Location = new System.Drawing.Point(125, 51);
+            this.lbl_IngresosT.Location = new System.Drawing.Point(84, 51);
             this.lbl_IngresosT.Name = "lbl_IngresosT";
             this.lbl_IngresosT.Size = new System.Drawing.Size(36, 37);
             this.lbl_IngresosT.TabIndex = 24;
@@ -1277,6 +1314,7 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.label15);
             this.panel4.Controls.Add(this.lbl_DineroTotal);
             this.panel4.Controls.Add(this.label24);
             this.panel4.Location = new System.Drawing.Point(13, 311);
@@ -1284,16 +1322,27 @@
             this.panel4.Size = new System.Drawing.Size(292, 130);
             this.panel4.TabIndex = 25;
             // 
+            // label15
+            // 
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(1, 50);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(52, 55);
+            this.label15.TabIndex = 22;
+            this.label15.Text = "$";
+            // 
             // lbl_DineroTotal
             // 
             this.lbl_DineroTotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_DineroTotal.AutoSize = true;
-            this.lbl_DineroTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_DineroTotal.Location = new System.Drawing.Point(125, 57);
+            this.lbl_DineroTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_DineroTotal.Location = new System.Drawing.Point(84, 59);
             this.lbl_DineroTotal.Name = "lbl_DineroTotal";
-            this.lbl_DineroTotal.Size = new System.Drawing.Size(57, 39);
+            this.lbl_DineroTotal.Size = new System.Drawing.Size(40, 42);
             this.lbl_DineroTotal.TabIndex = 21;
-            this.lbl_DineroTotal.Text = "$0";
+            this.lbl_DineroTotal.Text = "0";
             // 
             // label24
             // 
@@ -1319,24 +1368,48 @@
             this.lbl_Lista_Vacia.Text = "LISTA VACIA";
             this.lbl_Lista_Vacia.Visible = false;
             // 
-            // Dtv_AutosCliente
+            // label18
             // 
-            this.Dtv_AutosCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dtv_AutosCliente.Location = new System.Drawing.Point(258, 304);
-            this.Dtv_AutosCliente.Name = "Dtv_AutosCliente";
-            this.Dtv_AutosCliente.Size = new System.Drawing.Size(523, 140);
-            this.Dtv_AutosCliente.TabIndex = 57;
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(12, 43);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(97, 20);
+            this.label18.TabIndex = 63;
+            this.label18.Text = "Id del Auto";
             // 
-            // label12
+            // Txt_ID_Auto
             // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(422, 260);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(212, 29);
-            this.label12.TabIndex = 58;
-            this.label12.Text = "Autos del Cliente";
+            this.Txt_ID_Auto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_ID_Auto.Location = new System.Drawing.Point(12, 66);
+            this.Txt_ID_Auto.Name = "Txt_ID_Auto";
+            this.Txt_ID_Auto.Size = new System.Drawing.Size(222, 29);
+            this.Txt_ID_Auto.TabIndex = 62;
+            // 
+            // Btn_ModificarPA
+            // 
+            this.Btn_ModificarPA.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Btn_ModificarPA.BackColor = System.Drawing.Color.White;
+            this.Btn_ModificarPA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_ModificarPA.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_ModificarPA.ForeColor = System.Drawing.Color.Black;
+            this.Btn_ModificarPA.Location = new System.Drawing.Point(60, 159);
+            this.Btn_ModificarPA.Name = "Btn_ModificarPA";
+            this.Btn_ModificarPA.Size = new System.Drawing.Size(121, 32);
+            this.Btn_ModificarPA.TabIndex = 64;
+            this.Btn_ModificarPA.Text = "Modificar ";
+            this.Btn_ModificarPA.UseVisualStyleBackColor = false;
+            this.Btn_ModificarPA.Click += new System.EventHandler(this.Btn_ModificarPA_Click);
+            // 
+            // TxT_CompradorID
+            // 
+            this.TxT_CompradorID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxT_CompradorID.Location = new System.Drawing.Point(0, 422);
+            this.TxT_CompradorID.Name = "TxT_CompradorID";
+            this.TxT_CompradorID.Size = new System.Drawing.Size(10, 29);
+            this.TxT_CompradorID.TabIndex = 65;
+            this.TxT_CompradorID.Visible = false;
             // 
             // Gerencia
             // 
@@ -1366,6 +1439,7 @@
             this.Panel_ModificarCliente.ResumeLayout(false);
             this.Panel_ModificarCliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Btn_Volver)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dtv_AutosCliente)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dtv_Clientes)).EndInit();
@@ -1393,7 +1467,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Dtv_AutosCliente)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1475,9 +1548,8 @@
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Button Btn_ModificarI;
-        private System.Windows.Forms.Button btn_BorrarI;
+        private System.Windows.Forms.TextBox Txt_PrecioM;
+        private System.Windows.Forms.Button Btn_ModificarP;
         private System.Windows.Forms.TextBox txt_BuscarMatricula;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label42;
@@ -1502,5 +1574,12 @@
         private System.Windows.Forms.Label lbl_Lista_Vacia;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridView Dtv_AutosCliente;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button Btn_ModificarPA;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox Txt_ID_Auto;
+        private System.Windows.Forms.TextBox TxT_CompradorID;
     }
 }

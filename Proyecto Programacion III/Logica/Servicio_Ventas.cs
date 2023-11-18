@@ -16,9 +16,18 @@ namespace Logica2
         {
             repositorio_Ventas = new Repositorio_Ventas(conexion);
         }
+        public void Insertar(Ventas ventas)
+        {
+            repositorio_Ventas.Insert(ventas);
+        }
         public List<Ventas> GetAll()
         {
             return repositorio_Ventas.GetAll();
         }
+        public List<Ventas> GetAbyAuto_Clientes(string comprador)
+        {
+            return repositorio_Ventas.GetByAuto_Cliente(comprador);
+        }
+
     }
 }

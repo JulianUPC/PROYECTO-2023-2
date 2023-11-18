@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auto.cs" />
-    <Compile Include="Autos_de_Clientes.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Concesionario.cs" />
     <Compile Include="Empleado.cs" />

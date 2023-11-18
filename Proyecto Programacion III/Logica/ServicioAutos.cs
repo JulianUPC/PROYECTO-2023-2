@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Logica2
 {
@@ -16,28 +17,25 @@ namespace Logica2
         Datos.repositorioFinanzas repositorioFinanzas;
         Inventario inventario = new Inventario();
         Finanzas finanzas = new Finanzas();
-        Auto auto;
-        Autos_de_Clientes autos_De_Clientes;
+        Auto auto = new Auto();
+        Servicio_Inventario servicio_Inventario;
+        Servicio_Finanzas servicio_Finanzas;
         public ServicioAutos(string conexion)
         {
             repositorioAutos = new RepositorioAuto(conexion);
         }
-        public void ObtenerIdentificacion(string usuario)
+        public void Insertar(Auto auto)
         {
-
+            //POR SI EN UN FUTURO SE QUIERE INCLUIR MAS AUTOS
         }
-        public void Insertar(Auto Entidad)
+        public void Update(string id,Auto auto)
         {
-            
+            repositorioAutos.Update(id,auto);
         }
-        public void Update(string id,Auto Entidad)
+        public void Delete(Auto auto)
         {
-
+            //POR SI EN UN FUTURO SE QUIERE ELIMINAR AUTOS
         }
-        public void Delete(Auto Entidad)
-        {
-
-        }   
         public int ContarAutos() 
         {
             int total_autos = 0;
@@ -73,59 +71,102 @@ namespace Logica2
                 return null;
             }
         }
+        public void ActualizarPrecio(TextBox id_auto,TextBox precio)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(id_auto.Text) || string.IsNullOrEmpty(precio.Text))
+                {
+                    MessageBox.Show("Llene todo los campos para poder modificar");
+                }
+                else
+                {
+                    auto.Precio_Venta = int.Parse(precio.Text);
+                    Update(id_auto.Text, auto);
+                    MessageBox.Show("Precio Actualizado Correctamente");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Id del vehiculo no Encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
 
+        }
         public string Generar_Matricula()
         {
             for (int i = 0; i < 10; i++)
             {
                 Random randomChar = new Random();
                 char[] letras = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
-                string matriculaRandom = randomChar.Next(10, 99) + "-" + letras[randomChar.Next(26)].ToString() + letras[randomChar.Next(26)].ToString() + "-" + randomChar.Next(10, 99);
+                string matriculaRandom = letras[randomChar.Next(26)].ToString() + letras[randomChar.Next(26)].ToString() + letras[randomChar.Next(26)].ToString() + "-" + randomChar.Next(100, 999);
 
                 return matriculaRandom;
             }
 
             return Generar_Matricula().ToString();
         }
-        public void Comprar_Auto(string modo_gerente,string id_auto,int precio,int saldo)
-        {            
-            if (modo_gerente == "Gerente")
+        public bool Comprobar_Saldo(int saldo,int precio)
+        {
+            int total = saldo - precio;
+            if(total < 0)
             {
-                foreach(var item in repositorioAutos.GetAll())
-                {
-                    inventario.Fecha_Compra = DateTime.Now;
-                    inventario.Matricula = Generar_Matricula();
-                    inventario.Nombre_Auto = item.Nombre_Auto;
-                    inventario.Precio_Venta = item.Precio_Venta;
-                    inventario.Modelo = item.Modelo;
-                    inventario.Categoria = item.Categoria;
-                    inventario.Motor = item.Motor;
-                    inventario.Potencia = item.Potencia;
-                    inventario.Valvulas = item.Valvulas;
-                    inventario.Asientos = item.Asientos;
-                    inventario.Sistema_Combustible = item.Sistema_Combustible;
-                    inventario.Tipo_Transmision = item.Tipo_Transmision;
-                    inventario.Id_Auto = item.Id_Auto;   
-                    finanzas.Nombre_Auto = item.Nombre_Auto;
-                }
-                finanzas.Tipo = "Compra de Auto";
-                finanzas.Monto_Total = saldo - precio;
-                finanzas.Fecha_Gasto = DateTime.Now;
-                finanzas.Monto_Gasto = precio;
-                repositorioInventario.Insert(inventario);
-                repositorioFinanzas.Insert(finanzas);
-                
+                return false;
             }
             else
             {
-
+                return true;
             }
         }
-        public bool Modo_Gerente(bool permiso)
+        //MENSAJES
+        public bool MensajeInciciarSesion(Form login)
         {
-            bool Acceso;
-            Acceso = permiso;
-            return Acceso;
+            DialogResult Resultado = MessageBox.Show("Para comprar un vehiculo necesita Iniciar Sesion \n                      ¿Desea Iniciar Sesion? ", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (Resultado == DialogResult.Yes)
+            {
+                login.Show();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool Mensaje_Comprar()
+        {
+            DialogResult Resultado = MessageBox.Show("Desea Comprar este Auto?","Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (Resultado == DialogResult.Yes)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool Mensaje_Salir()
+        {
+            DialogResult Resultado = MessageBox.Show("Esta sesion se cerrara \n ¿Seguro Desea Salir? ", "Cerrar Sesion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (Resultado == DialogResult.Yes)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        //FIN MENSAJES
+        public bool Comprar_Auto(string modo_gerente)
+        {
+            if (modo_gerente == "Gerente")
+            {
+                return true;                        
+            }
+            else
+            {
+                return false;
+            }
         }
         public List<Auto> GetAll()
         {

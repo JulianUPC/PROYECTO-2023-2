@@ -14,19 +14,17 @@ namespace Concesionario_J_M
 {
     public partial class Gerencia : Form
     {
-        ServicioAutos servicioAutos = new ServicioAutos(configConnnection.ConnectionString);
         Servicio_Ventas servicioVentas = new Servicio_Ventas(configConnnection.ConnectionString);
         Servicio_Finanzas servicioFinanzas = new Servicio_Finanzas(configConnnection.ConnectionString);
         Servicio_Empleado servicioEmpleado = new Servicio_Empleado(configConnnection.ConnectionString);
         ServicioClientes servicioClientes = new ServicioClientes(configConnnection.ConnectionString);
         Servicio_Inventario servicio_Inventario = new Servicio_Inventario(configConnnection.ConnectionString);
-        Servicio_Autos_de_Clientes servicio_Autos_De_Clientes = new Servicio_Autos_de_Clientes(configConnnection.ConnectionString);
+        ServicioAutos servicioAutos = new ServicioAutos(configConnnection.ConnectionString);
         Empleado empleados = new Empleado();
         public Gerencia()
         {
             InitializeComponent();
-            Contadores();
-            Cargar_Tablas();
+            Actualizar();
         }
         //ABRIR Y CERRAR PANELES DEPENDIENDO LA OPCION
         //PANEL CLIENTES
@@ -139,17 +137,21 @@ namespace Concesionario_J_M
 
         private void Btn_Salir_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
-            login.Show();
-            this.Close();
+            if (servicioAutos.Mensaje_Salir() == true)
+            {
+                Login login = new Login();
+                login.Show();
+                this.Close();
+            }            
         }
         
         private void Btn_Comprar_Click(object sender, EventArgs e)
         {
             Autos autos = new Autos();
+            autos.ActivarLabelGerente();
             autos.Show();
             this.Close();          
-            autos.ActivarLabelGerente();
+            
         }
 
         private void Txt_BuscarID_KeyPress(object sender, KeyPressEventArgs e)
@@ -160,18 +162,19 @@ namespace Concesionario_J_M
         private void Btn_ConfModificar_Click(object sender, EventArgs e)
         {
             servicioClientes.ActualizarInfo(Txt_ModNombre, Txt_ModTelefono, Txt_ModDireccion,Txt_ModPresupuesto,Txt_ModCorreo,Txt_BuscarID);
+            Actualizar();
         }
 
         private void Btn_Borrar_Click(object sender, EventArgs e)
         {
             servicioClientes.Delete(Txt_BuscarID);
-            Contadores();
+            Actualizar();
         }
 
         private void Btn_BorrarEmp_Click(object sender, EventArgs e)
         {
             servicioEmpleado.Delete(txt_IDEmpleado);
-            Contadores();
+            Actualizar();
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
@@ -191,7 +194,9 @@ namespace Concesionario_J_M
             empleados.Fecha_Ingreso = DateTime.Now;
             empleados.Pago_Mes = 2000;
             empleados.Monto_Comision = 0;
+            empleados.Cargo = "Empleado";
             servicioEmpleado.Registrar(empleados);
+            Actualizar();
         }
 
         public void Cargar_Tablas()
@@ -201,7 +206,17 @@ namespace Concesionario_J_M
             Dtv_IngresosyGastos.DataSource = servicioFinanzas.GetAll();
             Dgv_Ventas.DataSource = servicioVentas.GetAll();
             Dgv_Inventario.DataSource = servicio_Inventario.GetAll();   
-            Dtv_AutosCliente.DataSource = servicio_Autos_De_Clientes.GetAll();
+            Dtv_Clientes.ReadOnly = true;
+            Dtv_Empleados.ReadOnly = true;
+            Dtv_IngresosyGastos.ReadOnly = true;
+            Dgv_Ventas.ReadOnly = true;
+            Dgv_Inventario.ReadOnly = true;
+            Dtv_AutosCliente.ReadOnly = true;
+        }
+        public void Actualizar()
+        {
+            Contadores();
+            Cargar_Tablas();
         }
 
         private void txt_IDEmpleado_KeyPress(object sender, KeyPressEventArgs e)
@@ -211,7 +226,30 @@ namespace Concesionario_J_M
 
         private void Txt_BuscarM_KeyPress(object sender, KeyPressEventArgs e)
         {
+            
+        }
 
+        private void Btn_ModificarPA_Click(object sender, EventArgs e)
+        {
+            servicioAutos.ActualizarPrecio(Txt_ID_Auto,Txt_PrecioM);
+            Actualizar();
+        }
+
+        private void Dtv_Clientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            servicioClientes.Buscar_Tablas(Txt_BuscarID, Dtv_Clientes, "N_Identificacion", e);
+            servicioClientes.Buscar_Tablas(TxT_CompradorID, Dtv_Clientes, "Id_Cliente", e);
+            Dtv_AutosCliente.DataSource = servicioVentas.GetAbyAuto_Clientes(TxT_CompradorID.Text);
+        }
+
+        private void Dtv_Empleados_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            servicioClientes.Buscar_Tablas(txt_IDEmpleado, Dtv_Empleados, "ID_Empleado", e);
+        }
+
+        private void Dgv_Inventario_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            servicioClientes.Buscar_Tablas(txt_BuscarMatricula, Dgv_Inventario, "Matricula", e);
         }
     }
 }

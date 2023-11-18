@@ -26,13 +26,13 @@ namespace Logica2
         {
             repositorioEmpleados.Insert(empleado);
         }
-        public void Update(string id, Empleado Entidad)
+        public void Update(string id, Empleado empleado)
         {
-
+            repositorioEmpleados.Update(id,empleado);
         }
         public void Delete(Empleado empleado)
         {
-
+            repositorioEmpleados.Delete(empleado);
         }
         public void Registrar(Empleado empleado)
         {
@@ -74,29 +74,46 @@ namespace Logica2
                 if (item.ID_Empleado.Equals(empleado.ID_Empleado))
                 {
                     Verificar = true;
-                    if (item.N_identificacion.Equals(empleado.N_identificacion))
-                    {
-                        Verificar = true;
-                    }                   
+                }
+                if (item.N_identificacion.Equals(empleado.N_identificacion))
+                {
+                    Verificar = true;
                 }
             }
             if(Verificar == true)
             {
-                MessageBox.Show("Este Empleado ya se encuentra Registrado");
+                MessageBox.Show("ID / Numero de identificacion del empleado ya se encuentra registrado","Error al Registrar",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             return Verificar;
+        } 
+        public bool Mensaje_Despido()
+        {
+           DialogResult mensaje = MessageBox.Show("Seguro quiere despedir a este empleado?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if(mensaje == DialogResult.Yes)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         public void Delete(TextBox id)
         {
+                
             foreach (var item in GetAll())
             {
                 if (item.ID_Empleado.Equals(id.Text))
                 {
-                    empleado.ID_Empleado = item.ID_Empleado;
-                    repositorioEmpleados.Delete(empleado);
-                    MessageBox.Show("Empleado Despedido");
+                     if (Mensaje_Despido() == true)
+                     {
+                         empleado.ID_Empleado = item.ID_Empleado;
+                         repositorioEmpleados.Delete(empleado);
+                         MessageBox.Show("Empleado Despedido");
+                     }
                 }
-            }
+            }               
+                           
         }
         public int ContarEmpleados()
         {
@@ -107,6 +124,37 @@ namespace Logica2
             }
             return total_empleados;
         }
+        public string Obtener_Empleado()
+        {
+           Random random = new Random();
+           List<Empleado> empleados = GetAll();
+           Empleado empleadoazar = empleados.OrderBy(emp => random.Next()).FirstOrDefault();
+           if(empleadoazar == null)
+           {
+                MessageBox.Show("No se encontraron Vendedores que te puedan atender\nPor favor, informa al ascesor de contratar empleados.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return "Sin Vendedor Disponible";
+           }
+           else if (empleadoazar.Cargo == "Gerente")
+           {
+              Obtener_Empleado();
+           }
+            return empleadoazar.Nombre_Completo;
+        }
+        public void Añadir_Comision(string nombre_empleado,int auto_vendido)
+        {
+            foreach(var item in GetAll())
+            {
+                if (item.Nombre_Completo.Equals(nombre_empleado))
+                {       
+                    item.Monto_Comision = item.Monto_Comision + empleado.Calcular_MontoComision(auto_vendido);
+                    item.Pago_Mes = item.Pago_Mes + item.Monto_Comision;
+                    Update(item.ID_Empleado.ToString(),item);
+                }
+                  
+            }
+        }
+
+
         public List<Empleado> GetAll()
         {
             return repositorioEmpleados.GetAll();
@@ -116,4 +164,5 @@ namespace Logica2
             return repositorioEmpleados.GetBy(Columna, Doc);
         }
     }
+
 }

@@ -18,10 +18,11 @@ namespace Datos
         {
             using (var Comando = conexion.CreateCommand())
             {
-                Comando.CommandText = "Insert into Inventario (Fecha_Compra,Nombre_Auto,Precio,Modelo,Categoria,Motor,Potencia,Valvulas,Asientos,Sistema_Combustible,Tipo_Transmision) values (@Fecha_Compra,@Nombre_Auto,@Precio,@Modelo,@Categoria,@Motor,@Potencia,@Valvulas,@Asientos,@Sistema_Combustible,@Tipo_Transmision)";
+                Comando.CommandText = "Insert into Inventario (Fecha_Compra,Matricula,Nombre_Auto,Precio_Venta,Modelo,Categoria,Motor,Potencia,Valvulas,Asientos,Sistema_Combustible,Tipo_Transmision,Id_Auto) values (@Fecha_Compra,@Matricula,@Nombre_Auto,@Precio_Venta,@Modelo,@Categoria,@Motor,@Potencia,@Valvulas,@Asientos,@Sistema_Combustible,@Tipo_Transmision,@Id_Auto)";
                 Comando.Parameters.Add("@Fecha_Compra", SqlDbType.DateTime).Value = inventario.Fecha_Compra;
+                Comando.Parameters.Add("@Matricula", SqlDbType.VarChar).Value = inventario.Matricula;
                 Comando.Parameters.Add("@Nombre_Auto", SqlDbType.VarChar).Value = inventario.Nombre_Auto;
-                Comando.Parameters.Add("@Precio", SqlDbType.Int).Value = inventario.Precio_Venta;
+                Comando.Parameters.Add("@Precio_Venta", SqlDbType.Int).Value = inventario.Precio_Venta;
                 Comando.Parameters.Add("@Modelo", SqlDbType.VarChar).Value = inventario.Modelo;
                 Comando.Parameters.Add("@Categoria", SqlDbType.VarChar).Value = inventario.Categoria;
                 Comando.Parameters.Add("@Motor", SqlDbType.VarChar).Value = inventario.Motor;
@@ -30,7 +31,7 @@ namespace Datos
                 Comando.Parameters.Add("@Asientos", SqlDbType.VarChar).Value = inventario.Asientos;
                 Comando.Parameters.Add("@Sistema_Combustible", SqlDbType.VarChar).Value = inventario.Sistema_Combustible;
                 Comando.Parameters.Add("@Tipo_Transmision", SqlDbType.VarChar).Value = inventario.Tipo_Transmision;
-
+                Comando.Parameters.Add("@Id_Auto", SqlDbType.VarChar).Value = inventario.Id_Auto;
                 Open();
                 Comando.ExecuteNonQuery();
                 Close();
@@ -44,7 +45,14 @@ namespace Datos
 
         public void Delete(Inventario inventario)
         {
-
+            using (var Comando = conexion.CreateCommand())
+            {
+                Comando.CommandText = "Delete FROM Inventario WHERE Matricula = @Matricula;";
+                Comando.Parameters.Add("Matricula", SqlDbType.VarChar).Value = inventario.Matricula;
+                Open();
+                Comando.ExecuteNonQuery();
+                Close();
+            }
         }
 
             private Inventario Mapeador_inventario(SqlDataReader dataReader)
