@@ -18,7 +18,7 @@ namespace Datos
         {
             using (var Comando = conexion.CreateCommand())
             {
-                Comando.CommandText = "Insert into Ventas (Id_Cliente,Nombre_Vendedor,Comprador,Fecha_Vendido,Precio_Vendido,Id_Auto,Matricula,Nombre_Auto,Categoria,Motor,Potencia,Sistema_Combustible,Tipo_Transmision) values (@Id_Cliente,@Comprador,@Nombre_Vendedor,@Fecha_Vendido,@Precio_Vendido,@Id_Auto,@Matricula,@Nombre_Auto,@Categoria,@Motor,@Potencia,@Sistema_Combustible,@Tipo_Transmision)";
+                Comando.CommandText = "Insert into Ventas (Id_Cliente,Comprador,Nombre_Vendedor,Fecha_Vendido,Precio_Vendido,Id_Auto,Matricula,Nombre_Auto,Categoria,Motor,Potencia,Sistema_Combustible,Tipo_Transmision) values (@Id_Cliente,@Comprador,@Nombre_Vendedor,@Fecha_Vendido,@Precio_Vendido,@Id_Auto,@Matricula,@Nombre_Auto,@Categoria,@Motor,@Potencia,@Sistema_Combustible,@Tipo_Transmision)";
                 Comando.Parameters.Add("@Id_Cliente", SqlDbType.VarChar).Value = ventas.Id_Cliente;
                 Comando.Parameters.Add("@Comprador", SqlDbType.VarChar).Value = ventas.Comprador;
                 Comando.Parameters.Add("@Nombre_Vendedor", SqlDbType.VarChar).Value = ventas.Nombre_Vendedor;
@@ -41,39 +41,39 @@ namespace Datos
         private Ventas Mapeador_Ventas(SqlDataReader dataReader)
         {
             if (!dataReader.HasRows) return null;
-            Ventas clienteLog = new Ventas();
-            clienteLog.Id_Cliente = dataReader.GetString(0);
-            clienteLog.Comprador = dataReader.GetString(1);
-            clienteLog.Nombre_Vendedor  = dataReader.GetString(2);
-            clienteLog.Fecha_Vendido = dataReader.GetDateTime(3);
-            clienteLog.Precio_Venta = dataReader.GetInt32(4);
-            clienteLog.Id_Auto = dataReader.GetString(5);
-            clienteLog.Matricula = dataReader.GetString(6);
-            clienteLog.Nombre_Auto = dataReader.GetString(7);
-            clienteLog.Categoria = dataReader.GetString(8);
-            clienteLog.Motor = dataReader.GetString(9); 
-            clienteLog.Potencia = dataReader.GetString(10);
-            clienteLog.Sistema_Combustible = dataReader.GetString(11);
-            clienteLog.Tipo_Transmision = dataReader.GetString(12);
+            Ventas VentasLog = new Ventas();
+            VentasLog.Id_Cliente = dataReader.GetString(0);
+            VentasLog.Comprador = dataReader.GetString(1);
+            VentasLog.Nombre_Vendedor  = dataReader.GetString(2);
+            VentasLog.Fecha_Vendido = dataReader.GetDateTime(3);
+            VentasLog.Precio_Venta = dataReader.GetInt32(4);
+            VentasLog.Id_Auto = dataReader.GetString(5);
+            VentasLog.Matricula = dataReader.GetString(6);
+            VentasLog.Nombre_Auto = dataReader.GetString(7);
+            VentasLog.Categoria = dataReader.GetString(8);
+            VentasLog.Motor = dataReader.GetString(9);
+            VentasLog.Potencia = dataReader.GetString(10);
+            VentasLog.Sistema_Combustible = dataReader.GetString(11);
+            VentasLog.Tipo_Transmision = dataReader.GetString(12);
 
-            return clienteLog;
+            return VentasLog;
         }
         private Ventas Mapeador_Auto_Cliente(SqlDataReader dataReader)
         {
             if (!dataReader.HasRows) return null;
-            Ventas clienteLog = new Ventas();
-            clienteLog.Nombre_Vendedor = dataReader.GetString(0);
-            clienteLog.Fecha_Vendido = dataReader.GetDateTime(1);
-            clienteLog.Precio_Venta = dataReader.GetInt32(2);
-            clienteLog.Matricula = dataReader.GetString(3);
-            clienteLog.Nombre_Auto = dataReader.GetString(4);
-            clienteLog.Categoria = dataReader.GetString(5);
-            clienteLog.Motor = dataReader.GetString(6);
-            clienteLog.Potencia = dataReader.GetString(7);
-            clienteLog.Sistema_Combustible = dataReader.GetString(8);
-            clienteLog.Tipo_Transmision = dataReader.GetString(9);
+            Ventas VentasLog = new Ventas();
+            VentasLog.Nombre_Vendedor = dataReader.GetString(0);
+            VentasLog.Fecha_Vendido = dataReader.GetDateTime(1);
+            VentasLog.Precio_Venta = dataReader.GetInt32(2);
+            VentasLog.Matricula = dataReader.GetString(3);
+            VentasLog.Nombre_Auto = dataReader.GetString(4);
+            VentasLog.Categoria = dataReader.GetString(5);
+            VentasLog.Motor = dataReader.GetString(6);
+            VentasLog.Potencia = dataReader.GetString(7);
+            VentasLog.Sistema_Combustible = dataReader.GetString(8);
+            VentasLog.Tipo_Transmision = dataReader.GetString(9);
 
-            return clienteLog;
+            return VentasLog;
         }
         public List<Ventas> GetAll()
         {
@@ -89,19 +89,33 @@ namespace Datos
             Close();
             return ventas;
         }
-        public List<Ventas> GetByAuto_Cliente(string comprador)
+        public DataTable GetAllTabla_Auto_Cliente(string comprador)
         {
-            List<Ventas> ventas = new List<Ventas>();
-            var comando = conexion.CreateCommand();
-            comando.CommandText = "SELECT Fecha_Vendido,Precio_Vendido,Matricula,Nombre_Auto,Categoria,Motor,Potencia,Sistema_Combustible,Tipo_Transmision FROM VENTAS where Id_Cliente = '"+comprador+"';";
             Open();
-            SqlDataReader lector = comando.ExecuteReader();
-            while (lector.Read())
-            {
-                ventas.Add(Mapeador_Auto_Cliente(lector));
-            }
+            SqlCommand comando = conexion.CreateCommand();
+            comando.CommandType = CommandType.Text;
+            comando.CommandText = "SELECT Nombre_Vendedor,Fecha_Vendido,Precio_Vendido,Matricula,Nombre_Auto,Categoria,Motor,Potencia,Sistema_Combustible,Tipo_Transmision FROM VENTAS where Id_Cliente = '" + comprador + "';";
+            comando.ExecuteNonQuery();
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(comando);
+            dataAdapter.Fill(dt);
             Close();
-            return ventas;
+            return dt;
+        }
+        public DataTable GetAllTabla()
+        {
+            Open();
+            SqlCommand comando = conexion.CreateCommand();
+            comando.CommandType = CommandType.Text;
+            comando.CommandText = "SELECT * FROM VENTAS";
+            comando.ExecuteNonQuery();
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(comando);
+            dataAdapter.Fill(dt);
+            Close();
+            return dt;
         }
     }
 }

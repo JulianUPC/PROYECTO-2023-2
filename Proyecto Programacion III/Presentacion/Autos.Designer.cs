@@ -185,21 +185,21 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.lbl_NombreV = new System.Windows.Forms.Label();
             this.Panel_Detalles = new System.Windows.Forms.Panel();
+            this.Panel_ProcesoC = new System.Windows.Forms.Panel();
+            this.Btn_Cerrar = new System.Windows.Forms.Button();
+            this.Pict_CompraCmpt = new System.Windows.Forms.PictureBox();
+            this.Llb_CompraCmpt = new System.Windows.Forms.Label();
+            this.Lbl_Empleado = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.Lbl_Punto3 = new System.Windows.Forms.Label();
+            this.Lbl_Punto2 = new System.Windows.Forms.Label();
+            this.Lbl_Punto1 = new System.Windows.Forms.Label();
+            this.Lbl_Comprando = new System.Windows.Forms.Label();
+            this.Pict_Logo = new System.Windows.Forms.PictureBox();
             this.label15 = new System.Windows.Forms.Label();
             this.lbl_Id_Auto = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.Panel_ProcesoC = new System.Windows.Forms.Panel();
-            this.Pict_Logo = new System.Windows.Forms.PictureBox();
-            this.Lbl_Comprando = new System.Windows.Forms.Label();
-            this.Lbl_Punto1 = new System.Windows.Forms.Label();
-            this.Lbl_Punto2 = new System.Windows.Forms.Label();
-            this.Lbl_Punto3 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.Lbl_Empleado = new System.Windows.Forms.Label();
-            this.Llb_CompraCmpt = new System.Windows.Forms.Label();
-            this.Pict_CompraCmpt = new System.Windows.Forms.PictureBox();
-            this.Btn_Cerrar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Btn_Volver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -249,11 +249,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.Panel_Detalles.SuspendLayout();
+            this.Panel_ProcesoC.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Pict_CompraCmpt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pict_Logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.Panel_ProcesoC.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Pict_Logo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pict_CompraCmpt)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -309,7 +309,7 @@
             this.lbl_DineroDisp.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lbl_DineroDisp.AutoSize = true;
             this.lbl_DineroDisp.Font = new System.Drawing.Font("HoloLens MDL2 Assets", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_DineroDisp.Location = new System.Drawing.Point(212, 73);
+            this.lbl_DineroDisp.Location = new System.Drawing.Point(211, 74);
             this.lbl_DineroDisp.Name = "lbl_DineroDisp";
             this.lbl_DineroDisp.Size = new System.Drawing.Size(18, 21);
             this.lbl_DineroDisp.TabIndex = 40;
@@ -2178,6 +2178,154 @@
             this.Panel_Detalles.TabIndex = 28;
             this.Panel_Detalles.Visible = false;
             // 
+            // Panel_ProcesoC
+            // 
+            this.Panel_ProcesoC.Controls.Add(this.Btn_Cerrar);
+            this.Panel_ProcesoC.Controls.Add(this.Pict_CompraCmpt);
+            this.Panel_ProcesoC.Controls.Add(this.Llb_CompraCmpt);
+            this.Panel_ProcesoC.Controls.Add(this.Lbl_Empleado);
+            this.Panel_ProcesoC.Controls.Add(this.label18);
+            this.Panel_ProcesoC.Controls.Add(this.Lbl_Punto3);
+            this.Panel_ProcesoC.Controls.Add(this.Lbl_Punto2);
+            this.Panel_ProcesoC.Controls.Add(this.Lbl_Punto1);
+            this.Panel_ProcesoC.Controls.Add(this.Lbl_Comprando);
+            this.Panel_ProcesoC.Controls.Add(this.Pict_Logo);
+            this.Panel_ProcesoC.Location = new System.Drawing.Point(137, 78);
+            this.Panel_ProcesoC.Name = "Panel_ProcesoC";
+            this.Panel_ProcesoC.Size = new System.Drawing.Size(538, 225);
+            this.Panel_ProcesoC.TabIndex = 45;
+            this.Panel_ProcesoC.Visible = false;
+            // 
+            // Btn_Cerrar
+            // 
+            this.Btn_Cerrar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Btn_Cerrar.BackColor = System.Drawing.Color.White;
+            this.Btn_Cerrar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Btn_Cerrar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Btn_Cerrar.FlatAppearance.BorderSize = 2;
+            this.Btn_Cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Cerrar.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Cerrar.ForeColor = System.Drawing.Color.Black;
+            this.Btn_Cerrar.Location = new System.Drawing.Point(376, 174);
+            this.Btn_Cerrar.Name = "Btn_Cerrar";
+            this.Btn_Cerrar.Size = new System.Drawing.Size(148, 39);
+            this.Btn_Cerrar.TabIndex = 46;
+            this.Btn_Cerrar.Text = "Cerrar";
+            this.Btn_Cerrar.UseVisualStyleBackColor = false;
+            this.Btn_Cerrar.Visible = false;
+            this.Btn_Cerrar.Click += new System.EventHandler(this.Btn_Cerrar_Click);
+            // 
+            // Pict_CompraCmpt
+            // 
+            this.Pict_CompraCmpt.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Pict_CompraCmpt.Image = ((System.Drawing.Image)(resources.GetObject("Pict_CompraCmpt.Image")));
+            this.Pict_CompraCmpt.Location = new System.Drawing.Point(0, 50);
+            this.Pict_CompraCmpt.Name = "Pict_CompraCmpt";
+            this.Pict_CompraCmpt.Size = new System.Drawing.Size(148, 130);
+            this.Pict_CompraCmpt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Pict_CompraCmpt.TabIndex = 53;
+            this.Pict_CompraCmpt.TabStop = false;
+            this.Pict_CompraCmpt.Visible = false;
+            // 
+            // Llb_CompraCmpt
+            // 
+            this.Llb_CompraCmpt.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Llb_CompraCmpt.AutoSize = true;
+            this.Llb_CompraCmpt.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Llb_CompraCmpt.Location = new System.Drawing.Point(147, 96);
+            this.Llb_CompraCmpt.Name = "Llb_CompraCmpt";
+            this.Llb_CompraCmpt.Size = new System.Drawing.Size(378, 42);
+            this.Llb_CompraCmpt.TabIndex = 52;
+            this.Llb_CompraCmpt.Text = "Compra Completada";
+            this.Llb_CompraCmpt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Llb_CompraCmpt.Visible = false;
+            // 
+            // Lbl_Empleado
+            // 
+            this.Lbl_Empleado.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Lbl_Empleado.AutoSize = true;
+            this.Lbl_Empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Empleado.Location = new System.Drawing.Point(210, 195);
+            this.Lbl_Empleado.Name = "Lbl_Empleado";
+            this.Lbl_Empleado.Size = new System.Drawing.Size(105, 24);
+            this.Lbl_Empleado.TabIndex = 51;
+            this.Lbl_Empleado.Text = "Empleado";
+            this.Lbl_Empleado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label18
+            // 
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(3, 195);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(209, 24);
+            this.label18.TabIndex = 50;
+            this.label18.Text = "Siendo Atendido por:";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Lbl_Punto3
+            // 
+            this.Lbl_Punto3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Lbl_Punto3.AutoSize = true;
+            this.Lbl_Punto3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Punto3.Location = new System.Drawing.Point(400, 96);
+            this.Lbl_Punto3.Name = "Lbl_Punto3";
+            this.Lbl_Punto3.Size = new System.Drawing.Size(29, 42);
+            this.Lbl_Punto3.TabIndex = 49;
+            this.Lbl_Punto3.Text = ".";
+            this.Lbl_Punto3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Lbl_Punto3.Visible = false;
+            // 
+            // Lbl_Punto2
+            // 
+            this.Lbl_Punto2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Lbl_Punto2.AutoSize = true;
+            this.Lbl_Punto2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Punto2.Location = new System.Drawing.Point(376, 96);
+            this.Lbl_Punto2.Name = "Lbl_Punto2";
+            this.Lbl_Punto2.Size = new System.Drawing.Size(29, 42);
+            this.Lbl_Punto2.TabIndex = 48;
+            this.Lbl_Punto2.Text = ".";
+            this.Lbl_Punto2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Lbl_Punto2.Visible = false;
+            // 
+            // Lbl_Punto1
+            // 
+            this.Lbl_Punto1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Lbl_Punto1.AutoSize = true;
+            this.Lbl_Punto1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Punto1.Location = new System.Drawing.Point(355, 96);
+            this.Lbl_Punto1.Name = "Lbl_Punto1";
+            this.Lbl_Punto1.Size = new System.Drawing.Size(29, 42);
+            this.Lbl_Punto1.TabIndex = 47;
+            this.Lbl_Punto1.Text = ".";
+            this.Lbl_Punto1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Lbl_Punto1.Visible = false;
+            // 
+            // Lbl_Comprando
+            // 
+            this.Lbl_Comprando.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Lbl_Comprando.AutoSize = true;
+            this.Lbl_Comprando.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Comprando.Location = new System.Drawing.Point(142, 96);
+            this.Lbl_Comprando.Name = "Lbl_Comprando";
+            this.Lbl_Comprando.Size = new System.Drawing.Size(222, 42);
+            this.Lbl_Comprando.TabIndex = 46;
+            this.Lbl_Comprando.Text = "Comprando";
+            this.Lbl_Comprando.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Pict_Logo
+            // 
+            this.Pict_Logo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Pict_Logo.Image = ((System.Drawing.Image)(resources.GetObject("Pict_Logo.Image")));
+            this.Pict_Logo.Location = new System.Drawing.Point(0, 0);
+            this.Pict_Logo.Name = "Pict_Logo";
+            this.Pict_Logo.Size = new System.Drawing.Size(120, 74);
+            this.Pict_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Pict_Logo.TabIndex = 46;
+            this.Pict_Logo.TabStop = false;
+            // 
             // label15
             // 
             this.label15.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -2221,154 +2369,6 @@
             this.pictureBox4.Size = new System.Drawing.Size(3, 104);
             this.pictureBox4.TabIndex = 41;
             this.pictureBox4.TabStop = false;
-            // 
-            // Panel_ProcesoC
-            // 
-            this.Panel_ProcesoC.Controls.Add(this.Btn_Cerrar);
-            this.Panel_ProcesoC.Controls.Add(this.Pict_CompraCmpt);
-            this.Panel_ProcesoC.Controls.Add(this.Llb_CompraCmpt);
-            this.Panel_ProcesoC.Controls.Add(this.Lbl_Empleado);
-            this.Panel_ProcesoC.Controls.Add(this.label18);
-            this.Panel_ProcesoC.Controls.Add(this.Lbl_Punto3);
-            this.Panel_ProcesoC.Controls.Add(this.Lbl_Punto2);
-            this.Panel_ProcesoC.Controls.Add(this.Lbl_Punto1);
-            this.Panel_ProcesoC.Controls.Add(this.Lbl_Comprando);
-            this.Panel_ProcesoC.Controls.Add(this.Pict_Logo);
-            this.Panel_ProcesoC.Location = new System.Drawing.Point(137, 81);
-            this.Panel_ProcesoC.Name = "Panel_ProcesoC";
-            this.Panel_ProcesoC.Size = new System.Drawing.Size(538, 225);
-            this.Panel_ProcesoC.TabIndex = 45;
-            this.Panel_ProcesoC.Visible = false;
-            // 
-            // Pict_Logo
-            // 
-            this.Pict_Logo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Pict_Logo.Image = ((System.Drawing.Image)(resources.GetObject("Pict_Logo.Image")));
-            this.Pict_Logo.Location = new System.Drawing.Point(0, 0);
-            this.Pict_Logo.Name = "Pict_Logo";
-            this.Pict_Logo.Size = new System.Drawing.Size(120, 74);
-            this.Pict_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Pict_Logo.TabIndex = 46;
-            this.Pict_Logo.TabStop = false;
-            // 
-            // Lbl_Comprando
-            // 
-            this.Lbl_Comprando.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Lbl_Comprando.AutoSize = true;
-            this.Lbl_Comprando.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Comprando.Location = new System.Drawing.Point(142, 96);
-            this.Lbl_Comprando.Name = "Lbl_Comprando";
-            this.Lbl_Comprando.Size = new System.Drawing.Size(222, 42);
-            this.Lbl_Comprando.TabIndex = 46;
-            this.Lbl_Comprando.Text = "Comprando";
-            this.Lbl_Comprando.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Lbl_Punto1
-            // 
-            this.Lbl_Punto1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Lbl_Punto1.AutoSize = true;
-            this.Lbl_Punto1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Punto1.Location = new System.Drawing.Point(355, 96);
-            this.Lbl_Punto1.Name = "Lbl_Punto1";
-            this.Lbl_Punto1.Size = new System.Drawing.Size(29, 42);
-            this.Lbl_Punto1.TabIndex = 47;
-            this.Lbl_Punto1.Text = ".";
-            this.Lbl_Punto1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Lbl_Punto1.Visible = false;
-            // 
-            // Lbl_Punto2
-            // 
-            this.Lbl_Punto2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Lbl_Punto2.AutoSize = true;
-            this.Lbl_Punto2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Punto2.Location = new System.Drawing.Point(376, 96);
-            this.Lbl_Punto2.Name = "Lbl_Punto2";
-            this.Lbl_Punto2.Size = new System.Drawing.Size(29, 42);
-            this.Lbl_Punto2.TabIndex = 48;
-            this.Lbl_Punto2.Text = ".";
-            this.Lbl_Punto2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Lbl_Punto2.Visible = false;
-            // 
-            // Lbl_Punto3
-            // 
-            this.Lbl_Punto3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Lbl_Punto3.AutoSize = true;
-            this.Lbl_Punto3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Punto3.Location = new System.Drawing.Point(400, 96);
-            this.Lbl_Punto3.Name = "Lbl_Punto3";
-            this.Lbl_Punto3.Size = new System.Drawing.Size(29, 42);
-            this.Lbl_Punto3.TabIndex = 49;
-            this.Lbl_Punto3.Text = ".";
-            this.Lbl_Punto3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Lbl_Punto3.Visible = false;
-            // 
-            // label18
-            // 
-            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(3, 195);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(209, 24);
-            this.label18.TabIndex = 50;
-            this.label18.Text = "Siendo Atendido por:";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Lbl_Empleado
-            // 
-            this.Lbl_Empleado.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Lbl_Empleado.AutoSize = true;
-            this.Lbl_Empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Empleado.Location = new System.Drawing.Point(210, 195);
-            this.Lbl_Empleado.Name = "Lbl_Empleado";
-            this.Lbl_Empleado.Size = new System.Drawing.Size(105, 24);
-            this.Lbl_Empleado.TabIndex = 51;
-            this.Lbl_Empleado.Text = "Empleado";
-            this.Lbl_Empleado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Llb_CompraCmpt
-            // 
-            this.Llb_CompraCmpt.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Llb_CompraCmpt.AutoSize = true;
-            this.Llb_CompraCmpt.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Llb_CompraCmpt.Location = new System.Drawing.Point(147, 96);
-            this.Llb_CompraCmpt.Name = "Llb_CompraCmpt";
-            this.Llb_CompraCmpt.Size = new System.Drawing.Size(378, 42);
-            this.Llb_CompraCmpt.TabIndex = 52;
-            this.Llb_CompraCmpt.Text = "Compra Completada";
-            this.Llb_CompraCmpt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.Llb_CompraCmpt.Visible = false;
-            // 
-            // Pict_CompraCmpt
-            // 
-            this.Pict_CompraCmpt.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Pict_CompraCmpt.Image = ((System.Drawing.Image)(resources.GetObject("Pict_CompraCmpt.Image")));
-            this.Pict_CompraCmpt.Location = new System.Drawing.Point(0, 50);
-            this.Pict_CompraCmpt.Name = "Pict_CompraCmpt";
-            this.Pict_CompraCmpt.Size = new System.Drawing.Size(148, 130);
-            this.Pict_CompraCmpt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Pict_CompraCmpt.TabIndex = 53;
-            this.Pict_CompraCmpt.TabStop = false;
-            this.Pict_CompraCmpt.Visible = false;
-            // 
-            // Btn_Cerrar
-            // 
-            this.Btn_Cerrar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Btn_Cerrar.BackColor = System.Drawing.Color.White;
-            this.Btn_Cerrar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Btn_Cerrar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.Btn_Cerrar.FlatAppearance.BorderSize = 2;
-            this.Btn_Cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Cerrar.Font = new System.Drawing.Font("Trebuchet MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Cerrar.ForeColor = System.Drawing.Color.Black;
-            this.Btn_Cerrar.Location = new System.Drawing.Point(376, 174);
-            this.Btn_Cerrar.Name = "Btn_Cerrar";
-            this.Btn_Cerrar.Size = new System.Drawing.Size(148, 39);
-            this.Btn_Cerrar.TabIndex = 46;
-            this.Btn_Cerrar.Text = "Cerrar";
-            this.Btn_Cerrar.UseVisualStyleBackColor = false;
-            this.Btn_Cerrar.Visible = false;
-            this.Btn_Cerrar.Click += new System.EventHandler(this.Btn_Cerrar_Click);
             // 
             // Autos
             // 
@@ -2462,12 +2462,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.Panel_Detalles.ResumeLayout(false);
             this.Panel_Detalles.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.Panel_ProcesoC.ResumeLayout(false);
             this.Panel_ProcesoC.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Pict_Logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pict_CompraCmpt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pict_Logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

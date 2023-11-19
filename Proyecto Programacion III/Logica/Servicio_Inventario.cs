@@ -2,13 +2,14 @@
 using Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Logica2
 {
-    public class Servicio_Inventario : ICrud<Inventario>
+    public class Servicio_Inventario 
     {
         Datos.RepositorioInventario repositorioInventario;
         public Servicio_Inventario(string conexion)
@@ -24,11 +25,6 @@ namespace Logica2
         {
             repositorioInventario.Delete(inventario);
         }
-
-        public void Update(string id, Inventario inventario)
-        {
-            repositorioInventario.Update(id, inventario);
-        }
         public int ContarInventario()
         {
             int total_inventario = 0;
@@ -39,7 +35,7 @@ namespace Logica2
             return total_inventario;
         }
 
-        public List<Inventario> Buscar_Auto(string id_auto)
+        public List<Inventario> Buscar_Auto(string matricula)
         {
             try
             {
@@ -52,7 +48,7 @@ namespace Logica2
                 {
                     foreach (var item in GetAll())
                     {
-                        if (item.Id_Auto.Equals(id_auto))
+                        if (item.Matricula.Equals(matricula))
                         {
                             ListaPorIA.Add(item);
                         }
@@ -68,6 +64,10 @@ namespace Logica2
         public List<Inventario> GetAll()
         {
             return repositorioInventario.GetAll();
+        }
+        public DataTable GetAllTabla()
+        {
+            return repositorioInventario.GetAllTabla();
         }
     }
 }

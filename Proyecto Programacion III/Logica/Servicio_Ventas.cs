@@ -2,6 +2,7 @@
 using Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,9 +25,13 @@ namespace Logica2
         {
             return repositorio_Ventas.GetAll();
         }
-        public List<Ventas> GetAbyAuto_Clientes(string comprador)
+        public DataTable GetAllAuto_Clientes(string comprador)
         {
-            return repositorio_Ventas.GetByAuto_Cliente(comprador);
+            return repositorio_Ventas.GetAllTabla_Auto_Cliente(comprador);
+        }
+        public DataTable GetAllTabla()
+        {
+            return repositorio_Ventas.GetAllTabla();
         }
 
     }

@@ -647,7 +647,7 @@ namespace Concesionario_J_M
             lbl_DineroDisp.Text = Sf.Contar_DineroTotal().ToString();
         }
 
-        private async void Btn_Comprar_Click(object sender, EventArgs e)
+        private void Btn_Comprar_Click(object sender, EventArgs e)
         {
             Login login = new Login();
             if (lbl_Nombre.Text == "Perfil Sesion")
@@ -722,31 +722,19 @@ namespace Concesionario_J_M
                                         finanzas.Nombre_Auto = item.Nombre_Auto;
                                         finanzas.Tipo = "Venta de Auto";
                                         finanzas.Fecha_Ingreso = DateTime.Now;
-                                        finanzas.Monto_Ingreso = int.Parse(lbl_Precio.Text); ;
+                                        finanzas.Monto_Ingreso = int.Parse(lbl_Precio.Text); 
                                         finanzas.Fecha_Gasto = DateTime.Now;
                                         finanzas.Monto_Gasto = 0;
                                         finanzas.Monto_Total = int.Parse(lbl_Precio.Text);
                                         cliente.Presupuesto = int.Parse(lbl_DineroDisp.Text) - int.Parse(lbl_Precio.Text);
                                         cliente.Autos_Comprados += 1;
                                         lbl_DineroDisp.Text = cliente.Presupuesto.ToString();
-                                        Se.Añadir_Comision(ventas.Nombre_Vendedor.ToString(),finanzas.Monto_Ingreso);
+                                        Se.Añadir_Comision(ventas.Nombre_Vendedor,int.Parse(lbl_Precio.Text));
                                         Sl.UpdateAuto(lbl_Id_Cliente.Text, cliente);
                                         Sv.Insertar(ventas);
                                         Si.Delete(item);
                                         Sf.Insertar(finanzas);
-                                        Panel_ProcesoC.Visible = true;
-                                        Lbl_Empleado.Text = ventas.Nombre_Vendedor;
-                                        await Task.Delay(500);
-                                        Lbl_Punto1.Visible = true;
-                                        await Task.Delay(500);
-                                        Lbl_Punto2.Visible = true;
-                                        await Task.Delay(500);
-                                        Lbl_Punto3.Visible = true;
-                                        await Task.Delay(500);
-                                        Pict_Logo.Visible = false;
-                                        Llb_CompraCmpt.Visible = true;
-                                        Pict_CompraCmpt.Visible = true;
-                                        Btn_Cerrar.Visible = true;
+                                        Sa.Proceso_Compra(Panel_ProcesoC,Lbl_Empleado,Lbl_Punto1,Lbl_Punto2,Lbl_Punto3,Pict_Logo, Llb_CompraCmpt, Pict_CompraCmpt, Btn_Cerrar,ventas.Nombre_Vendedor);                                      
                                         Encontro = true;
                                         break;
                                     }

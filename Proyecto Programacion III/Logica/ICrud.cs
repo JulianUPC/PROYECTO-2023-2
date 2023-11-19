@@ -12,7 +12,6 @@ namespace Logica2
         void Delete(T Entidad);
         void Update(string id,T Entidad);
         List<T> GetAll();
-
     }
 }
 

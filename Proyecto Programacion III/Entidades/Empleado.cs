@@ -35,15 +35,5 @@ namespace Entidades
             Pago_Total = Convert.ToInt32(Precio_Auto * Comision);
             return Pago_Total;
         }
-        public int Calcular_PagoMes(int Precio_Auto)
-        {
-            Pago_Mes = Pago_Mes + Calcular_Comision(Precio_Auto);
-            return Pago_Mes;
-        }
-        public int Calcular_MontoComision(int Precio_Auto) 
-        {
-            Monto_Comision = Monto_Comision + Calcular_Comision(Precio_Auto);
-            return Monto_Comision;
-        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Datos;
 using Entidades;
 using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -93,7 +94,29 @@ namespace Logica2
             
 
         }
-        public string Generar_Matricula()
+        public async void Proceso_Compra(Panel panel_Compra,Label label1,Label label_punto1,Label label_punto2,Label label_punto3,PictureBox logo,Label comprar_Cmpt,PictureBox logo_Cmpt,Button Cerrar,string nombre_vendedor)
+        {
+            panel_Compra.Visible = true;
+            label1.Text = nombre_vendedor;
+            await Task.Delay(500);
+            label_punto1.Visible = true;
+            await Task.Delay(500);
+            label_punto2.Visible = true;
+            await Task.Delay(500);
+            label_punto3.Visible = true;
+            await Task.Delay(500);
+            logo.Visible = false;
+            comprar_Cmpt.Visible = true;
+            logo_Cmpt.Visible = true;
+            Cerrar.Visible = true;
+            label_punto1.Visible = false;
+            label_punto2.Visible = false;
+            label_punto3.Visible = false;
+            logo.Visible = true;
+            comprar_Cmpt.Visible = false;
+            logo_Cmpt.Visible = false;
+        }
+        public string Generar_Matricula() 
         {
             for (int i = 0; i < 10; i++)
             {

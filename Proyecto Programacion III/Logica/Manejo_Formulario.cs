@@ -79,6 +79,23 @@ namespace Logica2
                 MessageBox.Show("Debe Aceptar Los Terminos y Condiciones");
             }
         }
-        
+        public void OcultarFilasVacias(DataGridView dataGridView)
+        {
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                bool filaVacia = true;
+
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    if (cell.Value != null && !string.IsNullOrWhiteSpace(cell.Value.ToString()))
+                    {
+                        filaVacia = false;
+                        break; 
+                    }
+                }
+                row.Visible = !filaVacia;
+            }
+        }
+
     } 
 }

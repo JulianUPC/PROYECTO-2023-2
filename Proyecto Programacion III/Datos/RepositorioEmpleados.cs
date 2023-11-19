@@ -60,15 +60,15 @@ namespace Datos
         private Empleado Mapeador_empleado(SqlDataReader dataReader)
         {
             if (!dataReader.HasRows) return null;
-            Empleado clienteLog = new Empleado();
-            clienteLog.ID_Empleado = dataReader.GetString(0);
-            clienteLog.N_identificacion = dataReader.GetString(1);
-            clienteLog.Nombre_Completo = dataReader.GetString(2);
-            clienteLog.Fecha_Ingreso = dataReader.GetDateTime(3);
-            clienteLog.Pago_Mes = dataReader.GetInt32(4);
-            clienteLog.Monto_Comision = dataReader.GetInt32(5);
+            Empleado EmpleadoLog = new Empleado();
+            EmpleadoLog.ID_Empleado = dataReader.GetString(0);
+            EmpleadoLog.N_identificacion = dataReader.GetString(1);
+            EmpleadoLog.Nombre_Completo = dataReader.GetString(2);
+            EmpleadoLog.Fecha_Ingreso = dataReader.GetDateTime(3);
+            EmpleadoLog.Pago_Mes = dataReader.GetInt32(4);
+            EmpleadoLog.Monto_Comision = dataReader.GetInt32(5);
 
-            return clienteLog;
+            return EmpleadoLog;
         }
         public List<Empleado> GetAll()
         {
@@ -90,6 +90,20 @@ namespace Datos
             SqlCommand comando = conexion.CreateCommand();
             comando.CommandType = CommandType.Text;
             comando.CommandText = "select * from Empleados where " + Columna + " like ('" + DocumentoBuscar + "%')";
+            comando.ExecuteNonQuery();
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(comando);
+            dataAdapter.Fill(dt);
+            Close();
+            return dt;
+        }
+        public DataTable GetAllTabla()
+        {
+            Open();
+            SqlCommand comando = conexion.CreateCommand();
+            comando.CommandType = CommandType.Text;
+            comando.CommandText = "SELECT * FROM EMPLEADOS";
             comando.ExecuteNonQuery();
 
             DataTable dt = new DataTable();

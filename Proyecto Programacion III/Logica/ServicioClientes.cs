@@ -27,12 +27,10 @@ namespace Logica2
         {
             repositorioCliente.Insert(cliente);
         }
-
         public void Delete(Cliente cliente)
         {
             repositorioCliente.Delete(cliente);
         }
-
         public void Update(string id,Cliente cliente)
         {
             repositorioCliente.Update(id,cliente);
@@ -51,6 +49,7 @@ namespace Logica2
                 {
                     validacion = true;
                     terminosno.Checked = false;
+                    Validar.Clear();
                 }
                 else if(terminosno.Checked)
                 {
@@ -146,7 +145,7 @@ namespace Logica2
             }
             catch (Exception)
             {
-                MessageBox.Show("Ingrese un numero de identificacion Existente","Confirmacion", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Ingrese un numero de identificacion Existente","Aviso", MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
             
         }
@@ -201,10 +200,6 @@ namespace Logica2
             {
                 Mensaje_Error();
                 total_ingresos = 0;
-            }
-            else if(int.Parse(ingresos.Text) > 50000000)
-            {
-                MessageBox.Show("Limite de Ingresos Mensual alcanzado, Ingrese un Monto valido \n                (5000 - 5000000)");
             }
             else if(int.Parse(ingresos.Text) < 5000)
             {
@@ -422,22 +417,22 @@ namespace Logica2
 
         public void Registrar(Cliente cliente,RadioButton terminossi,RadioButton terminosno,Panel panel1,Panel panel2,TextBox texto1,TextBox texto2,TextBox texto3,TextBox texto4,TextBox texto5,TextBox texto6,TextBox texto7,TextBox texto8,TextBox texto9,TextBox texto10, TextBox texto11, RadioButton boton1, RadioButton boton2, RadioButton boton3, RadioButton boton4, RadioButton boton5, RadioButton boton6, RadioButton boton7, RadioButton boton8, DateTimePicker fecha_n)
         {
-          if (AceptarTerminos(terminossi,terminosno) == true) { 
-              if (Verificar_DatosErroneos(cliente) == true)
-              {
-                    if (Buscar_Repetidos(cliente) == false)
-                    {
+            if (AceptarTerminos(terminossi,terminosno) == true) { 
+                  if (Verificar_DatosErroneos(cliente) == true)
+                  { 
+                      if (Buscar_Repetidos(cliente) == false)
+                      {
                           Insertar(cliente);
                           MessageBox.Show("Cuenta Registrada");
                           Vaciar_Registro(panel1,panel2,texto1,texto2,texto3,texto4,texto5,texto6,texto7,texto8,texto9,texto10,texto11,fecha_n);
                           VaciarRadioButtom(boton1,boton2,boton3,boton4,boton5,boton6,boton7,boton8);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Este usuario ya se encuentra registrado.");
-                    }
-              }
-          }
+                      }
+                      else
+                      {
+                          MessageBox.Show("Este usuario ya se encuentra registrado.");
+                      }
+                  }
+            }
         }     
         public List<Cliente> Buscar_Cliente(string n_identificacion)
         {
@@ -554,6 +549,10 @@ namespace Logica2
         public List<Cliente> GetAll()
         {
             return repositorioCliente.GetAll();
+        }
+        public DataTable GetAllTabla()
+        {
+            return repositorioCliente.GetAllTabla();
         }
     }
 }

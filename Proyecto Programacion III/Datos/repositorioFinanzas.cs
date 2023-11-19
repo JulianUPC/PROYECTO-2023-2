@@ -32,26 +32,19 @@ namespace Datos
 
             }
         }
-        public void Delete(Finanzas finanzas)
-        {
-        }
-        public void Update(string id, Finanzas finanzas)
-        {
-
-        }
         private Finanzas Mapeador_finanzas(SqlDataReader dataReader)
         {
             if (!dataReader.HasRows) return null;
-            Finanzas clienteLog = new Finanzas();
-            clienteLog.Tipo = dataReader.GetString(0);
-            clienteLog.Fecha_Ingreso = dataReader.GetDateTime(1);
-            clienteLog.Monto_Ingreso = dataReader.GetInt32(2);
-            clienteLog.Fecha_Gasto = dataReader.GetDateTime(3);
-            clienteLog.Monto_Gasto = dataReader.GetInt32(4);
-            clienteLog.Nombre_Auto = dataReader.GetString(5);
-            clienteLog.Monto_Total = dataReader.GetInt32(6);
+            Finanzas FinanzasLog = new Finanzas();
+            FinanzasLog.Tipo = dataReader.GetString(0);
+            FinanzasLog.Fecha_Ingreso = dataReader.GetDateTime(1);
+            FinanzasLog.Monto_Ingreso = dataReader.GetInt32(2);
+            FinanzasLog.Fecha_Gasto = dataReader.GetDateTime(3);
+            FinanzasLog.Monto_Gasto = dataReader.GetInt32(4);
+            FinanzasLog.Nombre_Auto = dataReader.GetString(5);
+            FinanzasLog.Monto_Total = dataReader.GetInt32(6);
 
-            return clienteLog;
+            return FinanzasLog;
         }
         public List<Finanzas> GetAll()
         {
@@ -66,6 +59,20 @@ namespace Datos
             }
             Close();
             return finanzas;
+        }
+        public DataTable GetAllTabla()
+        {
+            Open();
+            SqlCommand comando = conexion.CreateCommand();
+            comando.CommandType = CommandType.Text;
+            comando.CommandText = "SELECT * FROM FINANZAS";
+            comando.ExecuteNonQuery();
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(comando);
+            dataAdapter.Fill(dt);
+            Close();
+            return dt;
         }
     }
 }

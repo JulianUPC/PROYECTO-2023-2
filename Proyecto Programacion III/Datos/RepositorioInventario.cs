@@ -38,11 +38,6 @@ namespace Datos
 
             }
         }
-        public void Update(string id, Inventario inventario)
-        {
-
-        }
-
         public void Delete(Inventario inventario)
         {
             using (var Comando = conexion.CreateCommand())
@@ -58,22 +53,22 @@ namespace Datos
             private Inventario Mapeador_inventario(SqlDataReader dataReader)
         {
             if (!dataReader.HasRows) return null;
-            Inventario clienteLog = new Inventario();
-            clienteLog.Fecha_Compra = dataReader.GetDateTime(0);
-            clienteLog.Matricula = dataReader.GetString(1);
-            clienteLog.Nombre_Auto = dataReader.GetString(2);
-            clienteLog.Precio_Venta = dataReader.GetInt32(3);
-            clienteLog.Modelo = dataReader.GetString(4);
-            clienteLog.Categoria = dataReader.GetString(5);
-            clienteLog.Motor = dataReader.GetString(6);
-            clienteLog.Potencia = dataReader.GetString(7);
-            clienteLog.Valvulas = dataReader.GetString(8);
-            clienteLog.Asientos = dataReader.GetString(9);
-            clienteLog.Sistema_Combustible = dataReader.GetString(10);
-            clienteLog.Tipo_Transmision = dataReader.GetString(11);
-            clienteLog.Id_Auto = dataReader.GetString(12);
+            Inventario InventarioLog = new Inventario();
+            InventarioLog.Fecha_Compra = dataReader.GetDateTime(0);
+            InventarioLog.Matricula = dataReader.GetString(1);
+            InventarioLog.Nombre_Auto = dataReader.GetString(2);
+            InventarioLog.Precio_Venta = dataReader.GetInt32(3);
+            InventarioLog.Modelo = dataReader.GetString(4);
+            InventarioLog.Categoria = dataReader.GetString(5);
+            InventarioLog.Motor = dataReader.GetString(6);
+            InventarioLog.Potencia = dataReader.GetString(7);
+            InventarioLog.Valvulas = dataReader.GetString(8);
+            InventarioLog.Asientos = dataReader.GetString(9);
+            InventarioLog.Sistema_Combustible = dataReader.GetString(10);
+            InventarioLog.Tipo_Transmision = dataReader.GetString(11);
+            InventarioLog.Id_Auto = dataReader.GetString(12);
 
-            return clienteLog;
+            return InventarioLog;
         }
         public List<Inventario> GetAll()
         {
@@ -88,6 +83,20 @@ namespace Datos
             }
             Close();
             return inventario;
+        }
+        public DataTable GetAllTabla()
+        {
+            Open();
+            SqlCommand comando = conexion.CreateCommand();
+            comando.CommandType = CommandType.Text;
+            comando.CommandText = "SELECT * FROM Inventario";
+            comando.ExecuteNonQuery();
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(comando);
+            dataAdapter.Fill(dt);
+            Close();
+            return dt;
         }
     }
 }

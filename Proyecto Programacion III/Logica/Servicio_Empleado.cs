@@ -18,10 +18,6 @@ namespace Logica2
         {
             repositorioEmpleados = new RepositorioEmpleados(conexion);
         }
-        public void ObtenerIdentificacion(string usuario)
-        {
-
-        }
         public void Insertar(Empleado empleado)
         {
             repositorioEmpleados.Insert(empleado);
@@ -101,7 +97,7 @@ namespace Logica2
         public void Delete(TextBox id)
         {
                 
-            foreach (var item in GetAll())
+            foreach (var item in GetAll()) 
             {
                 if (item.ID_Empleado.Equals(id.Text))
                 {
@@ -146,8 +142,8 @@ namespace Logica2
             {
                 if (item.Nombre_Completo.Equals(nombre_empleado))
                 {       
-                    item.Monto_Comision = item.Monto_Comision + empleado.Calcular_MontoComision(auto_vendido);
-                    item.Pago_Mes = item.Pago_Mes + item.Monto_Comision;
+                    item.Monto_Comision += empleado.Calcular_Comision(auto_vendido);
+                    item.Pago_Mes += item.Monto_Comision;
                     Update(item.ID_Empleado.ToString(),item);
                 }
                   
@@ -162,6 +158,10 @@ namespace Logica2
         public DataTable GetBy(String Columna, String Doc)
         {
             return repositorioEmpleados.GetBy(Columna, Doc);
+        }
+        public DataTable GetAllTabla()
+        {
+            return repositorioEmpleados.GetAllTabla();
         }
     }
 

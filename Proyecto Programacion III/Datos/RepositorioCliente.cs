@@ -140,6 +140,19 @@ namespace Datos
             Close();
             return dt;
         }
+        public DataTable GetAllTabla()
+        {
+            Open();
+            SqlCommand comando = conexion.CreateCommand();
+            comando.CommandType = CommandType.Text;
+            comando.CommandText = "SELECT * FROM Clientes";
+            comando.ExecuteNonQuery();
 
+            DataTable dt = new DataTable();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(comando);
+            dataAdapter.Fill(dt);
+            Close();
+            return dt;
+        }
     }
 }

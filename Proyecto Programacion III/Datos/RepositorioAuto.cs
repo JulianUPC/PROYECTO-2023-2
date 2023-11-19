@@ -29,21 +29,21 @@ namespace Datos
         private Auto Mapeador_auto(SqlDataReader dataReader)
         {
             if (!dataReader.HasRows) return null;
-            Auto clienteLog = new Auto();
-            clienteLog.Nombre_Auto = dataReader.GetString(0);
-            clienteLog.Precio_Compra = dataReader.GetInt32(1);
-            clienteLog.Modelo = dataReader.GetString(2);
-            clienteLog.Categoria = dataReader.GetString(3);
-            clienteLog.Motor = dataReader.GetString(4);
-            clienteLog.Potencia = dataReader.GetString(5);
-            clienteLog.Valvulas = dataReader.GetString(6);
-            clienteLog.Asientos = dataReader.GetString(7);
-            clienteLog.Sistema_Combustible = dataReader.GetString(8);
-            clienteLog.Tipo_Transmision = dataReader.GetString(9);
-            clienteLog.Id_Auto = dataReader.GetString(10);
-            clienteLog.Precio_Venta = dataReader.GetInt32(11);
+            Auto AutoLog = new Auto();
+            AutoLog.Nombre_Auto = dataReader.GetString(0);
+            AutoLog.Precio_Compra = dataReader.GetInt32(1);
+            AutoLog.Modelo = dataReader.GetString(2);
+            AutoLog.Categoria = dataReader.GetString(3);
+            AutoLog.Motor = dataReader.GetString(4);
+            AutoLog.Potencia = dataReader.GetString(5);
+            AutoLog.Valvulas = dataReader.GetString(6);
+            AutoLog.Asientos = dataReader.GetString(7);
+            AutoLog.Sistema_Combustible = dataReader.GetString(8);
+            AutoLog.Tipo_Transmision = dataReader.GetString(9);
+            AutoLog.Id_Auto = dataReader.GetString(10);
+            AutoLog.Precio_Venta = dataReader.GetInt32(11);
 
-            return clienteLog;
+            return AutoLog;
         }
         public List<Auto> GetAll()
         {

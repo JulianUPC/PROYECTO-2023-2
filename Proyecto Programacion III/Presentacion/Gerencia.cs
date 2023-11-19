@@ -20,6 +20,7 @@ namespace Concesionario_J_M
         ServicioClientes servicioClientes = new ServicioClientes(configConnnection.ConnectionString);
         Servicio_Inventario servicio_Inventario = new Servicio_Inventario(configConnnection.ConnectionString);
         ServicioAutos servicioAutos = new ServicioAutos(configConnnection.ConnectionString);
+        Manejo_Formulario mf = new Manejo_Formulario();
         Empleado empleados = new Empleado();
         public Gerencia()
         {
@@ -201,11 +202,11 @@ namespace Concesionario_J_M
 
         public void Cargar_Tablas()
         {
-            Dtv_Clientes.DataSource = servicioClientes.GetAll();
-            Dtv_Empleados.DataSource = servicioEmpleado.GetAll();
-            Dtv_IngresosyGastos.DataSource = servicioFinanzas.GetAll();
-            Dgv_Ventas.DataSource = servicioVentas.GetAll();
-            Dgv_Inventario.DataSource = servicio_Inventario.GetAll();   
+            Dtv_Clientes.DataSource = servicioClientes.GetAllTabla();
+            Dtv_Empleados.DataSource = servicioEmpleado.GetAllTabla();
+            Dtv_IngresosyGastos.DataSource = servicioFinanzas.GetAllTabla();
+            Dgv_Ventas.DataSource = servicioVentas.GetAllTabla();
+            Dgv_Inventario.DataSource = servicio_Inventario.GetAllTabla();
             Dtv_Clientes.ReadOnly = true;
             Dtv_Empleados.ReadOnly = true;
             Dtv_IngresosyGastos.ReadOnly = true;
@@ -239,7 +240,7 @@ namespace Concesionario_J_M
         {
             servicioClientes.Buscar_Tablas(Txt_BuscarID, Dtv_Clientes, "N_Identificacion", e);
             servicioClientes.Buscar_Tablas(TxT_CompradorID, Dtv_Clientes, "Id_Cliente", e);
-            Dtv_AutosCliente.DataSource = servicioVentas.GetAbyAuto_Clientes(TxT_CompradorID.Text);
+            Dtv_AutosCliente.DataSource = servicioVentas.GetAllAuto_Clientes(TxT_CompradorID.Text);
         }
 
         private void Dtv_Empleados_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -250,6 +251,12 @@ namespace Concesionario_J_M
         private void Dgv_Inventario_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             servicioClientes.Buscar_Tablas(txt_BuscarMatricula, Dgv_Inventario, "Matricula", e);
+        }
+
+        private void Txt_NIDCont_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            mf.SoloNumeros(e);
+            mf.LimitarLongitudTextBox(Txt_NIDCont, 10, e);
         }
     }
 }

@@ -21,16 +21,6 @@ namespace Logica2
         {
             repositorioFinanzas.Insert(finanzas);
         }
-
-        public void Delete(Finanzas finanzas)
-        {
-            repositorioFinanzas.Delete(finanzas);
-        }
-
-        public void Update(string id, Finanzas finanzas)
-        {
-            repositorioFinanzas.Update(id, finanzas);
-        }
         public int Contar_Ingresos()
         {
             int total_ingresos = 0;
@@ -58,6 +48,10 @@ namespace Logica2
         public List<Finanzas> GetAll()
         {
                 return repositorioFinanzas.GetAll();                
+        }
+        public DataTable GetAllTabla()
+        {
+            return repositorioFinanzas.GetAllTabla();
         }
     }
 }
