@@ -6,10 +6,11 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Logica2
 {
-    public class Servicio_Inventario 
+    public class Servicio_Inventario : ICrud<Inventario>
     {
         Datos.RepositorioInventario repositorioInventario;
         public Servicio_Inventario(string conexion)
@@ -33,6 +34,10 @@ namespace Logica2
                 total_inventario++;
             }
             return total_inventario;
+        }
+        public void Update(string id,Inventario inventario)
+        {
+            repositorioInventario.Update(id, inventario);
         }
 
         public List<Inventario> Buscar_Auto(string matricula)

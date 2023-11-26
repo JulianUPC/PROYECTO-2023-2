@@ -46,7 +46,6 @@
     <Compile Include="Concesionario.cs" />
     <Compile Include="Empleado.cs" />
     <Compile Include="Finanzas.cs" />
-    <Compile Include="Gerente.cs" />
     <Compile Include="Inventario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ventas.cs" />

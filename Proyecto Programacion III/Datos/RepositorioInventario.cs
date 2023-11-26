@@ -50,7 +50,19 @@ namespace Datos
             }
         }
 
-            private Inventario Mapeador_inventario(SqlDataReader dataReader)
+        public void Update(string id, Inventario inventario)
+        {
+            using (var Comando = conexion.CreateCommand())
+            {
+                Comando.CommandText = "Update Inventario SET Precio_Venta = @Precio_Venta WHERE Id_Auto = '" + id + "';";
+                Comando.Parameters.Add("@Precio_Venta", SqlDbType.Int).Value = inventario.Precio_Venta;
+                Open();
+                Comando.ExecuteNonQuery();
+                Close();
+            }
+        }
+
+        private Inventario Mapeador_inventario(SqlDataReader dataReader)
         {
             if (!dataReader.HasRows) return null;
             Inventario InventarioLog = new Inventario();

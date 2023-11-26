@@ -180,6 +180,7 @@
             this.Txt_Contraseña.Name = "Txt_Contraseña";
             this.Txt_Contraseña.Size = new System.Drawing.Size(235, 29);
             this.Txt_Contraseña.TabIndex = 7;
+            this.Txt_Contraseña.TextChanged += new System.EventHandler(this.Txt_Contraseña_TextChanged);
             // 
             // label3
             // 
@@ -282,6 +283,7 @@
             this.Txt_ContraseñaG.Name = "Txt_ContraseñaG";
             this.Txt_ContraseñaG.Size = new System.Drawing.Size(214, 29);
             this.Txt_ContraseñaG.TabIndex = 59;
+            this.Txt_ContraseñaG.TextChanged += new System.EventHandler(this.Txt_ContraseñaG_TextChanged);
             // 
             // Btn_IngresarGerente
             // 
@@ -883,8 +885,8 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

@@ -14,13 +14,7 @@ namespace Logica2
     {
 
         Datos.RepositorioAuto repositorioAutos;
-        Datos.RepositorioInventario repositorioInventario;
-        Datos.repositorioFinanzas repositorioFinanzas;
-        Inventario inventario = new Inventario();
-        Finanzas finanzas = new Finanzas();
         Auto auto = new Auto();
-        Servicio_Inventario servicio_Inventario;
-        Servicio_Finanzas servicio_Finanzas;
         public ServicioAutos(string conexion)
         {
             repositorioAutos = new RepositorioAuto(conexion);
@@ -72,8 +66,10 @@ namespace Logica2
                 return null;
             }
         }
-        public void ActualizarPrecio(TextBox id_auto,TextBox precio)
+        public bool ActualizarPrecio(TextBox id_auto,TextBox precio)
         {
+            bool Actualizar = false;
+            bool Encontro = false;
             try
             {
                 if (string.IsNullOrEmpty(id_auto.Text) || string.IsNullOrEmpty(precio.Text))
@@ -81,15 +77,30 @@ namespace Logica2
                     MessageBox.Show("Llene todo los campos para poder modificar");
                 }
                 else
-                {
-                    auto.Precio_Venta = int.Parse(precio.Text);
-                    Update(id_auto.Text, auto);
-                    MessageBox.Show("Precio Actualizado Correctamente");
+                { 
+                    foreach (var item in GetAll())
+                    {
+                        if (item.Id_Auto.Equals(id_auto.Text))
+                        {
+                            auto.Precio_Venta = int.Parse(precio.Text);
+                            Update(id_auto.Text, auto);
+                            MessageBox.Show("Precio Actualizado Correctamente");
+                            Encontro = true;
+                            Actualizar = true;
+                            break;
+                        }                     
+                    }
+                    if (Encontro == false)
+                    {
+                        MessageBox.Show("El Id del vehiculo no se ha podido encontrar");
+                    }                   
                 }
+                return Actualizar;
             }
             catch (Exception)
             {
                 MessageBox.Show("Id del vehiculo no Encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return Actualizar;
             }
             
 
@@ -166,19 +177,7 @@ namespace Logica2
             {
                 return false;
             }
-        }
-        public bool Mensaje_Salir()
-        {
-            DialogResult Resultado = MessageBox.Show("Esta sesion se cerrara \n ¿Seguro Desea Salir? ", "Cerrar Sesion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (Resultado == DialogResult.Yes)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        }       
         //FIN MENSAJES
         public bool Comprar_Auto(string modo_gerente)
         {

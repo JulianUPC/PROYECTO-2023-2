@@ -17,13 +17,13 @@ namespace Concesionario_J_M
 {
     public partial class Autos : Form
     {
+        Manejo_Formulario Mf = new Manejo_Formulario();
         ServicioClientes Sl = new ServicioClientes(configConnnection.ConnectionString);
         Servicio_Inventario Si = new Servicio_Inventario(configConnnection.ConnectionString);
         ServicioAutos Sa = new ServicioAutos(configConnnection.ConnectionString);
         Servicio_Finanzas Sf = new Servicio_Finanzas(configConnnection.ConnectionString);
         Servicio_Ventas Sv = new Servicio_Ventas(configConnnection.ConnectionString);
         Servicio_Empleado Se = new Servicio_Empleado(configConnnection.ConnectionString);
-        Gerencia gerencia = new Gerencia();
         Inventario inventario = new Inventario();
         Finanzas finanzas = new Finanzas();
         Ventas ventas = new Ventas();
@@ -32,55 +32,26 @@ namespace Concesionario_J_M
         public Autos()
         {
             InitializeComponent();
-            Actualizar_Lista();
+            Actualizar_Lista();   //Actualiza las listas al iniciar el formulario
         }
+        //Cerrar el formulario
+        public void Cerrar_Fomulario()
+        {
+            this.Close(); 
+        }
+        //Boton Volver
         private void Btn_Volver_Click(object sender, EventArgs e)
         {
             Presentacion.Menu menu = new Presentacion.Menu();
-            if (Panel_Detalles.Visible == true)
+            Gerencia gerencia = new Gerencia();
+            //Si al darle aceptar al mensaje de salir devolvera true por lo tanto este formulario se cerrara
+            if (Mf.Abrir_Form(Panel_Detalles, lbl_Nombre, lbl_DineroDisp, menu, gerencia) == true) 
             {
-                Panel_Detalles.Visible = false;
+                this.Close();
             }
-            else
-            {
-                if (lbl_Nombre.Text == "Perfil Sesion")
-                {
-                    menu.Show();
-                    this.Close();
-                }
-                else if (Sa.Mensaje_Salir() == true)
-                {
-                    if (lbl_Nombre.Text == "Gerente")
-                    {
-                        lbl_Nombre.Text = "";
-                        lbl_Nombre.Visible = false;
-                        lbl_DineroDisp.Text = "0";
-                        gerencia.Show();
-                        gerencia.Actualizar();
-                        this.Close();
-                    }
-                    else
-                    {
-                        lbl_Nombre.Text = "";
-                        lbl_Nombre.Visible = false;
-                        lbl_DineroDisp.Text = "0";
-                        menu.Show();
-                        this.Close();
-                    }
-                }
-            }
+                 
         }
-        //CODIGO NECESARIO PARA EL COMPORTAMIENTO DEL BOTON AL PASAR EL MOUSE POR ESTE
-        public void Letras_Grises(Button boton)
-        {
-            boton.BackColor = Color.Gainsboro; //SI EL MOUSE SALE DEL BOTON 
-            boton.ForeColor = Color.DimGray;
-        }
-        public void Letras_Negras(Button boton)
-        {
-            boton.BackColor = Color.White;
-            boton.ForeColor = Color.Black; //SI EL MOUSE PASA POR EL BOTON 
-        }
+        //Codigo para el diseño del catalogo de autos
         public void Desactivar_Labels()
         {
             lbl_Camionetas.Visible = false;
@@ -91,11 +62,11 @@ namespace Concesionario_J_M
         }
         public void BotonesGrises()
         {
-            Letras_Grises(Btn_Camionetas);
-            Letras_Grises(Btn_Convertibles);
-            Letras_Grises(Btn_Deportivos);
-            Letras_Grises(Btn_Electricos);
-            Letras_Grises(Btn_Performance);
+            Mf.Letras_Grises(Btn_Camionetas);
+            Mf.Letras_Grises(Btn_Convertibles);
+            Mf.Letras_Grises(Btn_Deportivos);
+            Mf.Letras_Grises(Btn_Electricos);
+            Mf.Letras_Grises(Btn_Performance);
         }
         public void AlterarBorde()
         {
@@ -113,7 +84,7 @@ namespace Concesionario_J_M
             }
             else
             {
-                Letras_Grises(boton);
+                Mf.Letras_Grises(boton);
             }
         }
         public void Ocultar_PanelesCamionetas()
@@ -148,9 +119,10 @@ namespace Concesionario_J_M
         }
         public void Actualizar_Lista()
         {
-            Actulizar_Vehiculos(lbl_NCamioneta1, PS_Camioneta1, "A02");
+            //Actualiza el nombre,precio y imagen del vehiculo si es que este fue cambiado en la base de datos
+            Actulizar_Vehiculos(lbl_NCamioneta1, PS_Camioneta1, "A02");  
             Actulizar_Vehiculos(lbl_NCamioneta2, PS_Camioneta2, "A09");
-            Actulizar_Vehiculos(lbl_NCamioneta3, PS_Camioneta3, "A016");
+            Actulizar_Vehiculos(lbl_NCamioneta3, PS_Camioneta3, "A016");  
             Actulizar_Vehiculos(lbl_NCamioneta4, PS_Camioneta4, "A017");
             Actulizar_Vehiculos(lbl_NCamioneta5, PS_Camioneta5, "A018");
             Actulizar_Vehiculos(lbl_NConvertible1, PS_Convertible1, "A015");
@@ -167,6 +139,7 @@ namespace Concesionario_J_M
             Actulizar_Vehiculos(lbl_NPerformance2, PS_Performance2, "A07");
             Actulizar_Vehiculos(lbl_NPerformance3, PS_Performance3, "A014");
         }
+        //Actualiza el el precio de los vehiculos si es que esta en modo gerente o en modo cliente
         public void Actulizar_Vehiculos(Label Auto, Label precio, string Id_Auto)
         {
             foreach (Auto Ca in Sa.Buscar_Auto(Id_Auto))
@@ -185,7 +158,7 @@ namespace Concesionario_J_M
 
         }
 
-
+        //Muestra los detalles del vehiculo seleccionado
         public void Vehiculo_Detalles(Label Carro, PictureBox picture, string Id_Auto)
         {
             Panel_Detalles.Visible = true;
@@ -212,16 +185,17 @@ namespace Concesionario_J_M
             }
 
         }
+        //Abre el Form Iniciar Sesion si es que este es invocado en un metodo
         public void Inciar_Sesion()
         {
             Login login = new Login();
             login.Show();
         }
-
+        //CODIGO NECESARIO PARA EL COMPORTAMIENTO DEL BOTON AL PASAR EL MOUSE POR ESTE
         //CAMIONETAS
         private void Btn_Camionetas_MouseEnter(object sender, EventArgs e)
         {
-            Letras_Negras(Btn_Camionetas);  //ENTRADA DE MOUSE EN EL BOTON
+            Mf.Letras_Negras(Btn_Camionetas);  //ENTRADA DE MOUSE EN EL BOTON
         }
         private void Btn_Camionetas_MouseLeave(object sender, EventArgs e)
         {
@@ -231,7 +205,7 @@ namespace Concesionario_J_M
         {
             Desactivar_Labels();
             BotonesGrises();
-            Letras_Negras(Btn_Camionetas);
+            Mf.Letras_Negras(Btn_Camionetas);
             AlterarBorde();
             Ocultar_PanelesCamionetas();
             Btn_Camionetas.FlatAppearance.BorderSize = 0;
@@ -320,7 +294,7 @@ namespace Concesionario_J_M
         //CONVERTIBLES
         private void Btn_Convertibles_MouseEnter(object sender, EventArgs e)
         {
-            Letras_Negras(Btn_Convertibles);
+            Mf.Letras_Negras(Btn_Convertibles);
         }
         private void Btn_Convertibles_MouseLeave(object sender, EventArgs e)
         {
@@ -330,7 +304,7 @@ namespace Concesionario_J_M
         {
             Desactivar_Labels();
             BotonesGrises();
-            Letras_Negras(Btn_Convertibles);
+            Mf.Letras_Negras(Btn_Convertibles);
             AlterarBorde();
             Ocultar_PanelesConvertibles();
             Panel_Convertibles.Visible = true;
@@ -386,7 +360,7 @@ namespace Concesionario_J_M
         //DEPORTIVOS
         private void Btn_Deportivos_MouseEnter(object sender, EventArgs e)
         {
-            Letras_Negras(Btn_Deportivos);
+            Mf.Letras_Negras(Btn_Deportivos);
         }
         private void Btn_Deportivos_MouseLeave(object sender, EventArgs e)
         {
@@ -396,7 +370,7 @@ namespace Concesionario_J_M
         {
             Desactivar_Labels();
             BotonesGrises();
-            Letras_Negras(Btn_Deportivos);
+            Mf.Letras_Negras(Btn_Deportivos);
             AlterarBorde();
             Ocultar_PanelesDeportivos();
             Panel_Deportivos.Visible = true;
@@ -453,7 +427,7 @@ namespace Concesionario_J_M
         //ELECTRICOS
         private void Btn_Electricos_MouseEnter(object sender, EventArgs e)
         {
-            Letras_Negras(Btn_Electricos);
+            Mf.Letras_Negras(Btn_Electricos);
         }
         private void Btn_Electricos_MouseLeave(object sender, EventArgs e)
         {
@@ -463,7 +437,7 @@ namespace Concesionario_J_M
         {
             Desactivar_Labels();
             BotonesGrises();
-            Letras_Negras(Btn_Electricos);
+            Mf.Letras_Negras(Btn_Electricos);
             AlterarBorde();
             Ocultar_PanelesElectrico();
             Panel_Electricos.Visible = true;
@@ -539,7 +513,7 @@ namespace Concesionario_J_M
         //PERFORMANCE
         private void Btn_Performance_MouseEnter(object sender, EventArgs e)
         {
-            Letras_Negras(Btn_Performance);
+            Mf.Letras_Negras(Btn_Performance);
         }
         private void Btn_Performance_MouseLeave(object sender, EventArgs e)
         {
@@ -549,7 +523,7 @@ namespace Concesionario_J_M
         {
             Desactivar_Labels();
             BotonesGrises();
-            Letras_Negras(Btn_Performance);
+            Mf.Letras_Negras(Btn_Performance);
             AlterarBorde();
             MostrarPanel_Performance();
             Panel_Performance.Visible = true;
@@ -611,7 +585,7 @@ namespace Concesionario_J_M
             this.Close();
         }
         //FIN DISEÑO
-        //INICIO DE LOGICA
+        //Agarra el nombre del cliente que inicio sesion y lo traslada a este formulario
         public void PasarUsuario(string n_identificacion)
         {
             Cliente cliente = new Cliente();
@@ -625,7 +599,7 @@ namespace Concesionario_J_M
             }
         }
 
-        public void ActivarLabelCliente()
+        public void ActivarLabelCliente() //Se activa por si el que inicio sesion fue un cliente
         {
             Btn_IniciarSesion.Visible = false;
             lbl_Nombre.Visible = true;
@@ -634,7 +608,7 @@ namespace Concesionario_J_M
             label11.Visible = true;
         }
 
-        public void ActivarLabelGerente()
+        public void ActivarLabelGerente() //Se activa por si el que inicio sesion fue el gerente
         {
             Btn_IniciarSesion.Visible = false;
             lbl_Nombre.Visible = true;
@@ -652,115 +626,123 @@ namespace Concesionario_J_M
             Login login = new Login();
             if (lbl_Nombre.Text == "Perfil Sesion")
             {
+                //Si se le da al boton comprar y no se ha iniciado sesion se abrira el formulario de iniciar sesion si es que este acepta hacerlo
                 if (Sa.MensajeInciciarSesion(login) == true)
                 {
                     this.Close();
                 }
             }
-            else if (lbl_Nombre.Text == "Gerente")
+            else if (lbl_Nombre.Text == "Gerente") //De lo contrario si fue el gerente se comprara el auto al darle click
             {
-                foreach (var item in Sa.GetAll())
-                {
-                    if (item.Id_Auto.Equals(lbl_Id_Auto.Text))
-                    {
-                        inventario.Fecha_Compra = DateTime.Now;
-                        inventario.Matricula = Sa.Generar_Matricula();
-                        inventario.Nombre_Auto = item.Nombre_Auto;
-                        inventario.Precio_Venta = item.Precio_Venta;
-                        inventario.Modelo = item.Modelo;
-                        inventario.Categoria = item.Categoria;
-                        inventario.Motor = item.Motor;
-                        inventario.Potencia = item.Potencia;
-                        inventario.Valvulas = item.Valvulas;
-                        inventario.Asientos = item.Asientos;
-                        inventario.Sistema_Combustible = item.Sistema_Combustible;
-                        inventario.Tipo_Transmision = item.Tipo_Transmision;
-                        inventario.Id_Auto = lbl_Id_Auto.Text;
-                        finanzas.Nombre_Auto = item.Nombre_Auto;
-                    }
-                }
-                finanzas.Tipo = "Compra de Auto";
-                finanzas.Fecha_Ingreso = DateTime.Now;
-                finanzas.Monto_Ingreso = 0;
-                finanzas.Fecha_Gasto = DateTime.Now;
-                finanzas.Monto_Gasto = int.Parse(lbl_Precio.Text);
-                finanzas.Monto_Total = 1 * -int.Parse(lbl_Precio.Text);               
-                Si.Insertar(inventario);
-                Sf.Insertar(finanzas);
-                lbl_DineroDisp.Text = Sf.Contar_DineroTotal().ToString();
-                MessageBox.Show("Compra Realizada Satisfactoriamente.");
+                Insertar_DatosGerente();
             }
             else
             {
-                if (Sa.Mensaje_Comprar() == true)
-                {
-                    if (Sa.Comprobar_Saldo(int.Parse(lbl_DineroDisp.Text),int.Parse(lbl_Precio.Text))== true)
-                    {
-                        bool Encontro = false;
-
-                        if (Se.GetAll() != null)
-                        {
-                            foreach (var item in Si.GetAll())
-                            {
-                                if (item.Id_Auto.Equals(lbl_Id_Auto.Text))
-                                {
-                                    ventas.Nombre_Vendedor = Se.Obtener_Empleado();
-                                    if(ventas.Nombre_Vendedor != "Sin Vendedor Disponible")
-                                    {
-                                        ventas.Id_Cliente = lbl_Id_Cliente.Text;
-                                        ventas.Comprador = lbl_Nombre.Text;
-                                        ventas.Fecha_Vendido = DateTime.Now;
-                                        ventas.Precio_Venta = item.Precio_Venta;
-                                        ventas.Id_Auto = item.Id_Auto;
-                                        ventas.Matricula = item.Matricula;
-                                        ventas.Nombre_Auto = item.Nombre_Auto;
-                                        ventas.Categoria = item.Categoria;
-                                        ventas.Motor = item.Motor;
-                                        ventas.Potencia = item.Potencia;
-                                        ventas.Sistema_Combustible = item.Sistema_Combustible;
-                                        ventas.Tipo_Transmision = item.Tipo_Transmision;
-                                        finanzas.Nombre_Auto = item.Nombre_Auto;
-                                        finanzas.Tipo = "Venta de Auto";
-                                        finanzas.Fecha_Ingreso = DateTime.Now;
-                                        finanzas.Monto_Ingreso = int.Parse(lbl_Precio.Text); 
-                                        finanzas.Fecha_Gasto = DateTime.Now;
-                                        finanzas.Monto_Gasto = 0;
-                                        finanzas.Monto_Total = int.Parse(lbl_Precio.Text);
-                                        cliente.Presupuesto = int.Parse(lbl_DineroDisp.Text) - int.Parse(lbl_Precio.Text);
-                                        cliente.Autos_Comprados += 1;
-                                        lbl_DineroDisp.Text = cliente.Presupuesto.ToString();
-                                        Se.Añadir_Comision(ventas.Nombre_Vendedor,int.Parse(lbl_Precio.Text));
-                                        Sl.UpdateAuto(lbl_Id_Cliente.Text, cliente);
-                                        Sv.Insertar(ventas);
-                                        Si.Delete(item);
-                                        Sf.Insertar(finanzas);
-                                        Sa.Proceso_Compra(Panel_ProcesoC,Lbl_Empleado,Lbl_Punto1,Lbl_Punto2,Lbl_Punto3,Pict_Logo, Llb_CompraCmpt, Pict_CompraCmpt, Btn_Cerrar,ventas.Nombre_Vendedor);                                      
-                                        Encontro = true;
-                                        break;
-                                    }
-                                    else
-                                    {
-                                        Encontro = true;
-                                        break;
-                                    }
-                                    
-                                }                                             
-                            }                           
-                        }
-                        if (Encontro == false)
-                        {
-                            MessageBox.Show("No hay autos de este tipo disponibles por el momento.");
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se pudo completar la compra, Dinero insuficiente");
-                    }
-                }
-
+                Comprobar_DatosCliente(); //Si es el cliente se comprobara los datos necesarios para comprar el auto
             }
 
 
+        }
+        public void Comprobar_DatosCliente()
+        {
+            if (Sa.Mensaje_Comprar() == true) //Saldra un mensaje de si desea comprar el auto, si lo hace pasara a comprubar el saldo
+            {
+                if (Sa.Comprobar_Saldo(int.Parse(lbl_DineroDisp.Text), int.Parse(lbl_Precio.Text)) == true) //Comprueba si tiene salda disponible
+                {
+                    if (Se.GetAll() != null) //Comprueba si hay vendedores disponibles
+                    {
+                        Insertar_DatosCliente();
+                    }                  
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo completar la compra, Dinero insuficiente");
+                }
+            }
+        }
+        public void Insertar_DatosCliente()
+        {
+            foreach (var item in Si.GetAll()) //Busca el auto que se desea comprar
+            {
+                if (item.Id_Auto.Equals(lbl_Id_Auto.Text)) //Si lo encuentra procede a verificar si hay empleados disponibles
+                {
+                    ventas.Nombre_Vendedor = Se.Obtener_Empleado();
+                    if (ventas.Nombre_Vendedor != "Sin Vendedor Disponible") //Si hay vendedores disponibles se procede a insertar los datos
+                    {
+                        ventas.Id_Cliente = lbl_Id_Cliente.Text;
+                        ventas.Comprador = lbl_Nombre.Text;
+                        ventas.Fecha_Vendido = DateTime.Now;
+                        ventas.Precio_Venta = item.Precio_Venta; 
+                        ventas.Id_Auto = item.Id_Auto;
+                        ventas.Matricula = item.Matricula;
+                        ventas.Nombre_Auto = item.Nombre_Auto; //Datos de Ventas necesario para insertar a la bse de datos
+                        ventas.Categoria = item.Categoria;
+                        ventas.Motor = item.Motor;
+                        ventas.Potencia = item.Potencia;
+                        ventas.Sistema_Combustible = item.Sistema_Combustible;
+                        ventas.Tipo_Transmision = item.Tipo_Transmision;
+                        finanzas.Nombre_Auto = item.Nombre_Auto; 
+                        finanzas.Tipo = "Venta de Auto"; //Como es una venta de auto seria un ingreso
+                        finanzas.Fecha_Ingreso = DateTime.Now;
+                        finanzas.Monto_Ingreso = int.Parse(lbl_Precio.Text); //Datos de Finanzas necesario para insertar a la bse de datos
+                        finanzas.Fecha_Gasto = DateTime.Now;
+                        finanzas.Monto_Gasto = 0;
+                        finanzas.Monto_Total = int.Parse(lbl_Precio.Text);
+                        cliente.Presupuesto = int.Parse(lbl_DineroDisp.Text) - int.Parse(lbl_Precio.Text); //Datos de Cliente que se actualizaran en la base de datos
+                        cliente.Autos_Comprados += 1;
+                        lbl_DineroDisp.Text = cliente.Presupuesto.ToString();
+                        Se.Añadir_Comision(ventas.Nombre_Vendedor, int.Parse(lbl_Precio.Text));
+                        Sl.UpdateAuto(lbl_Id_Cliente.Text, cliente); //Se actualizan los datos del cliente en la base de datos
+                        Sv.Insertar(ventas); //Se insertan los datos en la base de datos
+                        Si.Delete(item); //Se elimina el auto de la base de datos
+                        Sf.Insertar(finanzas);
+                        Sa.Proceso_Compra(Panel_ProcesoC, Lbl_Empleado, Lbl_Punto1, Lbl_Punto2, Lbl_Punto3, Pict_Logo, Llb_CompraCmpt, Pict_CompraCmpt, Btn_Cerrar, ventas.Nombre_Vendedor);
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("No hay autos de este tipo disponibles por el momento.");
+                }
+            }
+        }
+        public void Insertar_DatosGerente() //Inserta los datos del gerente en la base de datos
+        {
+            foreach (var item in Sa.GetAll())
+            {
+                if (item.Id_Auto.Equals(lbl_Id_Auto.Text))
+                {
+                    inventario.Fecha_Compra = DateTime.Now;
+                    inventario.Matricula = Sa.Generar_Matricula();
+                    inventario.Nombre_Auto = item.Nombre_Auto;
+                    inventario.Precio_Venta = item.Precio_Venta;
+                    inventario.Modelo = item.Modelo;
+                    inventario.Categoria = item.Categoria;
+                    inventario.Motor = item.Motor;
+                    inventario.Potencia = item.Potencia; //Datos de Inventario necesario para insertar a la bse de datos
+                    inventario.Valvulas = item.Valvulas;
+                    inventario.Asientos = item.Asientos;
+                    inventario.Sistema_Combustible = item.Sistema_Combustible;
+                    inventario.Tipo_Transmision = item.Tipo_Transmision;
+                    inventario.Id_Auto = lbl_Id_Auto.Text;
+                    finanzas.Nombre_Auto = item.Nombre_Auto; //Agarra el nombre del auto para saber cual auto fue vendido
+                }
+            }
+            finanzas.Tipo = "Compra de Auto"; //Como es una compra de auto seria un gasto
+            finanzas.Fecha_Ingreso = DateTime.Now;
+            finanzas.Monto_Ingreso = 0;
+            finanzas.Fecha_Gasto = DateTime.Now;  
+            finanzas.Monto_Gasto = int.Parse(lbl_Precio.Text);
+            finanzas.Monto_Total = 1 * -int.Parse(lbl_Precio.Text); //Se Convierte el mmonto total en negativo para que se pueda restar en la base de datos
+            Si.Insertar(inventario);
+            Sf.Insertar(finanzas);
+            lbl_DineroDisp.Text = Sf.Contar_DineroTotal().ToString();
+            MessageBox.Show("Compra Realizada Satisfactoriamente.");
         }
 
         private void Btn_Cerrar_Click(object sender, EventArgs e)

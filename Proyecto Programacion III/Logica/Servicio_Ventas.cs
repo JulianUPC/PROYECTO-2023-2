@@ -33,6 +33,14 @@ namespace Logica2
         {
             return repositorio_Ventas.GetAllTabla();
         }
-
+        public int Contar_VehiculosVendidos()
+        {
+            int total_vehiculosvendidos = 0;
+            foreach (var item in GetAll())
+            {
+                total_vehiculosvendidos++;
+            }
+            return total_vehiculosvendidos;
+        }
     }
 }

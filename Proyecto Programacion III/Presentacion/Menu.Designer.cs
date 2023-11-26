@@ -318,8 +318,8 @@
             this.ClientSize = new System.Drawing.Size(1014, 514);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Menu";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CONSECIONARIO J&M";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -26,18 +26,18 @@ namespace Concesionario_J_M
             InitializeComponent();
         }
         
-        private void Btn_Registrar_Click(object sender, EventArgs e)
+        private void Btn_Registrar_Click(object sender, EventArgs e) //Cambia el color del boton al darle click
         {
 
             Btn_InicioSesion.BackColor = Color.White;
-            Btn_InicioSesion.ForeColor = Color.Black;
+            Btn_InicioSesion.ForeColor = Color.Black; 
             Btn_Registrar.BackColor = Color.Black;
             Btn_Registrar.ForeColor = Color.White;
             Panel_Gerente.Visible = false;
             Panel_Registrar.Visible = true;
         }
 
-        private void Btn_InicioSesion_Click(object sender, EventArgs e)
+        private void Btn_InicioSesion_Click(object sender, EventArgs e) //Cambia el color del boton al darle click
         {
             Btn_InicioSesion.BackColor = Color.Black;
             Btn_InicioSesion.ForeColor = Color.White; 
@@ -61,42 +61,43 @@ namespace Concesionario_J_M
         private void Btn_Gerente_Click(object sender, EventArgs e)
         {
             Panel_Gerente.Visible = true;
+            Txt_Usuario.Text = "";
+            Txt_Contraseña.Text = "";
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void pictureBox3_Click(object sender, EventArgs e) //Boton de salir del formulario
         {
            Presentacion.Menu menu = new Presentacion.Menu();
            menu.Show();
            this.Close();
         }
-        private void Txt_NombreC_KeyPress(object sender, KeyPressEventArgs e)
+        private void Txt_NombreC_KeyPress(object sender, KeyPressEventArgs e) //Verifica si el usuario ingresa numeros
         {
             mf.ValidarLetras(e, Txt_NombreC);
         }
 
-        private void Txt_Cedula_KeyPress(object sender, KeyPressEventArgs e)
+        private void Txt_Cedula_KeyPress(object sender, KeyPressEventArgs e) //Verifica si el usuario ingresa letras
         {
             mf.SoloNumeros(e);
             mf.LimitarLongitudTextBox(Txt_Cedula, 10, e);
         }
 
-        private void Txt_Cargo_KeyPress(object sender, KeyPressEventArgs e)
+        private void Txt_Cargo_KeyPress(object sender, KeyPressEventArgs e) //Verifica si el usuario ingresa numeros
         {
             mf.ValidarLetras(e, Txt_Cargo);
         }
 
-        private void Txt_IngresosM_KeyPress(object sender, KeyPressEventArgs e)
+        private void Txt_IngresosM_KeyPress(object sender, KeyPressEventArgs e) //Verifica si el usuario ingresa letras
         {
             mf.SoloNumeros(e);
         }
 
-        private void Txt_Presupuesto_KeyPress(object sender, KeyPressEventArgs e)
+        private void Txt_Presupuesto_KeyPress(object sender, KeyPressEventArgs e) //Verifica si el usuario ingresa letras
         {
             mf.SoloNumeros(e);
         }
         //FIN DISEÑO
-        //INICIO LOGICA
-        private void Btn_RegistrarInfo_Click(object sender, EventArgs e)
+        private void Btn_RegistrarInfo_Click(object sender, EventArgs e) //Al darle click procede a guardar los datos del cliente
         {
             cliente.Id_Cliente = Sl.Generar_ID();
             cliente.N_Identificacion = Sl.Verificar_ID(Txt_Cedula);
@@ -116,7 +117,7 @@ namespace Concesionario_J_M
             cliente.Usuario = Txt_UsuarioR.Text;
             cliente.Contraseña = Sl.VerificarContraseña(Txt_ContraseñaR, Txt_ConfCotraseñaR);
             cliente.Autos_Comprados = 0;
-            if(txt_Correo.Text == "")
+            if(txt_Correo.Text == "") //Comprueba si el usuario ingreso un correo, si no entonces se le asigna "Sin Correo"
             {
                 txt_Correo.Text = "Sin Correo";
             }
@@ -125,11 +126,10 @@ namespace Concesionario_J_M
             
         }
         //INICIO DE SESION
-        private void Btn_Ingresar_Click(object sender, EventArgs e)
+        private void Btn_Ingresar_Click(object sender, EventArgs e) //Al darle click procede a iniciar sesion
         {
-            Txt_Cedula.Text = Sl.Iniciar_Sesion(Txt_Usuario, Txt_Contraseña);
-            Console.WriteLine(Txt_Cedula.Text);
-            if (Sl.Buscar_Cuenta(Txt_Cedula) == true)
+            Txt_Cedula.Text = Sl.Iniciar_Sesion(Txt_Usuario, Txt_Contraseña); //Verifica si el usuario existe y agarra su cedula
+            if (Sl.Buscar_Cuenta(Txt_Cedula) == true)  //Busca la cedula si existe true de lo contrario false
             {                     
                 Autos autos = new Autos();
                 autos.PasarUsuario(Txt_Cedula.Text);
@@ -143,12 +143,26 @@ namespace Concesionario_J_M
         }      
         private void Btn_IngresarGerente_Click(object sender, EventArgs e)
         {
-            if (Sl.IngresarGerente(Txt_UsuarioG, Txt_ContraseñaG) == true)
+            if (Sl.IngresarGerente(Txt_UsuarioG, Txt_ContraseñaG) == true) //Verifica si el usuario es "admin" y la contraseña es "admin" para poder iniciar seion
             {
                 Gerencia gerencia = new Gerencia();
                 gerencia.Show();
                 this.Close();
             }
+            else
+            {
+                MessageBox.Show("Usuario o Contraseña Incorrectos");
+            }
+        }
+
+        private void Txt_Contraseña_TextChanged(object sender, EventArgs e)
+        {
+            mf.ConvertirALetrasDeContrasena(Txt_Contraseña);
+        }
+
+        private void Txt_ContraseñaG_TextChanged(object sender, EventArgs e)
+        {
+            mf.ConvertirALetrasDeContrasena(Txt_ContraseñaG);
         }
     }
 }

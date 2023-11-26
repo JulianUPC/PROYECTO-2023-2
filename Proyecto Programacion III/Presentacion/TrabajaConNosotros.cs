@@ -12,6 +12,7 @@ namespace Concesionario_J_M
 {
     public partial class TrabajaConNosotros : Form
     {
+        //FORM PARA MOSTRAR TRABAJA CON NOSOTROS
         public TrabajaConNosotros()
         {
             InitializeComponent();
@@ -19,7 +20,7 @@ namespace Concesionario_J_M
 
         private void Btn_Salir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close(); //Boton para cerrar el formulario
         }
     }
 }

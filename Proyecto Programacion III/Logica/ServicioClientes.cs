@@ -169,7 +169,6 @@ namespace Logica2
                 int total_presupuesto = 0;
                 if(string.IsNullOrEmpty(presupuesto.Text))
                 {
-                    Mensaje_Error();
                     total_presupuesto = 0;
                 }
                 else if(int.Parse(presupuesto.Text) > 10000000)
@@ -198,7 +197,6 @@ namespace Logica2
             int total_ingresos = 0;
             if (string.IsNullOrEmpty(ingresos.Text))
             {
-                Mensaje_Error();
                 total_ingresos = 0;
             }
             else if(int.Parse(ingresos.Text) < 5000)
@@ -255,68 +253,68 @@ namespace Logica2
             DateTime fechaActual = DateTime.Now;
             int edad = fechaActual.Year - cliente.Fecha_Nacimiento.Year;
             bool Verificado = true;
-            if(cliente.N_Identificacion == 0)
+            if (cliente.N_Identificacion == 0||cliente.N_Identificacion.ToString().Length <7)
+            {
+                MessageBox.Show("Numero de Identificacion no valido", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Verificado = false;
+            }
+            else if(string.IsNullOrEmpty(cliente.Nombre_Completo))
             {
                 Mensaje_Error();
                 Verificado = false;
             }
-            if(string.IsNullOrEmpty(cliente.Nombre_Completo))
+            else if(edad < 18)
             {
-                Mensaje_Error();
-                Verificado = false;
-            }         
-            if (edad < 18)
-            {
-                MessageBox.Show("Debe ser mayor de 18 años para Continuar");
+                MessageBox.Show("Debe ser mayor de 18 años para Continuar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Verificado = false; 
             }
-            if (string.IsNullOrEmpty(cliente.Genero))
+            else if(string.IsNullOrEmpty(cliente.Genero))
             {
                 Mensaje_Error();
                 Verificado = false;
             }
-            if (string.IsNullOrEmpty(cliente.Direccion))
+            else if (string.IsNullOrEmpty(cliente.Direccion))
             {
                 Mensaje_Error();
                 Verificado = false;
             }
-            if (string.IsNullOrEmpty(cliente.Telefono))
+            else if (string.IsNullOrEmpty(cliente.Telefono))
             {
                 Mensaje_Error();
                 Verificado = false;
 
             }
-            if (string.IsNullOrEmpty(cliente.Trabaja))
+            else if (string.IsNullOrEmpty(cliente.Trabaja))
             {
                 Mensaje_Error();
                 Verificado = false;
             }
-            if (string.IsNullOrEmpty(cliente.Cargo))
+            else if (string.IsNullOrEmpty(cliente.Cargo))
             {
                 Mensaje_Error();
                 Verificado = false;
             }
-            if (cliente.Ingresos_Mensuales == 0) 
+            else if (cliente.Ingresos_Mensuales == 0) 
             {
                 Mensaje_Error();
                 Verificado = false;
             }
-            if (cliente.Presupuesto == 0)
+            else if (cliente.Presupuesto == 0)
             {
                 Mensaje_Error();
                 Verificado = false;
             }
-            if (string.IsNullOrEmpty(cliente.Licencia))
+            else if (string.IsNullOrEmpty(cliente.Licencia))
             {
                 Mensaje_Error();
                 Verificado = false;
             }
-            if (string.IsNullOrEmpty(cliente.Usuario))
+            else if (string.IsNullOrEmpty(cliente.Usuario))
             {
                 Mensaje_Error();
                 Verificado = false;
             }
-            if (string.IsNullOrEmpty(cliente.Contraseña))
+            else if (string.IsNullOrEmpty(cliente.Contraseña))
             {
                 Mensaje_Error();
                 Verificado = false;

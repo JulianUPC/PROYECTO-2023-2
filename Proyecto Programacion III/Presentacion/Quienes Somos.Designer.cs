@@ -114,7 +114,6 @@
             this.label3.Size = new System.Drawing.Size(59, 21);
             this.label3.TabIndex = 9;
             this.label3.Text = "Volver";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // pictureBox3
             // 
@@ -138,8 +137,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Quienes_Somos";
-            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quienes_Somos";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();

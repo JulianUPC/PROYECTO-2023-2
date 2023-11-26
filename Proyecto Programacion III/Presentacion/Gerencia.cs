@@ -22,35 +22,34 @@ namespace Concesionario_J_M
         ServicioAutos servicioAutos = new ServicioAutos(configConnnection.ConnectionString);
         Manejo_Formulario mf = new Manejo_Formulario();
         Empleado empleados = new Empleado();
+        Inventario inventario = new Inventario();
         public Gerencia()
         {
             InitializeComponent();
-            Actualizar();
+            Actualizar(); //Actualiza los contadores al momento de iniciar el formulario
         }
         //ABRIR Y CERRAR PANELES DEPENDIENDO LA OPCION
         //PANEL CLIENTES
-        private void Cerrar_Paneles()
+        private void Cerrar_Paneles() //Cierra todos los paneles
         {
             Panel_Empleados.Visible = false;
             Panel_Finanzas.Visible = false;
             Panel_Ventas.Visible = false;
             Panel_Inventario.Visible = false;
         }
-       private void Contadores()
-        {
+       private void Contadores() //Actualiza los contadores de la parte superior del formulario
+        {  
             Total_Clientes.Text = servicioClientes.ContarClientes().ToString(); 
             lbl_TotalEmpleado.Text = servicioEmpleado.ContarEmpleados().ToString();
             lbl_VehiculosTotal.Text = servicio_Inventario.ContarInventario().ToString();
             lbl_IngresosT.Text = servicioFinanzas.Contar_Ingresos().ToString();
             lbl_GastosT.Text = servicioFinanzas.Contar_Gastos().ToString();
             lbl_DineroTotal.Text = servicioFinanzas.Contar_DineroTotal().ToString();
-            //servicioVentas.Contar_VehiculosVendidos();
-            //servicioAutos.Contar_VehiculosInventario();
-
+            Total_V_Vendidos.Text = servicioVentas.Contar_VehiculosVendidos().ToString();
         }
 
         //PANEL EMPLEADOS
-        private void Cerrar_PanelesEmpleados()
+        private void Cerrar_PanelesEmpleados()  //Cierra lois paneles necesarios para mostrar el formulario empleados
         {
             Panel_Empleados.Visible = true;
             Panel_Finanzas.Visible = false;
@@ -58,15 +57,15 @@ namespace Concesionario_J_M
             Panel_Inventario.Visible = false;         
         }
         //PANEL FINANANZAS
-        private void Cerrar_PanelesFinanzas()
+        private void Cerrar_PanelesFinanzas() //Cierra lois paneles necesarios para mostrar el formulario Finanzas
         {
             Panel_Empleados.Visible = true;
             Panel_Finanzas.Visible = true;
-            Panel_Ventas.Visible = false;
+            Panel_Ventas.Visible = false; 
             Panel_Inventario.Visible = false;
         }
         //PANEL VENTAS
-        private void Cerrar_PanelesVentas()
+        private void Cerrar_PanelesVentas() //Cierra lois paneles necesarios para mostrar el formulario Ventas
         {
             Panel_Empleados.Visible = true;
             Panel_Finanzas.Visible = true;
@@ -74,13 +73,14 @@ namespace Concesionario_J_M
             Panel_Inventario.Visible = false;
         }
         //PANEL INVENTARIO
-        private void Cerrar_PanelesInventario()
+        private void Cerrar_PanelesInventario() //Cierra lois paneles necesarios para mostrar el formulario Inventario
         {
             Panel_Empleados.Visible = true;
             Panel_Finanzas.Visible = true;
             Panel_Ventas.Visible = true;
             Panel_Inventario.Visible = true;
         }
+        //BOTONES DEL FORMULARIO PARA ABRIR CLIENTES, EMPLEADOS, FINANZAS, VENTAS E INVENTARIO
         private void Btn_Clientes_Click(object sender, EventArgs e)
         {
             Cerrar_Paneles();
@@ -88,7 +88,7 @@ namespace Concesionario_J_M
         private void Btn_Inventario_Click(object sender, EventArgs e)
         {
             Cerrar_PanelesEmpleados();
-        }
+        }   
         private void Btn_Finanzas_Click(object sender, EventArgs e)
         {
             Cerrar_PanelesFinanzas();
@@ -105,7 +105,7 @@ namespace Concesionario_J_M
         {
             this.Close();
         }
-
+        //BOTONES PARA AÑADIR, BORRAR O MODIFICAR
         private void Btn_Modificar_Click(object sender, EventArgs e)
         {
             Panel_ModificarCliente.Visible = true;
@@ -138,7 +138,7 @@ namespace Concesionario_J_M
 
         private void Btn_Salir_Click(object sender, EventArgs e)
         {
-            if (servicioAutos.Mensaje_Salir() == true)
+            if (mf.Mensaje_Salir() == true)
             {
                 Login login = new Login();
                 login.Show();
@@ -146,10 +146,10 @@ namespace Concesionario_J_M
             }            
         }
         
-        private void Btn_Comprar_Click(object sender, EventArgs e)
+        private void Btn_Comprar_Click(object sender, EventArgs e) //Abre el Form Autos al momento de darle click y inicara sesion como Gerente
         {
             Autos autos = new Autos();
-            autos.ActivarLabelGerente();
+            autos.ActivarLabelGerente(); 
             autos.Show();
             this.Close();          
             
@@ -187,7 +187,7 @@ namespace Concesionario_J_M
         {
             Panel_Contratar.Visible = true;
         }
-        private void Btn_ConfContratar_Click(object sender, EventArgs e)
+        private void Btn_ConfContratar_Click(object sender, EventArgs e) //Contrata a un empleado
         {
             empleados.ID_Empleado = Txt_IDCont .Text;
             empleados.N_identificacion = Txt_NIDCont.Text;
@@ -200,7 +200,7 @@ namespace Concesionario_J_M
             Actualizar();
         }
 
-        public void Cargar_Tablas()
+        public void Cargar_Tablas() //Carga las tablas de los formularios
         {
             Dtv_Clientes.DataSource = servicioClientes.GetAllTabla();
             Dtv_Empleados.DataSource = servicioEmpleado.GetAllTabla();
@@ -232,7 +232,11 @@ namespace Concesionario_J_M
 
         private void Btn_ModificarPA_Click(object sender, EventArgs e)
         {
-            servicioAutos.ActualizarPrecio(Txt_ID_Auto,Txt_PrecioM);
+            if (servicioAutos.ActualizarPrecio(Txt_ID_Auto, Txt_PrecioM) == true)
+            {
+                inventario.Precio_Venta = int.Parse(Txt_PrecioM.Text);
+                servicio_Inventario.Update(Txt_ID_Auto.Text,inventario);
+            }
             Actualizar();
         }
 
