@@ -163,6 +163,7 @@ namespace Concesionario_J_M
         {
             Panel_Detalles.Visible = true;
             Pict_VhcDetalle.Image = picture.Image;
+            lbl_Id_Auto.Text = Id_Auto;
             foreach (Auto Ca in Sa.Buscar_Auto(Id_Auto))
             {
                 Carro.Text = Ca.Nombre_Auto;
@@ -173,7 +174,6 @@ namespace Concesionario_J_M
                 lbl_Valvulas.Text = Ca.Valvulas;
                 lbl_Motor.Text = Ca.Motor;
                 lbl_Asientos.Text = Ca.Asientos;
-                lbl_Id_Auto.Text = Ca.Id_Auto;
                 if (lbl_Nombre.Text == "Gerente")
                 {
                     lbl_Precio.Text = Ca.Precio_Compra.ToString();
@@ -662,10 +662,12 @@ namespace Concesionario_J_M
         }
         public void Insertar_DatosCliente()
         {
+            bool Encontrado = false;
             foreach (var item in Si.GetAll()) //Busca el auto que se desea comprar
             {
                 if (item.Id_Auto.Equals(lbl_Id_Auto.Text)) //Si lo encuentra procede a verificar si hay empleados disponibles
                 {
+                    Encontrado = true;
                     ventas.Nombre_Vendedor = Se.Obtener_Empleado();
                     if (ventas.Nombre_Vendedor != "Sin Vendedor Disponible") //Si hay vendedores disponibles se procede a insertar los datos
                     {
@@ -705,10 +707,10 @@ namespace Concesionario_J_M
                     }
 
                 }
-                else
-                {
+            }
+            if(Encontrado == false)
+            {
                     MessageBox.Show("No hay autos de este tipo disponibles por el momento.");
-                }
             }
         }
         public void Insertar_DatosGerente() //Inserta los datos del gerente en la base de datos

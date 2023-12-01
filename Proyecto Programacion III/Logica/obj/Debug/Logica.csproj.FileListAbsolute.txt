@@ -20,3 +20,14 @@ C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\PROYECTO-2023-
 C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Logica\obj\Debug\Logica.csproj.CopyComplete
 C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Logica\obj\Debug\Logica2.dll
 C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Logica\obj\Debug\Logica2.pdb
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Logica\bin\Debug\Logica2.dll
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Logica\bin\Debug\Logica2.pdb
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Logica\bin\Debug\Datos.dll
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Logica\bin\Debug\Entidades.dll
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Logica\bin\Debug\Datos.pdb
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Logica\bin\Debug\Entidades.pdb
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Logica\obj\Debug\Logica.csproj.AssemblyReference.cache
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Logica\obj\Debug\Logica.csproj.CopyComplete
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Logica\obj\Debug\Logica2.dll
+C:\Users\Angel Barrueto\Documents\PROYECTO-2023-2\PROYECTO-2023-2\PROYECTO-2023-2\PROYECTO-2023-2\Proyecto Programacion III\Logica\obj\Debug\Logica2.pdb
